@@ -11,7 +11,7 @@ if (elems !== null) {
 
     switch (elem.id) {
       case 'swiper-banner':
-        config = Object.assign({}, defaultSwiper, {
+        config = Object.assign({}, {
           loop: false,
           autoplay: {
             delay: 5000,
@@ -27,7 +27,7 @@ if (elems !== null) {
       case 'swiper-blog':
       case 'swiper-testimonials':
       case 'swiper-portfolio':
-        config = Object.assign({}, defaultSwiper, {
+        config = Object.assign({}, {
           loop: false,
           autoplay: false,
           slidesPerView: 4,
@@ -52,7 +52,7 @@ if (elems !== null) {
         });
         break;
       case 'swiper-sales':
-        config = Object.assign({}, defaultSwiper, {
+        config = Object.assign({}, {
           loop: false,
           autoplay: false,
           slidesPerView: 3,
@@ -76,7 +76,31 @@ if (elems !== null) {
           },
         });
         break;
-      default: config = Object.assign({}, defaultSwiper);
+      default:
+        config = Object.assign({}, {
+          loop: false,
+          autoplay: false,
+          slidesPerView: 5,
+          spaceBetween: 10,
+          breakpoints: {
+            480: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            992: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            }
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
     }
 
     setTimeout(new Swiper(`#${elem.id}`, config),100);

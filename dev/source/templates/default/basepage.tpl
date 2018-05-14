@@ -5,7 +5,7 @@
         {snippet name="BreadCrumb@BreadCrumb"}
         <h1>{field name=pagetitle}</h1>
 
-        <div class="page__content">
+        <div class="section page__content">
 
             {block name=page_content}
                 <div class="content-wrapper">

@@ -48,6 +48,10 @@ $footer-copyright-bg-color: $footer-bg-color!default;
   background: #f8f6f7;
 }
 
+$pswp__assets-path: '../img/gallery/' !default;
+
+@import "../../../node_modules/photoswipe/src/css/main";
+@import "../../../node_modules/photoswipe/src/css/default-skin/default-skin";
 
 @import '../../../node_modules/materialize-css/sass/materialize';
 
@@ -66,3 +70,4 @@ $footer-copyright-bg-color: $footer-bg-color!default;
 @import "box";
 @import "block";
 @import "form";
+@import "portfolio";

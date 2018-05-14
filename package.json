@@ -53,7 +53,9 @@
   "description": "Starter kit for MODx Revolution",
   "version": "1.0.0",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "photoswipe": "^4.1.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magr0s/modx-starter-kit.git"
