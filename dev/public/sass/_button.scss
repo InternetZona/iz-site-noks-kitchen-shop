@@ -1,0 +1,17 @@
+.button-action{
+  @extend .btn;
+  @extend .z-depth-0;
+  font-size: .85rem;
+  text-transform: none;
+  height: 39px;
+  line-height: 39px;
+  background-color: $primary-color;
+  border-radius: 0;
+  width: 100%;
+  
+  @media (min-width: $medium-screen-up) and (max-width: $large-screen) {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}

@@ -1,0 +1,7 @@
+.footer{
+  @extend .page-footer;
+
+  &__copyright{
+    @extend .footer-copyright;
+  }
+}

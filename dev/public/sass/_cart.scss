@@ -1,0 +1,63 @@
+.quick-cart{
+  position: relative;
+  padding-left: 25px;
+
+  &__trigger{
+    display: inline-block;
+
+    &:before{
+      position: absolute;
+      content: "";
+      top: 50%;
+      margin-top: -11px;
+      left: 0;
+      width: 22px;
+      height: 21px;
+      background: url('../img/cart.png') no-repeat center center;
+    }
+
+    &-text{
+      font-size: .85rem;
+      color: $off-black;
+      text-decoration: none;
+      border-bottom: 1px dashed $off-black;
+
+      @media #{$small-and-down} {
+        display: none;
+      }
+
+      :hover > & {
+        color: $secondary-color;
+        border-bottom-color: $secondary-color;
+      }
+    }
+  }
+
+  &__counter {
+
+    @media #{$small-and-down} {
+      display: none;
+    }
+
+    &-badge{
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      text-align: center;
+      line-height: 22px;
+      border: 1px solid $primary-color;
+      background-color: $primary-color;
+      border-radius: 50%;
+      color: white;
+      margin: 0 8px;
+    }
+    &-cost{
+      font-size: .85rem;
+      > em{
+        font-weight: bold;
+        font-size: 1rem;
+        font-style: normal;
+      }
+    }
+  }
+}
