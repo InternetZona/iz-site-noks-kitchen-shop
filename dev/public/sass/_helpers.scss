@@ -51,6 +51,12 @@
     &:focus{
       text-decoration: none;
     }
+
+    &:before{
+      content: "/";
+      color: $off-black;
+      font-size: 14px;
+    }
   }
   span.breadcrumb{
     font-size: 12px;
