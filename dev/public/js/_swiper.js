@@ -1,108 +1,103 @@
 import Swiper from 'swiper';
 
-const defaultSwiper = {};
+(function () {
 
-let elems = document.querySelectorAll('.swiper-container');
-
-if (elems !== null) {
-  [].forEach.call(elems, (elem) => {
+  Array.from(document.querySelectorAll('.swiper-container')).map((elem) => {
 
     let config = {};
 
-    switch (elem.id) {
-      case 'swiper-banner':
-        config = Object.assign({}, {
-          loop: false,
-          autoplay: {
-            delay: 5000,
-            disableOnInteraction: true,
+    if (elem.id === 'swiper-banner') {
+      config = {
+        loop: true,
+        autoplay: {
+          delay: 6000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          hideOnClick: false,
+          clickable: true,
+        },
+      };
+
+    } else if (
+      elem.id === 'swiper-blog' ||
+      elem.id === 'swiper-testimonials' ||
+      elem.id === 'swiper-portfolio'
+    ) {
+      config = {
+        autoplay: false,
+        slidesPerView: 4,
+        spaceBetween: 30,
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
           },
-          pagination:{
-            el: '.swiper-pagination',
-            hideOnClick: false,
-            clickable: true,
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
           },
-        });
-        break;
-      case 'swiper-blog':
-      case 'swiper-testimonials':
-      case 'swiper-portfolio':
-        config = Object.assign({}, {
-          loop: false,
-          autoplay: false,
-          slidesPerView: 4,
-          spaceBetween: 30,
-          breakpoints: {
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 15,
-            },
-            992: {
-              slidesPerView: 3,
-            }
+          992: {
+            slidesPerView: 3,
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      };
+
+    } else if (elem.id === 'swiper-sales') {
+      config = {
+        autoplay: false,
+        slidesPerView: 3,
+        spaceBetween: 30,
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
           },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 15,
           },
-        });
-        break;
-      case 'swiper-sales':
-        config = Object.assign({}, {
-          loop: false,
-          autoplay: false,
-          slidesPerView: 3,
-          spaceBetween: 30,
-          breakpoints: {
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 15,
-            },
-            992: {
-              slidesPerView: 2,
-            }
+          992: {
+            slidesPerView: 2,
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      };
+
+    } else if (-1 !== elem.id.indexOf('swiper-gallery')) {
+      config = {
+        autoplay: false,
+        slidesPerView: 5,
+        spaceBetween: 10,
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
           },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 10,
           },
-        });
-        break;
-      default:
-        config = Object.assign({}, {
-          loop: false,
-          autoplay: false,
-          slidesPerView: 5,
-          spaceBetween: 10,
-          breakpoints: {
-            480: {
-              slidesPerView: 1,
-              spaceBetween: 0,
-            },
-            768: {
-              slidesPerView: 2,
-              spaceBetween: 10,
-            },
-            992: {
-              slidesPerView: 4,
-              spaceBetween: 10,
-            }
-          },
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-        });
+          992: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      };
+
     }
 
-    setTimeout(new Swiper(`#${elem.id}`, config),100);
+    setTimeout(new Swiper('#' + elem.id, config), 100);
   });
-}
+})();

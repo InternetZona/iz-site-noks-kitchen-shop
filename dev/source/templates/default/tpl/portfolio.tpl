@@ -16,7 +16,7 @@
                 <div class="portfolio-feed">
                     <div class="portfolio-feed__title">{$data.title}</div>
 
-                    <div id="swiper-portfolio-{$k}" class="swiper-container portfolio-feed__content">
+                    <div id="swiper-gallery-{$k}" class="swiper-container portfolio-feed__content">
                         <div class="swiper-wrapper gallery-photoswipe">
                             {foreach $images as $row}
 

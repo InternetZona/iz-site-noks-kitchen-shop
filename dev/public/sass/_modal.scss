@@ -1,0 +1,73 @@
+.modal{
+  outline: none!important;
+
+  .row {
+    margin-bottom: 0;
+  }
+
+  &-overlay{
+    opacity: .75!important;
+  }
+
+  &-content {
+    position: relative;
+
+    #modal-testimonial-video > & {
+      padding: 0;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: .75;
+    border: 1px solid rgba(0, 0, 0, .4);
+    padding: 0;
+    transition: all .3s ease-in 0s;
+    z-index: 1;
+
+    > i {
+      line-height: 30px;
+      color: white;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+  }
+
+  &-testimonial {
+
+    .collection{
+      margin: 0;
+      border: none;
+
+      .avatar {
+        padding:0;
+        min-height: auto;
+
+        .title {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        p{
+          font-size: .85rem;
+          color: $color-grey-20;
+
+          .rate{
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}

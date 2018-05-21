@@ -22,7 +22,10 @@
 
 {include file="components/footer/index.tpl"}
 
+{block name=modals}{/block}
+
 <script async src="{$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')}"></script>
+
 {block name=js_inject}
     {chunk name="jsInject"}
 {/block}

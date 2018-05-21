@@ -26,3 +26,7 @@
         {include file="blocks/request.tpl"}
     </div>
 {/block}
+
+{block name=modals append}
+    {include file="components/modals/testimonials.tpl"}
+{/block}

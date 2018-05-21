@@ -1,7 +1,7 @@
 /**
- * AMain script file
+ * Main script file
  */
 
-require('materialize-css');
-require('_swiper');
-require('_photoswipe');
+require('./_swiper');
+require('./_photoswipe');
+require('./_materialize');

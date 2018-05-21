@@ -11,7 +11,7 @@
                             ,"options" => "&w=1140&h=480&zc=1&aoe=0&far=0&q=70"
                         ] assign=thumbImage}
 
-                        <img src="{$thumbImage}">
+                        <img src="{$thumbImage}" class="responsive-img">
                     </div>
                 {/foreach}
             </div>

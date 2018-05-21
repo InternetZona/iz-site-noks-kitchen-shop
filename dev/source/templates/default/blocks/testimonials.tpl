@@ -20,17 +20,33 @@
                 <div id="swiper-testimonials" class="swiper-container">
                     <div class="swiper-wrapper">
 
+                        {assign var=testimonialsList value=[]}
+
                         {foreach $testimonials as $data}
 
                             {if $data.published}
 
                                 <div class="swiper-slide center-align">
-                                    {include file="components/testimonials/item.tpl" data=$data}
+                                    {if $data.hash}
+
+                                        {include file="components/testimonials/item-video.tpl" data=$data}
+
+                                    {else}
+
+                                        {$testimonialsList[$data.MIGX_id] = $data}
+
+                                        {include file="components/testimonials/item-text.tpl" data=$data}
+
+                                    {/if}
                                 </div>
 
                             {/if}
 
                         {/foreach}
+
+                        <script>
+                          var testimonialsList = {$testimonialsList|json_encode};
+                        </script>
 
                     </div>
 

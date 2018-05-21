@@ -52,6 +52,7 @@ $pswp__assets-path: '../img/gallery/' !default;
 
 @import "../../../node_modules/photoswipe/src/css/main";
 @import "../../../node_modules/photoswipe/src/css/default-skin/default-skin";
+@import "../../../node_modules/plyr/src/sass/plyr.scss";
 
 @import '../../../node_modules/materialize-css/sass/materialize';
 
@@ -71,3 +72,4 @@ $pswp__assets-path: '../img/gallery/' !default;
 @import "block";
 @import "form";
 @import "portfolio";
+@import "modal";

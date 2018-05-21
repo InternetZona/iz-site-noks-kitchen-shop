@@ -137,6 +137,7 @@
         font-size: .85rem;
         text-align: left;
         bottom: 25px;
+        color: $off-black;
       }
     }
 
@@ -150,9 +151,7 @@
       border: none;
 
       .avatar {
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-right: 0;
+        padding:0;
         min-height: auto;
 
         .title {
@@ -220,11 +219,6 @@
 
         > img{
           opacity: .55;
-        }
-      }
-      .collection-item{
-        &.avatar{
-          padding-left: 0;
         }
       }
     }
