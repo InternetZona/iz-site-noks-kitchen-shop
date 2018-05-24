@@ -376,4 +376,28 @@
       }
     }
   }
+
+  &-item{
+    @extend .z-depth-0;
+    border: 2px solid $color-light-blue-10;
+    margin: 0;
+    height: 100%;
+
+    .card-title{
+      font-size: 14px;
+      color: $primary-color;
+      font-weight: bold;
+      text-align: center;
+      line-height: 18px!important;
+      margin: 0!important;
+    }
+
+    .card-image{
+      padding: 24px;
+    }
+
+    .card-content{
+      padding: .5rem 1rem;
+    }
+  }
 }

@@ -1,22 +1,35 @@
-<div class="block-sales">
-    <div class="section__title">
-        Распродажа
-    </div>
-    <div class="section__content">
+{assign var=params value=[
+    'parent'    => 21
+    ,'limit'    => 10
+    ,'filtering'    => [
+        'issale'    => 1
+    ]
+    ,'dir'      => 'RAND()'
+]}
 
-        <div id="swiper-sales" class="swiper-container">
-            <div class="swiper-wrapper">
+{processor action="web/catalog/getdata" ns='modcatalog' params=$params assign=result}
 
-                {for $i=0 to 7}
-                    <div class="swiper-slide">
-                        {include file="components/product/item.tpl"}
-                    </div>
-                {/for}
+{if $result.success && $result.count > 0}
+    <div class="block-sales">
+        <div class="section__title">
+            Распродажа
+        </div>
+        <div class="section__content">
 
+            <div id="swiper-sales" class="swiper-container swiper-content">
+                <div class="swiper-wrapper">
+
+                    {foreach $result.object as $object}
+                        <div class="swiper-slide">
+                            {include file="components/product/item.tpl" object=$object}
+                        </div>
+                    {/foreach}
+
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
         </div>
     </div>
-</div>
+{/if}

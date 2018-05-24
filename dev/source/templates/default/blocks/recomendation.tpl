@@ -1,23 +1,39 @@
-<div class="block-recomendation">
-    <div class="section__title">
-        Нокс рекомендует
-    </div>
-    <div class="section__content">
+{assign var=params value=[
+    'parent'    => 21
+    ,'limit'    => 10
+    ,'filtering'    => [
+        'istop'    => 1
+    ]
+    ,'limit'    => 3
+    ,'dir'      => 'RAND()'
+]}
 
-        <div class="row">
-            {for $i=0 to 2}
-                {$responsiveClass=""}
+{processor action="web/catalog/getdata" ns='modcatalog' params=$params assign=result}
 
-                {if $i > 1}
-                    {$responsiveClass = "hide-on-med-and-down"}
-                {elseif $i > 0}
-                    {$responsiveClass = "hide-on-small-and-down"}
-                {/if}
+{if $result.success && $result.count > 0}
+    <div class="block-recomendation">
+        <div class="section__title">
+            Нокс рекомендует
+        </div>
+        <div class="section__content">
 
-                <div class="col s12 m6 l4 {$responsiveClass}">
-                    {include file="components/product/item.tpl"}
-                </div>
-            {/for}
+            <div class="row">
+                {$i = 0}
+                {foreach $result.object as $object}
+                    {$responsiveClass=""}
+
+                    {if $i > 1}
+                        {$responsiveClass = "hide-on-med-and-down"}
+                    {elseif $i > 0}
+                        {$responsiveClass = "hide-on-small-and-down"}
+                    {/if}
+
+                    <div class="col s12 m6 l4 {$responsiveClass}">
+                        {include file="components/product/item.tpl" object=$object}
+                    </div>
+                    {$i = $i + 1}
+                {/foreach}
+            </div>
         </div>
     </div>
-</div>
+{/if}

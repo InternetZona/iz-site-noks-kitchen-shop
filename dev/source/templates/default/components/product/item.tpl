@@ -1,21 +1,23 @@
 <div class="card box-product">
     <div class="card-image">
 
+        {$tvImages = $object.tvs.images.value|json_decode:true}
+
         {snippet name="pThumb" params=[
-            "input" => {$template_url}|cat:"img/product.jpg"
+            "input" => $tvImages[0].image
             ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=70"
         ] assign=thumbImage}
 
         <img src="{$thumbImage}">
     </div>
     <div class="card-content">
-        <a href="#" class="card-title">
-            Кухня Мария бест
+        <a href="{$object.uri}" class="card-title">
+            {$object.pagetitle}
         </a>
         <div class="row row--grid">
             <div class="col s12 m5 valign-wrapper">
                 <span class="product__cost">
-                    15 420
+                    {$object.tvs.price.value|number_format:0:'.':' '}
                 </span>
             </div>
             <div class="col s6 push-s6 m3 valign-wrapper">
@@ -29,10 +31,25 @@
             </div>
         </div>
     </div>
-    <ul class="product__badges-list">
-        <li><span class="badge badge--hit">хит</span></li>
-        <li><span class="badge badge--discount">скидка</span></li>
-        <li><span class="badge badge--new">новинка</span></li>
-        <li><span class="badge badge--top">наш выбор</span></li>
-    </ul>
+
+    {assign var=_li value=""}
+
+    {if $object.tvs.ishit.value}
+        {$_li = $_li|cat:'<li><span class="badge badge--hit">хит</span></li>'}
+    {/if}
+    {if $object.tvs.issale.value}
+        {$_li = $_li|cat:'<li><span class="badge badge--discount">скидка</span></li>'}
+    {/if}
+    {if $object.tvs.isnew.value}
+        {$_li = $_li|cat:'<li><span class="badge badge--new">новинка</span></li>'}
+    {/if}
+    {if $object.tvs.istop.value}
+        {$_li = $_li|cat:'<li><span class="badge badge--top">наш выбор</span></li>'}
+    {/if}
+
+    {if !empty($_li)}
+        <ul class="product__badges-list">
+            {$_li}
+        </ul>
+    {/if}
 </div>

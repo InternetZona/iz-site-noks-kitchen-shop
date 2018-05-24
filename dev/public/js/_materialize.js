@@ -58,4 +58,11 @@ const Plyr = require('plyr');
     M.Modal.init(elem, config);
 
   });
+
+  Array.from(document.querySelectorAll('.tabs')).map((elem) => {
+    let options = {};
+
+    M.Tabs.init(elem, options);
+  });
+
 })();

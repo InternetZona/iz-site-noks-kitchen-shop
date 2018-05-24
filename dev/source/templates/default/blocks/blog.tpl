@@ -14,7 +14,7 @@
         </div>
 
         <div class="section__content">
-            <div id="swiper-blog" class="swiper-container">
+            <div id="swiper-blog" class="swiper-container swiper-content">
                 <div class="swiper-wrapper">
                     {foreach $result.object as $object}
                         <div class="swiper-slide">

@@ -15,6 +15,11 @@
         display: none;
       }
     }
+    @media (min-width: $medium-screen-up) and (max-width: $large-screen) {
+      &:not(:nth-child(-n+6)) {
+        display: none;
+      }
+    }
 
     &:not(:first-child) {
       padding-left: 36px;

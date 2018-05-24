@@ -16,7 +16,7 @@
             {$portfolio = $result.object.tvs.portfolio.value|json_decode:true}
 
             {if $portfolio && is_array($portfolio)}
-                <div id="swiper-portfolio" class="swiper-container">
+                <div id="swiper-portfolio" class="swiper-container swiper-content">
                     <div class="swiper-wrapper">
 
                         {$portfolio = $portfolio|array_reverse}

@@ -5,7 +5,20 @@
     <div class="section_content">
         <div class="row">
 
-            {for $i=0 to 8}
+            {assign var=params value=[
+                'parent'    => 21
+                ,'where'     => [
+                    'template'  => 9
+                ]
+                ,'limit'    => 9
+                ,'sort'     => 'publishedon'
+                ,'dir'      => 'desc'
+            ]}
+
+            {processor action="site/web/resources/getdata" ns='modxsite' params=$params assign=result}
+
+            {$i = 0}
+            {foreach $result.object as $object}
                 {$responsiveClass=""}
 
                 {if $i > 7}
@@ -15,9 +28,11 @@
                 {/if}
 
                 <div class="col s12 m6 l4 {$responsiveClass}">
-                    {include file="components/product/item.tpl"}
+                    {include file="components/product/item.tpl" object=$object}
                 </div>
-            {/for}
+
+                {$i = $i +1}
+            {/foreach}
 
         </div>
     </div>

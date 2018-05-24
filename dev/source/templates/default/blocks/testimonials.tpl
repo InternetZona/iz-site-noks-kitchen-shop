@@ -17,7 +17,7 @@
 
             {if $testimonials && is_array($testimonials)}
 
-                <div id="swiper-testimonials" class="swiper-container">
+                <div id="swiper-testimonials" class="swiper-container swiper-content">
                     <div class="swiper-wrapper">
 
                         {assign var=testimonialsList value=[]}
