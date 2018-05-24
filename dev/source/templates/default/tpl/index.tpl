@@ -21,6 +21,7 @@
 {/block}
 
 {include file="components/footer/index.tpl"}
+{include file="components/navbar/sidenav.tpl"}
 
 {block name=modals}{/block}
 

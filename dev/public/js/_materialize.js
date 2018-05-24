@@ -65,4 +65,10 @@ const Plyr = require('plyr');
     M.Tabs.init(elem, options);
   });
 
+  let sidenav = document.querySelectorAll('.sidenav');
+
+  if (sidenav !== null) {
+    M.Sidenav.init(sidenav, {});
+  }
+
 })();

@@ -57,6 +57,7 @@ $pswp__assets-path: '../img/gallery/' !default;
 @import '../../../node_modules/materialize-css/sass/materialize';
 
 @import "helpers";
+@import "navbar";
 @import "page";
 @import "header";
 @import "footer";

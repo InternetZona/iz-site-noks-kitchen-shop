@@ -1,0 +1,15 @@
+.nav {
+  .brand-logo{
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    @media #{$large-and-up} {
+      display: none;
+    }
+  }
+
+  .sidenav-trigger{
+    position: absolute;
+    left: 0;
+  }
+}
