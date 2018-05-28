@@ -19,16 +19,15 @@
 
     {if $productType}
 
-        {block name=catalogParams}
-            {assign var=params value=[
+        {assign var=params value=[
             'parent'    => 21
             ,'where'    => [
                 'template' => $productType->template_id
             ]
             ,'sort' => 'publishedon'
             ,'dir'  => 'desc'
-            ]}
-        {/block}
+            ,'filtering' => {snippet name="getSeoFilter"}
+        ]}
 
         {processor action="web/catalog/getdata" ns="modcatalog" params=$params assign=result}
 
