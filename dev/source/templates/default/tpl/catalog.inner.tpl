@@ -25,6 +25,7 @@
                 ]
                 ,'sort' => 'publishedon'
                 ,'dir'  => 'desc'
+                ,'filtering' => $smarty.get.filter
             ]}
         {/block}
 
