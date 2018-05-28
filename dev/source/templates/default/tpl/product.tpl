@@ -12,6 +12,35 @@
                 </div>
                 <div class="col s12 m6 l4">
                     <h1>{field name=pagetitle}</h1>
+                    <ul class="product__params">
+                        <li>Стоимость: от <span class="product__cost">{{tv name=price}|number_format:0:',':' '}</span></li>
+                        {if $productionTime = {tv name=productionTime}}
+                            <li>Срок изготовления: <span>{$productionTime}</span></li>
+                        {/if}
+                    </ul>
+
+                    {include file="components/product/params.tpl" product=$modx->resource}
+
+                    {if $params = {tv name=params}|json_decode:true}
+
+                        <ul>
+                            {foreach $params as $param}
+                                <li>{$param.name}: <span>{$param.value}</span></li>
+                            {/foreach}
+                        </ul>
+
+                    {/if}
+
+                    <div class="row row--grid">
+                        <div class="col s6 push-s6 m3 valign-wrapper">
+                            <div class="product__bar">
+                                <a href="#" class="product__bar-btn favorite-btn"></a>
+                            </div>
+                        </div>
+                        <div class="col s6 pull-s6 m4 valign-wrapper">
+                            <a href="#" class="product__order-btn">Купить</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 

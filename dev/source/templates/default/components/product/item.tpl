@@ -22,7 +22,6 @@
             </div>
             <div class="col s6 push-s6 m3 valign-wrapper">
                 <div class="product__bar">
-                    <a href="#" class="product__bar-btn compare-btn"></a>
                     <a href="#" class="product__bar-btn favorite-btn"></a>
                 </div>
             </div>

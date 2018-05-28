@@ -71,4 +71,31 @@ const Plyr = require('plyr');
     M.Sidenav.init(sidenav, {});
   }
 
+  let selects = document.querySelectorAll('select');
+
+  if (selects !== null) {
+    M.FormSelect.init(selects, {
+      dropdownOption: {
+        coverTrigger: false,
+      }
+    });
+  }
+
+  let collapsible = document.querySelectorAll('.collapsible');
+
+  if (collapsible !== null) {
+    M.Collapsible.init(collapsible, {});
+  }
+
+  Array.from(document.querySelectorAll('.dropdown-trigger')).map((elem) => {
+    let config = {};
+
+    if (elem.classList.contains('dd-panel')) {
+      config.constrainWidth = false;
+      config.coverTrigger = false;
+    }
+
+    M.Dropdown.init(elem, config);
+  });
+
 })();
