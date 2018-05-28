@@ -3,8 +3,12 @@
 
 {block name=page_content prepend}
 
-    {assign var=productType value=$modx->getObject('catalogProductType', {tv name=productType})}
-    {assign var=productFilters value=$productType->getMany('ProductTypeFilters')}
+    {assign var=productType value=$modx->getObject('catalogProductType', {tv name=productType}|default:0)}
+    {assign var=productFilters value=''}
+
+    {if $productType}
+        {$productFilters = $productType->getMany('ProductTypeFilters')}
+    {/if}
 
     {if $productFilters}
         {include file="components/filter/index.tpl" productFilters=$productType->getMany('ProductTypeFilters')}
