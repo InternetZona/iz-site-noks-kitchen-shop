@@ -51,7 +51,7 @@
         {assign var=content value={field name=content}}
         {assign var=fasadeList value={tv name=fasade}|json_decode:true}
         {assign var=colorsList value={tv name=colors}|json_decode:true}
-        {assign var=equipList value={tv name=colors}|json_decode:true}
+        {assign var=equipList value={tv name=equip}|json_decode:true}
 
         {if $content || $fasadeList || $colorsList || $equipList}
             <div class="row product-tabs">
@@ -100,9 +100,57 @@
                         </div>
                     </div>
                 {/if}
-                <div id="tab-options" class="tab__item col s12">
-                    Цены
-                </div>
+                {if $equipList}
+                    <div id="tab-options" class="tab__item col s12">
+                        <div class="product-equip">
+                            <div class="product-equip__header">
+                                <div class="row">
+                                    <div class="col hide-on-small-and-down m4 product-equip__title">Конфигурация</div>
+                                    <div class="col hide-on-small-and-down m3 product-equip__title">Размер</div>
+                                    <div class="col hide-on-small-and-down m3 product-equip__title">Комплектация</div>
+                                    <div class="col hide-on-small-and-down m2 product-equip__title">Цена</div>
+                                </div>
+                            </div>
+                            <ul class="product-equip__list">
+                                {foreach $equipList as $data}
+                                    <li class="product-equip__item">
+                                        <div class="row">
+                                            <div class="col s12 m4">
+                                                <div class="product-equip__title hide-on-med-and-up">Конфигурация</div>
+                                                {snippet name="pThumb" params=[
+                                                    "input" => $data.image
+                                                    ,"options" => "&w=275&h=235&zc=0&aoe=0&far=0&q=70"
+                                                ] assign=thumbImage}
+                                                <img src="{$thumbImage}" class="responsive-img">
+                                            </div>
+                                            <div class="col s12 m3">
+                                                <div class="product-equip__title hide-on-med-and-up">Размер</div>
+                                                {$data.size}
+                                            </div>
+                                            <div class="col s12 m3">
+                                                <div class="product-equip__title hide-on-med-and-up">Комплектация</div>
+                                                <ul class="product-equip__list-inner">
+
+                                                    {$items = $data.items|json_decode:true}
+
+                                                    {foreach $items as $item}
+                                                        <li>{$item.title}</li>
+                                                    {/foreach}
+
+                                                </ul>
+                                            </div>
+                                            <div class="col s12 m2">
+                                                <div class="product-equip__title hide-on-med-and-up">Цена</div>
+                                                <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+                                                <a href="#" class="product__order-btn btn-block">Купить</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {/foreach}
+                            </ul>
+                        </div>
+                    </div>
+                {/if}
             </div>
         {/if}
 

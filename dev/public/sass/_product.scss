@@ -140,4 +140,91 @@
       opacity: .9;
     }
   }
+
+  &-equip{
+    margin: 1rem 0;
+
+    .row {
+      margin-bottom: 0;
+    }
+
+    &__header {
+      padding: 0 25px;
+    }
+
+    &__title {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    &__list {
+      margin-top: .5rem;
+      border: 2px solid $color-light-blue-10;
+
+      > li {
+        padding: 2rem 25px;
+        font-size: 13px;
+
+        .product__cost {
+          font-size: 17px;
+          font-weight: bold;
+          position: relative;
+          padding-right: 15px;
+
+          &:after {
+            content: "\20BD";
+            position: absolute;
+            right: 0;
+          }
+        }
+
+        .product__order-btn {
+          @extend .btn-flat;
+          @extend .btn-small;
+
+          font-size: .85rem;
+          color: $primary-color;
+          font-weight: bold;
+          border: 2px solid $primary-color;
+          text-transform: none;
+          opacity: 1;
+          height: 30px;
+          line-height: 26px;
+          padding: 0 30px;
+          border-radius: 0;
+          width: auto;
+          margin-top: 1rem;
+
+          &:hover,
+          &:focus{
+            background: transparent;
+            opacity: .9;
+          }
+        }
+
+        + li {
+          border-top: 2px solid $color-light-blue-10;
+        }
+      }
+
+      &-inner {
+        > li {
+          position: relative;
+          padding-left: 10px;
+          line-height: 20px;
+
+          &:before {
+            content: "";
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            left: 1px;
+            top: 50%;
+            margin-top: -2px;
+            background: $color-light-blue-10;
+          }
+        }
+      }
+    }
+  }
 }
