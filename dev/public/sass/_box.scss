@@ -364,14 +364,9 @@
         }
 
         &:after {
-          content: "";
+          content: "\20BD";
           position: absolute;
           right: 0;
-          width: 12px;
-          height: 14px;
-          top: 50%;
-          margin-top: -7px;
-          background: url("../img/rub.png") no-repeat center center;
         }
       }
     }
