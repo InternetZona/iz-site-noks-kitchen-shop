@@ -15,12 +15,12 @@
             {$object.pagetitle}
         </a>
         <div class="row row--grid">
-            <div class="col s12 m5 valign-wrapper">
+            <div class="col s12 m6 valign-wrapper">
                 <span class="product__cost">
                     {$object.tvs.price.value|number_format:0:'.':' '}
                 </span>
             </div>
-            <div class="col s6 push-s6 m3 valign-wrapper">
+            <div class="col s6 push-s6 m2 valign-wrapper">
                 <div class="product__bar">
                     <a href="#" class="product__bar-btn favorite-btn"></a>
                 </div>
