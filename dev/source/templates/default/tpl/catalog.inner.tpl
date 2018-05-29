@@ -1,6 +1,5 @@
 {extends file="basepage.tpl"}
 
-
 {block name=page_content prepend}
 
     {assign var=productType value=$modx->getObject('catalogProductType', {tv name=productType}|default:0)}
