@@ -154,6 +154,14 @@
             </div>
         {/if}
 
+        {if $tv = {tv name=relatedProducts}}
+            {include file="blocks/product.related.tpl" data=$tv}
+        {/if}
+
+        {if $tv = {tv name=semiProducts}}
+            {include file="blocks/product.semi.tpl" data=$tv}
+        {/if}
+
         {include file="blocks/testimonials.tpl"}
         {include file="blocks/steps.inner.tpl"}
         {include file="blocks/request.tpl"}

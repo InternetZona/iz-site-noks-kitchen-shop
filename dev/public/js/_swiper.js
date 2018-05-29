@@ -20,7 +20,8 @@ import Swiper from 'swiper';
     } else if (
       elem.id === 'swiper-blog' ||
       elem.id === 'swiper-testimonials' ||
-      elem.id === 'swiper-portfolio'
+      elem.id === 'swiper-portfolio' ||
+      elem.id === 'swiper-related'
     ) {
       setTimeout(new Swiper('#' + elem.id, {
         autoplay: false,
@@ -44,7 +45,10 @@ import Swiper from 'swiper';
           prevEl: '.swiper-button-prev',
         },
       }), 100);
-    } else if (elem.id === 'swiper-sales') {
+    } else if (
+      elem.id === 'swiper-sales' ||
+      elem.id === 'swiper-semi'
+    ) {
       setTimeout(new Swiper('#' + elem.id, {
         autoplay: false,
         slidesPerView: 3,
