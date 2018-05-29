@@ -15,4 +15,11 @@
       text-transform: uppercase;
     }
   }
+
+  &--product {
+    h1 {
+      color: $primary-color;
+      margin-bottom: 1.4rem;
+    }
+  }
 }

@@ -4,7 +4,7 @@
     <div class="section container">
         {snippet name="BreadCrumb@BreadCrumb"}
 
-        <div class="section page__content">
+        <div class="section page__content page--product">
 
             <div class="row">
                 <div class="col s12 m6 l8">
@@ -23,7 +23,7 @@
 
                     {if $params = {tv name=params}|json_decode:true}
 
-                        <ul>
+                        <ul class="product__params">
                             {foreach $params as $param}
                                 <li>{$param.name}: <span>{$param.value}</span></li>
                             {/foreach}
@@ -31,14 +31,16 @@
 
                     {/if}
 
+                    <div class="product__divider"></div>
+
                     <div class="row row--grid">
-                        <div class="col s6 push-s6 m3 valign-wrapper">
+                        <div class="col s6 push-s6 m2 valign-wrapper">
                             <div class="product__bar">
                                 <a href="#" class="product__bar-btn favorite-btn"></a>
                             </div>
                         </div>
-                        <div class="col s6 pull-s6 m4 valign-wrapper">
-                            <a href="#" class="product__order-btn">Купить</a>
+                        <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
+                            <a href="#" class="product__order-btn btn-block">Купить</a>
                         </div>
                     </div>
                 </div>
