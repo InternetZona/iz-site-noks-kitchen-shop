@@ -9,6 +9,27 @@
         ] assign=thumbImage}
 
         <img src="{$thumbImage}">
+
+        {$_li = ''}
+        {if $styleValue = $modx->getObject('catalogFilterValue', $object.tvs.style.value)}
+            {$_li = $_li|cat:"<li>Стиль: {$styleValue->name}</li>"}
+        {/if}
+
+        {if $colorValue = $modx->getObject('catalogFilterValue', $object.tvs.colour.value)}
+            {$_li = $_li|cat:"<li>Цвет: {$colorValue->name}</li>"}
+        {/if}
+
+        {if $materialValue = $modx->getObject('catalogFilterValue', $object.tvs.material.value)}
+            {$_li = $_li|cat:"<li>Материал: {$materialValue->name}</li>"}
+        {/if}
+
+        {if $_li ne ''}
+            <div class="product__params-reveal">
+                <ul class="product__params">
+                    {$_li}
+                </ul>
+            </div>
+        {/if}
     </div>
     <div class="card-content">
         <a href="{$object.uri}" class="card-title">
