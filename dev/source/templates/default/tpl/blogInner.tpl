@@ -8,7 +8,16 @@
                 {field name=content}
             </div>
         </div>
-        <div class="col l3 pull-l9"></div>
+        <div class="col l3 pull-l9">
+            <ul class="naviganion">
+                {snippet name="Wayfinder" params=[
+                    'startId'   => {field name=parent}
+                    ,'outerTpl' => 'outerTpl'
+                    ,'level'    => 1
+                    ,'excludeDocs'  => {field name=id}
+                ]}
+            </ul>
+        </div>
     </div>
 
 {/block}
