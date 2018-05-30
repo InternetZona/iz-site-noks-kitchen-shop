@@ -15,19 +15,17 @@
 
                                 {if $filter = $productFilter->getOne('Filter')}
 
-                                    {if empty($modx->resource->getTVValue($filter->tv_key))}
-                                        <li class="filter__item">
-                                            <select name="filter[{$filter->tv_key}]">
-                                                <option value="" selected>-</option>
-                                                {if $filterValues = $filter->getMany('FilterValues')}
-                                                    {foreach $filterValues as $data}
-                                                        <option value="{$data->id}" {if $smarty.get.filter.{$filter->tv_key} == $data->id}selected{/if}>{$data->name}</option>
-                                                    {/foreach}
-                                                {/if}
-                                            </select>
-                                            <label class="filter__label">{$filter->name}</label>
-                                        </li>
-                                    {/if}
+                                    <li class="filter__item">
+                                        <select name="filter[{$filter->tv_key}]">
+                                            <option value="" selected>-</option>
+                                            {if $filterValues = $filter->getMany('FilterValues')}
+                                                {foreach $filterValues as $data}
+                                                    <option value="{$data->id}" {if $smarty.get.filter.{$filter->tv_key} == $data->id}selected{/if}>{$data->name}</option>
+                                                {/foreach}
+                                            {/if}
+                                        </select>
+                                        <label class="filter__label">{$filter->name}</label>
+                                    </li>
 
                                 {/if}
 
