@@ -3,10 +3,10 @@
   &__item {
     display: inline-block;
     &:last-child {
-      margin-left: 2rem;
+      margin-left: 1rem;
 
       @media #{$small-and-down} {
-        margin-left: 1rem;
+        margin-left: .5rem;
       }
     }
   }

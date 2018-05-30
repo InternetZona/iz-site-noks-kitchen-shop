@@ -1,4 +1,4 @@
-<div class="card box-product">
+<div class="card box-product product--preview">
     <div class="card-image">
 
         {$tvImages = $object.tvs.images.value|json_decode:true}
@@ -12,12 +12,12 @@
     </div>
     <div class="card-content">
         <div class="row">
-            <div class="col m7 valign-wrapper">
+            <div class="col s12 xl8 valign-wrapper">
                 <a href="{$object.uri}" class="card-title">
                     {$object.pagetitle}
                 </a>
             </div>
-            <div class="col m5 valign-wrapper">
+            <div class="col s12 xl4 valign-wrapper">
                 <span class="product__cost">
                     {$object.tvs.price.value|number_format:0:'.':' '}
                 </span>

@@ -14,9 +14,9 @@
 
                     <ul class="bar right">
                         <li class="bar__item favorite">
-                            <a href="#" class="favorite__link">
+                            <a href="#" class="favorite__link favorite--empty">
                                 <span class="favorite__text">Избранное</span>
-                                <span class="favorite__counter">(2)</span>
+                                <span class="favorite__counter">(0)</span>
                             </a>
                         </li>
 

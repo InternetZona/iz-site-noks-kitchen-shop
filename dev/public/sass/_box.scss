@@ -226,11 +226,9 @@
 
   &-product{
     @extend .z-depth-0;
+    border: 2px solid $color-light-blue-10;
 
     .card-content{
-      border-left: 2px solid $color-light-blue-10;
-      border-bottom: 2px solid $color-light-blue-10;
-      border-right: 2px solid $color-light-blue-10;
       padding: 15px 20px;
 
       .card-title{

@@ -20,8 +20,15 @@
       left: 0;
       width: 22px;
       height: 21px;
-      background: url('../img/favorite.png') no-repeat center center;
+      background: url('../img/favorite-active.png') no-repeat center center;
     }
+
+    &.favorite--empty {
+      &:before{
+        background: url('../img/favorite.png') no-repeat center center;
+      }
+    }
+
   }
   &__text{
     @media #{$small-and-down} {
@@ -33,6 +40,10 @@
     color: $off-black;
 
     @media #{$small-and-down} {
+      display: none;
+    }
+
+    .favorite--empty &{
       display: none;
     }
   }

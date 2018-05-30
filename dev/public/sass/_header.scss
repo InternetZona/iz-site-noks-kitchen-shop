@@ -63,7 +63,6 @@
       margin-bottom: 0;
     }
   }
-
   &__contacts{
     margin: 0 0 0 auto;
     display: inline-block;
@@ -75,10 +74,9 @@
     &-phone{
       font-size: 1.2rem;
       color: $off-black;
-
+      line-height: 22px;
     }
   }
-
   &__action{
     margin: 0;
     width: 100%;
@@ -98,7 +96,6 @@
       }
     }
   }
-
   &__link{
     display: inline-block;
     margin-left: auto;

@@ -39,6 +39,10 @@
       display: none;
     }
 
+    .quick-cart--empty & {
+      display: none;
+    }
+
     &-badge{
       display: inline-block;
       width: 22px;

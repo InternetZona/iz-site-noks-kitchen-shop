@@ -91,8 +91,16 @@ const Plyr = require('plyr');
     let config = {};
 
     if (elem.classList.contains('dd-panel')) {
-      config.constrainWidth = false;
-      config.coverTrigger = false;
+      config = {
+        constrainWidth: false,
+        coverTrigger: false,
+        onOpenStart: function() {
+          this.el.classList.add('open');
+        },
+        onCloseStart: function() {
+          this.el.classList.remove('open');
+        }
+      }
     }
 
     M.Dropdown.init(elem, config);

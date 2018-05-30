@@ -1,4 +1,5 @@
 .product{
+
   &__divider {
     margin: 2rem 0;
     height: 1px;
@@ -101,6 +102,7 @@
   }
 
   &__bar {
+
     &-btn {
       display: inline-block;
       width: 19px;
@@ -225,6 +227,24 @@
           }
         }
       }
+    }
+  }
+
+  &--preview {
+    padding: 1rem;
+
+    .card-content {
+      padding: 1rem 0 0;
+    }
+
+    .card-title {
+      padding: 0;
+      margin-bottom: .5rem;
+      background: transparent!important;
+    }
+
+    .product__cost {
+      color: $off-black;
     }
   }
 }
