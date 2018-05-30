@@ -1,6 +1,5 @@
 {assign var=params value=[
     'parent'    => 21
-    ,'limit'    => 10
     ,'filtering'    => [
         'istop'    => 1
     ]
