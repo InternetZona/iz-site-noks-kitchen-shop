@@ -88,3 +88,132 @@
 .h6{
   @extend h6;
 }
+
+.content-wrapper {
+  strong {
+    font-weight: 700!important;
+  }
+
+  ul {
+    > li {
+      position: relative;
+      padding-left: 15px;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 4px;
+        top: 10px;
+        width: 4px;
+        height: 4px;
+        background: $primary-color;
+      }
+    }
+  }
+}
+
+.text {
+
+  &--bold{
+    font-weight: bold;
+  }
+}
+
+.switch-limit{
+  margin: 0;
+  display: inline-block;
+
+  &--wrapper {
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  > li {
+    display: inline-block;
+    margin-left: 10px;
+
+    > a {
+      color: $off-black;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+
+      &.active {
+        color: $primary-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.width-overlay {
+  width: 100%;
+}
+
+.sorting {
+
+  &--wrapper{
+    padding: 20px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e2e6;
+  }
+
+  &-control {
+
+    &--wrapper{
+      display: inline-block;
+      font-size: 13px;
+
+      .select-wrapper {
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        input.select-dropdown{
+          height: 36px;
+          line-height: 36px;
+          border: 1px solid color('grey', 'lighten-2');
+          width: 100%;
+          margin: 0;
+          outline: none!important;
+          padding-left: .5rem;
+          padding-right: .5rem;
+          font-size: 13px;
+          box-sizing: border-box;
+          box-shadow: inset 0 7px 14px -10px rgba(0, 0, 0, .5);
+          background: white;
+        }
+
+        ul.select-dropdown{
+          > li{
+            min-height: auto;
+
+            >span {
+              padding: 5px 1rem;
+              font-size: 13px;
+              color: $off-black;
+            }
+          }
+        }
+
+        .caret {
+          height: 18px;
+          width: 18px;
+          opacity: .6;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+.summary-wrapper {
+  font-size: 14px;
+
+  strong {
+    padding-left: 3px;
+  }
+}

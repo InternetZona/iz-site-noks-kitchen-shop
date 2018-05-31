@@ -16,4 +16,6 @@
         </div>
 
     </div>
+
+    {block name=aside}{/block}
 {/block}

@@ -37,4 +37,27 @@
 
         {/if}
     </div>
+
+{/block}
+
+{block name=aside}
+    <div class="grey-bg">
+        <div class="container">
+            {include file="blocks/sales.tpl"}
+        </div>
+    </div>
+    <div class="container">
+        {include file="blocks/steps.inner.tpl"}
+        {include file="blocks/request.tpl"}
+        {include file="blocks/recomendation.tpl"}
+        {include file="blocks/blog.tpl"}
+        {include file="blocks/testimonials.tpl"}
+        {include file="blocks/portfolio.tpl"}
+        {include file="blocks/helps.tpl"}
+        {include file="blocks/request.tpl"}
+    </div>
+{/block}
+
+{block name=modals append}
+    {include file="components/modals/testimonials.tpl"}
 {/block}

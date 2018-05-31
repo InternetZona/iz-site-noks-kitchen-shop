@@ -8,47 +8,50 @@
                 <a href="#modal-filter" class="modal-trigger">Фильтр</a>
             </div>
             <div class="hide-on-med-and-down">
-                <form id="form-filter" class="form">
-                    <ul class="filter">
-                        {if $productFilters}
-                            {foreach $productFilters as $productFilter}
+                <ul class="filter">
+                    {if $productFilters}
+                        {foreach $productFilters as $productFilter}
 
-                                {if $filter = $productFilter->getOne('Filter')}
+                            {if $filter = $productFilter->getOne('Filter')}
 
-                                    <li class="filter__item">
-                                        <select name="filter[{$filter->tv_key}]">
-                                            <option value="" selected>-</option>
-                                            {if $filterValues = $filter->getMany('FilterValues')}
-                                                {foreach $filterValues as $data}
-                                                    <option value="{$data->id}" {if $smarty.get.filter.{$filter->tv_key} == $data->id}selected{/if}>{$data->name}</option>
-                                                {/foreach}
-                                            {/if}
-                                        </select>
-                                        <label class="filter__label">{$filter->name}</label>
-                                    </li>
+                                <li class="filter__item">
+                                    <select name="filter[{$filter->tv_key}]" class="filter__control">
+                                        <option value="" selected>-</option>
+                                        {if $filterValues = $filter->getMany('FilterValues')}
 
-                                {/if}
+                                            {$lock = false}
 
-                            {/foreach}
-                        {/if}
-                        <li class="filter__item">
+                                            {foreach $filterValues as $data}
 
-                            <select name="filter[price_range]">
-                                <option value="" selected>-</option>
+                                                {$selected = ''}
 
-                                {$price_range = [
-                                    '50000:100000', '100001:250000', '250001:500000'
-                                ]}
+                                                {if !$lock }
+                                                    {if $smarty.get.filter.{$filter->tv_key} == $data->id}
+                                                        {$selected = 'selected'}
+                                                        {$lock = true}
+                                                    {elseif $modx->resource->getTVValue($filter->tv_key) == $data->id}
+                                                        {$selected = 'selected'}
+                                                    {/if}
+                                                {/if}
 
-                                {foreach $price_range as $range}
-                                    {$selected = ($range == $smarty.get.filter.price_range) ? 'selected' : '' }
-                                    <option value="{$range}" {$selected}>{$range}</option>
-                                {/foreach}
-                            </select>
-                            <label class="filter__label">Цена</label>
-                        </li>
-                    </ul>
-                </form>
+                                                <option value="{$data->id}" {$selected}>{$data->name}</option>
+                                            {/foreach}
+                                        {/if}
+                                    </select>
+                                    <label class="filter__label">{$filter->name}</label>
+                                </li>
+
+                            {/if}
+
+                        {/foreach}
+                    {/if}
+                    <li class="filter__item">
+
+                        {include file="components/filter/range.tpl"}
+
+                        <label class="filter__label">Цена</label>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

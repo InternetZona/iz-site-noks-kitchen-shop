@@ -71,15 +71,9 @@ const Plyr = require('plyr');
     M.Sidenav.init(sidenav, {});
   }
 
-  let selects = document.querySelectorAll('select');
-
-  if (selects !== null) {
-    M.FormSelect.init(selects, {
-      dropdownOption: {
-        coverTrigger: false,
-      }
-    });
-  }
+  Array.from(document.querySelectorAll('select')).map((elem) => {
+    M.FormSelect.init(elem);
+  });
 
   let collapsible = document.querySelectorAll('.collapsible');
 

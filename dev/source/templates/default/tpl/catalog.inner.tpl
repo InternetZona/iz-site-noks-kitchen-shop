@@ -3,32 +3,66 @@
 {block name=page_content prepend}
 
     {assign var=productType value=$modx->getObject('catalogProductType', {tv name=productType}|default:0)}
-    {assign var=productFilters value=''}
 
     {if $productType}
-        {$productFilters = $productType->getMany('ProductTypeFilters')}
-    {/if}
 
-    {if $productFilters}
-        {include file="components/filter/index.tpl" productFilters=$productType->getMany('ProductTypeFilters')}
-        {include file="components/modals/filter.tpl" productFilters=$productFilters}
-    {/if}
+        {$limit = 15}
 
-    {if $productType}
+        {if isset($smarty.get.limit)}
+            {$limit = (in_array($smarty.get.limit, [0, 15, 30, 45])) ? $smarty.get.limit : $limit }
+        {/if}
 
         {block name=catalogParams}
-            {assign var=params value=[
+            {$params=[
                 'parent'    => 21
                 ,'where'    => [
                     'template' => $productType->template_id
                 ]
                 ,'sort' => 'publishedon'
                 ,'dir'  => 'desc'
-                ,'filtering' => $smarty.get.filter
+                ,'limit'    => $limit
+                ,'filter' => $smarty.get.filter
+                ,'sorting'  => $smarty.get.sorting|default:false
             ]}
         {/block}
 
         {processor action="web/catalog/getdata" ns="modcatalog" params=$params assign=result}
+
+        <form id="form-catalog-controller" class="form" data-catalog="21" data-tpl="{$productType->template_id}">
+            <input type="hidden" name="limit" value="{$limit}">
+
+            {if $productFilters = $productType->getMany('ProductTypeFilters')}
+                {include file="components/filter/index.tpl" productFilters=$productFilters}
+            {/if}
+            <div class="sorting--wrapper">
+                <div class="row row--grid">
+                    <div class="col m6 valign-wrapper">
+                        Всего товаров: <strong class="text--bold">{$result.total}</strong>
+                    </div>
+                    <div class="col m6 valign-wrapper">
+                        <div class="right-align width-overlay">
+                            <div class="sorting-control--wrapper">
+                                Сортировать
+                                {include file="components/filter/sort.tpl"}
+                            </div>
+                            <div class="switch-limit--wrapper">
+                                Выводить по:
+                                <ul class="switch-limit">
+                                    {$active = ($limit == 15) ? 'active' :''}
+                                    <li><a href="#" data-limit="15" class="{$active}">15</a></li>
+                                    {$active = ($limit == 30) ? 'active' :''}
+                                    <li><a href="#" data-limit="30" class="{$active}">30</a></li>
+                                    {$active = ($limit == 45) ? 'active' :''}
+                                    <li><a href="#" data-limit="45" class="{$active}">45</a></li>
+                                    {$active = ($limit == 0) ? 'active' :''}
+                                    <li><a href="#" data-limit="0" class="{$active}">Все</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
 
         {if $result.success && $result.count > 0}
 
@@ -43,4 +77,26 @@
         {/if}
 
     {/if}
+{/block}
+
+{block name=aside}
+    <div class="grey-bg">
+        <div class="container">
+            {include file="blocks/sales.tpl"}
+        </div>
+    </div>
+    <div class="container">
+        {include file="blocks/steps.inner.tpl"}
+        {include file="blocks/request.tpl"}
+        {include file="blocks/recomendation.tpl"}
+        {include file="blocks/blog.tpl"}
+        {include file="blocks/testimonials.tpl"}
+        {include file="blocks/portfolio.tpl"}
+        {include file="blocks/helps.tpl"}
+        {include file="blocks/request.tpl"}
+    </div>
+{/block}
+
+{block name=modals append}
+    {include file="components/modals/testimonials.tpl"}
 {/block}

@@ -5,7 +5,7 @@
 
         {snippet name="pThumb" params=[
             "input" => $tvImages[0].image
-            ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=70"
+            ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=80"
         ] assign=thumbImage}
 
         <img src="{$thumbImage}">
