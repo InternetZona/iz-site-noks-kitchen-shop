@@ -1,7 +1,7 @@
 {assign var=params value=[
     'parent'    => 21
     ,'limit'    => 10
-    ,'filtering'    => [
+    ,'filter'    => [
         'issale'    => 1
     ]
     ,'dir'      => 'RAND()'
