@@ -88,7 +88,7 @@
 
         &.product__cost {
           font-size: 24px;
-          padding-right: 25px;
+          padding-right: 18px;
           position: relative;
 
           &:after {
@@ -113,7 +113,20 @@
       }
 
       &.favorite-btn{
+        margin-left: 5px;
         background: url("../img/favorite.png") no-repeat center center;
+
+        &.favorite--empty {
+          background: url("../img/favorite-active.png") no-repeat center center;
+          &.favorite--empty {
+            background: url("../img/favorite.png") no-repeat center center;
+            &:hover,
+            &:focus {
+              background: url("../img/favorite-active.png") no-repeat center center;
+              opacity: .85;
+            }
+          }
+        }
       }
     }
   }
@@ -138,7 +151,8 @@
 
     &:hover,
     &:focus{
-      background: transparent;
+      background: $primary-color;
+      color: white;
       opacity: .9;
     }
   }
@@ -199,7 +213,8 @@
 
           &:hover,
           &:focus{
-            background: transparent;
+            background: $primary-color;
+            color: white;
             opacity: .9;
           }
         }

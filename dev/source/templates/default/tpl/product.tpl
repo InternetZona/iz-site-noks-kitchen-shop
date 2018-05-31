@@ -36,7 +36,7 @@
                     <div class="row row--grid">
                         <div class="col s6 push-s6 m2 valign-wrapper">
                             <div class="product__bar">
-                                <a href="#" class="product__bar-btn favorite-btn"></a>
+                                <a href="#" class="product__bar-btn favorite-btn favorite--empty"></a>
                             </div>
                         </div>
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">

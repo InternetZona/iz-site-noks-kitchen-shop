@@ -37,13 +37,27 @@
         </a>
         <div class="row row--grid">
             <div class="col s12 m6 valign-wrapper">
-                <span class="product__cost">
-                    {$object.tvs.price.value|number_format:0:'.':' '}
-                </span>
+                {if $discount = $object.tvs.price_discount.value}
+                    <div class="product--sale-info">
+                        <div class="old-price">
+                            <span class="product__cost">
+                                {$object.tvs.price.value|number_format:0:'.':' '}
+                            </span>
+                            <span class="bonus-sum">экономия {($object.tvs.price.value - $discount)|number_format:0:'.':' '}</span>
+                        </div>
+                        <span class="product__cost">
+                            {$discount|number_format:0:'.':' '}
+                        </span>
+                    </div>
+                    {else}
+                    <span class="product__cost">
+                        {$object.tvs.price.value|number_format:0:'.':' '}
+                    </span>
+                {/if}
             </div>
             <div class="col s6 push-s6 m2 valign-wrapper">
                 <div class="product__bar">
-                    <a href="#" class="product__bar-btn favorite-btn"></a>
+                    <a href="#" class="product__bar-btn favorite-btn favorite--empty"></a>
                 </div>
             </div>
             <div class="col s6 pull-s6 m4 valign-wrapper">

@@ -657,6 +657,7 @@ button.swiper-pagination-bullet {
       margin-top: 0;
       height: 25px;
       outline: 0;
+      background-size: contain;
     }
 
     .swiper-button-prev{
@@ -779,4 +780,14 @@ button.swiper-pagination-bullet {
 
 .gallery-photoswipe__item{
   margin: 0;
+}
+
+.swiper-container {
+  .swiper-slide{
+    .box-product {
+      @media #{$small-and-down} {
+        margin: 1rem;
+      }
+    }
+  }
 }

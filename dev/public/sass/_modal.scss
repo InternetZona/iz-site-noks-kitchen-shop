@@ -79,6 +79,12 @@
         }
       }
     }
+
+    .testimonial-text {
+      @media #{$small-and-down} {
+        font-size: 13px;
+      }
+    }
   }
 
   &-filter {
