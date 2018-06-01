@@ -75,7 +75,12 @@ jQuery(function($) {
             },
 
             success: function(response) {
-              let total = (Object.keys(response.object).length > response.total) ? Object.keys(response.object).length : response.total;
+              let objectCount =  Object.keys(response.object).length,
+                total = 0;
+
+              if (objectCount > 0 && response.total > 0) {
+                total = (objectCount > response.total) ? objectCount : response.total;
+              }
 
               let $instanse = $this.closest('.select-wrapper').find('.filter__popup');
 
