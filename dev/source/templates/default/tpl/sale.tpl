@@ -5,7 +5,7 @@
 
         {assign var=params value=[
             'parent'    => 21
-            ,'filtering'    => [
+            ,'filter'    => [
                 'issale' => 1
             ]
             ,'sort' => 'publishedon'
