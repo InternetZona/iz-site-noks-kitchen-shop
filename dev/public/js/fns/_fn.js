@@ -29,10 +29,6 @@ jQuery(function($) {
         }
       });
 
-      urlParams.where = {};
-      urlParams.where.template = $form.data('tpl');
-      urlParams.parent = $form.data('catalog');
-
       let query = urlParams.map(function(elem){
         return encodeURIComponent(elem.key) + '=' + elem.value;
       }).join('&');
@@ -44,9 +40,24 @@ jQuery(function($) {
         if ($this.hasClass('filter__control--sorting')) {
           location.href = url;
         } else {
+
+          let setup = Array({
+            key: 'where[template]',
+            value: $form.data('tpl'),
+          },{
+            key: 'parent',
+            'value': $form.data('catalog'),
+          },{
+            key: 'action',
+            value: 'web/catalog/getdata',
+          }).map(function(elem){
+            return encodeURIComponent(elem.key) + '=' + elem.value;
+          }).join('&');
+
+
           $.ajax({
             url: 'assets/components/modcatalog/connectors/connector.php',
-            data: $form.serialize() + '&action=web/catalog/getdata',
+            data: query + '&' + setup,
             method: 'get',
             beforeSend: function() {
               let tpl = '<div class="filter__popup">Поиск товаров ...</div>',
@@ -63,7 +74,7 @@ jQuery(function($) {
             },
 
             success: function(response) {
-              let total = Object.keys(response.object).length;
+              let total = (Object.keys(response.object).length > response.total) ? Object.keys(response.object).length : response.total;
 
               let $instanse = $this.closest('.select-wrapper').find('.filter__popup');
 
@@ -103,7 +114,7 @@ jQuery(function($) {
         for (let i=0; i < params.length; i++) {
           let param = params[i].split('=');
 
-          if (param[i] !== 'limit') {
+          if (param[0] != 'limit') {
             query += params[i] + '&';
           }
         }

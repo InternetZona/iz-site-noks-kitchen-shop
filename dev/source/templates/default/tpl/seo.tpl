@@ -23,7 +23,7 @@
             ,'sort' => 'publishedon'
             ,'dir'  => 'desc'
             ,'limit'    => $limit
-            ,'filtering' => {snippet name="getSeoFilter"}
+            ,'filter' => {snippet name="getSeoFilter"}
             ,'sorting'  => $smarty.get.sorting|default:false
             ]}
         {/block}
