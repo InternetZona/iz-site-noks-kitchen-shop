@@ -18,12 +18,12 @@
                             {$favorite = $smarty.cookies.favorite|json_decode:true}
 
                             {if count($favorite)}
-                                <a href="#" class="favorite__link">
+                                <a href="{$modx->makeUrl(84)}" class="favorite__link">
                                     <span class="favorite__text">Избранное</span>
                                     <span class="favorite__counter">({$favorite|count})</span>
                                 </a>
                             {else}
-                                <a href="#" class="favorite__link favorite--empty">
+                                <a href="{$modx->makeUrl(84)}" class="favorite__link favorite--empty">
                                     <span class="favorite__text">Избранное</span>
                                     <span class="favorite__counter">(0)</span>
                                 </a>
@@ -39,7 +39,7 @@
                         <li class="bar__item quick-cart quick-cart--empty">
                             {/if}
 
-                            <a class='quick-cart__trigger' href='#'>
+                            <a class='quick-cart__trigger' href='{$modx->makeUrl(83)}'>
                                 <span class="quick-cart__trigger-text">Корзина</span>
                             </a>
                             <span class="quick-cart__counter">

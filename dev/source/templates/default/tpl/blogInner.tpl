@@ -9,14 +9,7 @@
             </div>
         </div>
         <div class="col l3 pull-l9">
-            <ul class="naviganion">
-                {snippet name="Wayfinder" params=[
-                    'startId'   => {field name=parent}
-                    ,'outerTpl' => 'outerTpl'
-                    ,'level'    => 1
-                    ,'excludeDocs'  => {field name=id}
-                ]}
-            </ul>
+            {include file="components/menu/folder.tpl"}
         </div>
     </div>
 
