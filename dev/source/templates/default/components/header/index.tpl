@@ -20,13 +20,31 @@
                             </a>
                         </li>
 
-                        <li class="bar__item quick-cart quick-cart--empty">
-                            <a class='dropdowntrigger quick-cart__trigger' href='#' data-target='dd-cart'>
+                        {$basket = $smarty.cookie.basket|json_decode:true}
+
+                        <li class="bar__item quick-cart {if !$basket}quick-cart--empty{/if}">
+                            <a class='quick-cart__trigger' href='#'>
                                 <span class="quick-cart__trigger-text">Корзина</span>
                             </a>
                             <span class="quick-cart__counter">
-                                <span class="quick-cart__counter-badge">7</span>
-                                <span class="quick-cart__counter-cost"><em>120 000</em> руб</span>
+
+                                {if $basket && is_array($basket)}
+
+                                    <span class="quick-cart__counter-badge">{count($basket)}</span>
+
+                                    {$cost = 0}
+
+                                    {foreach $basket as $data}
+                                        {$cost = $cost + $data.price}
+                                    {/foreach}
+
+                                    <span class="quick-cart__counter-cost"><em>{$cost|number_format:0:', ':' '}</em> руб</span>
+
+
+                                {else}
+                                    <span class="quick-cart__counter-badge">0</span>
+                                    <span class="quick-cart__counter-cost"><em>0</em> руб</span>
+                                {/if}
                             </span>
                         </li>
                     </ul>
