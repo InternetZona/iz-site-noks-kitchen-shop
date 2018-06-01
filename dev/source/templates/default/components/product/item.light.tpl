@@ -21,7 +21,7 @@
                 </span>
             </div>
             <div class="col s6 pull-s6 m6 valign-wrapper">
-                <a href="#" class="product__order-btn">Купить</a>
+                <a href="#" class="product__order-btn" data-id="{$object.id}" data-price="{$object.tvs.price_discount.value|default:$object.tvs.price.value}">Купить</a>
             </div>
         </div>
     </div>

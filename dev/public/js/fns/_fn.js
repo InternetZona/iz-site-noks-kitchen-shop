@@ -154,172 +154,6 @@ jQuery(function($) {
 
 jQuery(function($){
 
-  // let config = {};
-  //
-  // const controllers = {
-  //
-  //     refresh : function (list, animate) {
-  //       let total = 0,
-  //         $counter = $(config.cart).find('.cart-counter > span');
-  //
-  //       if ( list.length > 0 ){
-  //         jQuery.each( list, function ( i, data ){
-  //           total += data.cost;
-  //         });
-  //         $counter.text( list.length );
-  //         if ($counter.is(':hidden')) $counter.show();
-  //       } else {
-  //         $counter.text('0');
-  //         $counter.hide();
-  //       }
-  //
-  //       jQuery(config.cart).find('.quick-cart-summary > span')
-  //         .text(function () {
-  //           let num = total.toFixed(config.floatDigit),
-  //             str = num.toString();
-  //           let rgx = /(\d+)(\d{3})/;
-  //           while (rgx.test(str)) {
-  //             str = str.replace(rgx, '$1' + ' ' + '$2');
-  //           }
-  //           return str;
-  //         });
-  //       jQuery('.order-summary > .order-summary-footer span').text(function () {
-  //         let num = total.toFixed(config.floatDigit),
-  //           str = num.toString();
-  //         let rgx = /(\d+)(\d{3})/;
-  //         while (rgx.test(str)) {
-  //           str = str.replace(rgx, '$1' + ' ' + '$2');
-  //         }
-  //         return str;
-  //       });
-  //     },
-  //
-  //     remove : function ( id ){
-  //       let orderList = ($.cookie('orderList') != undefined) ? JSON.parse($.cookie('orderList')) : [];
-  //
-  //       if (orderList.length == 0) return;
-  //
-  //       orderList = jQuery.grep(orderList, function(item,index){
-  //         return item.id != id;
-  //       });
-  //
-  //       $.cookie('orderList', JSON.stringify(orderList), { path: '/' });
-  //
-  //       controllers.refresh(orderList);
-  //     }
-  //
-  //   };
-  //
-  // const basket = {
-  //
-  //   init: function ( options ){
-  //
-  //     config = $.extend({
-  //       cart : '.quick-cart',
-  //       floatDigit: 0
-  //     }, options);
-  //
-  //    },
-  //
-  //    add: function ( product ){
-  //
-  //     let orderList = ($.cookie('basket') !== undefined) ? JSON.parse($.cookie('basket')) : [],
-  //       found = false;
-  //
-  //     $.each(orderList, function(i, data){
-  //
-  //       if (data.id == product.id) {
-  //
-  //         found = true;
-  //         orderList[i].count = parseInt(data.count) + product.count;
-  //         orderList[i].cost = parseInt(data.cost) + (product.cost * product.count);
-  //       }
-  //
-  //       return !found;
-  //     });
-  //
-  //       if (!found) orderList.push(product);
-  //
-  //       $.cookie('orderList', JSON.stringify(orderList), { path: '/' });
-  //
-  //       controllers.refresh(orderList, config.animate);
-  //
-  //       let $modal = jQuery('#cart-modal');
-  //
-  //       if ($modal.length > 0){
-  //         $modal.find('.modal-image').append('<img src="'+product.image+'" class="img-responsive">');
-  //         $modal.find('.modal-product').append(product.name);
-  //       }
-  //
-  //       $.magnificPopup.open({
-  //         items: {
-  //           src: '#cart-modal'
-  //         },
-  //         type: 'inline'
-  //       });
-  //
-  //     },
-  //
-  //     remove: function (id) {
-  //       let orderList = ($.cookie('orderList') != undefined) ? JSON.parse($.cookie('orderList')) : [],
-  //         found = false;
-  //
-  //       jQuery.each(orderList, function(i, data){
-  //
-  //         if (data.id == id) {
-  //           orderList.splice(i, 1);
-  //
-  //         }
-  //         return !found;
-  //       });
-  //
-  //       $.cookie('orderList', JSON.stringify(orderList), { path: '/' });
-  //
-  //       controllers.refresh(orderList, config.animate);
-  //     },
-  //
-  //     minus: function (product) {
-  //       let orderList = ($.cookie('orderList') != undefined) ? JSON.parse($.cookie('orderList')) : [],
-  //         found = false;
-  //
-  //       jQuery.each(orderList, function(i, data){
-  //
-  //         if (data.id == product.id) {
-  //           found = true;
-  //           orderList[i].count = parseInt(data.count) - 1;
-  //           orderList[i].cost = parseInt(data.cost) - product.price;
-  //         }
-  //         return !found;
-  //       });
-  //
-  //       $.cookie('orderList', JSON.stringify(orderList), { path: '/' });
-  //
-  //       controllers.refresh(orderList, config.animate);
-  //     },
-  //
-  //     plus: function (product) {
-  //
-  //       let orderList = ($.cookie('orderList') != undefined) ? JSON.parse($.cookie('orderList')) : [],
-  //         found = false;
-  //
-  //       jQuery.each(orderList, function(i, data){
-  //
-  //         if (data.id == product.id) {
-  //           found = true;
-  //           orderList[i].count = parseInt(data.count) + 1;
-  //           orderList[i].cost = parseInt(data.cost) + product.price;
-  //
-  //         }
-  //         return !found;
-  //       });
-  //
-  //       $.cookie('orderList', JSON.stringify(orderList), { path: '/' });
-  //
-  //       controllers.refresh(orderList, config.animate);
-  //     }
-  //
-  //   };
-
   const Basket = {
 
     add: function( params ) {
@@ -357,7 +191,7 @@ jQuery(function($){
         if (list.length > 0) {
 
           $.each(list, function(i, data) {
-            total += data.price;
+            total += parseInt(data.price);
           });
 
           $badge.html(total);
@@ -365,7 +199,7 @@ jQuery(function($){
 
           $cart.removeClass('quick-cart--empty');
 
-          M.toast({html: 'Товар добавлен в корзину.'})
+          M.toast({html: 'Товар добавлен в корзину.'});
         } else {
 
           $cart.addClass('quick-cart--empty');
@@ -393,6 +227,78 @@ jQuery(function($){
         };
 
       Basket.add(data);
+    });
+
+  }
+
+});
+
+jQuery(function($){
+
+  const Favorites = {
+
+    controllers: {
+
+      refresh: function(list) {
+
+        let $favorite = $('.favorite__link'),
+          $counter = $favorite.find('.favorite__counter');
+
+        $counter.html('(' + list.length + ')');
+
+        if (list.length > 0) {
+          $favorite.removeClass('favorite--empty');
+        } else {
+          $favorite.addClass('favorite--empty');
+        }
+      }
+    },
+
+    check: function(id) {
+
+      let favList = ($.cookie('favorite') != undefined) ? JSON.parse($.cookie('favorite')) : [];
+
+      let idx = favList.indexOf(id);
+
+      if (idx > -1) {
+
+        M.toast({html: 'Товар удален из избранного.'});
+
+        favList.splice(idx, 1);
+
+      } else {
+        M.toast({html: 'Товар добавлен в избранное.'});
+
+        favList.push(id);
+      }
+
+      $.cookie('favorite', JSON.stringify(favList), { path: '/' });
+
+      this.controllers.refresh(favList);
+    },
+
+  };
+
+  let $addFavoriteBtn = $('.favorite-btn');
+
+  if ($addFavoriteBtn.length > 0) {
+
+    $addFavoriteBtn.on('click', function(e) {
+      e.preventDefault();
+
+      let $this = $(this);
+
+      if ($this.hasClass('favorite--empty')) {
+
+        $this.removeClass('favorite--empty');
+        Favorites.check($this.data('id'));
+      } else {
+
+        $this.addClass('favorite--empty');
+        Favorites.check($this.data('id'));
+      }
+
+      $this.blur();
     });
 
   }

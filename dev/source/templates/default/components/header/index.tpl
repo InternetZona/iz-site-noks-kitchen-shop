@@ -14,31 +14,47 @@
 
                     <ul class="bar right">
                         <li class="bar__item favorite">
-                            <a href="#" class="favorite__link favorite--empty">
-                                <span class="favorite__text">Избранное</span>
-                                <span class="favorite__counter">(0)</span>
-                            </a>
+
+                            {$favorite = $smarty.cookies.favorite|json_decode:true}
+
+                            {if count($favorite)}
+                                <a href="#" class="favorite__link">
+                                    <span class="favorite__text">Избранное</span>
+                                    <span class="favorite__counter">({$favorite|count})</span>
+                                </a>
+                            {else}
+                                <a href="#" class="favorite__link favorite--empty">
+                                    <span class="favorite__text">Избранное</span>
+                                    <span class="favorite__counter">(0)</span>
+                                </a>
+                            {/if}
+
                         </li>
 
-                        {$basket = $smarty.cookie.basket|json_decode:true}
+                        {$basket = json_decode($smarty.cookies.basket, true)}
 
-                        <li class="bar__item quick-cart {if !$basket}quick-cart--empty{/if}">
+                        {if $basket}
+                        <li class="bar__item quick-cart">
+                            {else}
+                        <li class="bar__item quick-cart quick-cart--empty">
+                            {/if}
+
                             <a class='quick-cart__trigger' href='#'>
                                 <span class="quick-cart__trigger-text">Корзина</span>
                             </a>
                             <span class="quick-cart__counter">
 
-                                {if $basket && is_array($basket)}
+                                {if $basket}
 
-                                    <span class="quick-cart__counter-badge">{count($basket)}</span>
+                                    <span class="quick-cart__counter-badge">{$basket|count}</span>
 
                                     {$cost = 0}
 
                                     {foreach $basket as $data}
-                                        {$cost = $cost + $data.price}
-                                    {/foreach}
+                                    {$cost = $cost + $data.price}
+                                {/foreach}
 
-                                    <span class="quick-cart__counter-cost"><em>{$cost|number_format:0:', ':' '}</em> руб</span>
+                                    <span class="quick-cart__counter-cost"><em>{$cost|number_format:0:',':' '}</em> руб</span>
 
 
                                 {else}

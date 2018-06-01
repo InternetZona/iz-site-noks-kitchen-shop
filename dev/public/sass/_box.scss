@@ -380,17 +380,14 @@
 
         .favorite-btn{
           margin-left: 5px;
-          background: url("../img/favorite.png") no-repeat center center;
+          background: url("../img/favorite-active.png") no-repeat center center;
 
           &.favorite--empty {
-            background: url("../img/favorite-active.png") no-repeat center center;
-            &.favorite--empty {
-              background: url("../img/favorite.png") no-repeat center center;
-              &:hover,
-              &:focus {
-                background: url("../img/favorite-active.png") no-repeat center center;
-                opacity: .85;
-              }
+            background: url("../img/favorite.png") no-repeat center center;
+            &:hover,
+            &:focus {
+              background: url("../img/favorite-active.png") no-repeat center center;
+              opacity: .85;
             }
           }
         }

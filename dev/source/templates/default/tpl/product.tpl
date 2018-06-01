@@ -13,7 +13,7 @@
                 <div class="col s12 m6 l4">
                     <h1>{field name=pagetitle}</h1>
                     <ul class="product__params">
-                        <li>Стоимость: от <span class="product__cost">{{tv name=price}|number_format:0:',':' '}</span></li>
+                        <li>Стоимость: от <span class="product__cost">{{tv name=price_discount}|default:{tv name=price}|number_format:0:',':' '}</span></li>
                         {if $productionTime = {tv name=productionTime}}
                             <li>Срок изготовления: <span>{$productionTime}</span></li>
                         {/if}
@@ -36,11 +36,18 @@
                     <div class="row row--grid">
                         <div class="col s6 push-s6 m2 valign-wrapper">
                             <div class="product__bar">
-                                <a href="#" class="product__bar-btn favorite-btn favorite--empty"></a>
+                                {$favorite = $smarty.cookies.favorite|json_decode:true}
+                                {if in_array({field name=id}, $favorite)}
+                                    <a href="#" class="product__bar-btn favorite-btn" data-id="{field name=id}"></a>
+                                {else}
+                                    <a href="#" class="product__bar-btn favorite-btn favorite--empty" data-id="{field name=id}"></a>
+                                {/if}
+
                             </div>
                         </div>
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
-                            <a href="#" class="product__order-btn btn-block">Купить</a>
+                            {$price = {tv name=price_discount}|default:{tv name=price}}
+                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}">Купить</a>
                         </div>
                     </div>
                 </div>
@@ -142,7 +149,7 @@
                                             <div class="col s12 m2">
                                                 <div class="product-equip__title hide-on-med-and-up">Цена</div>
                                                 <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
-                                                <a href="#" class="product__order-btn btn-block">Купить</a>
+                                                <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}">Купить</a>
                                             </div>
                                         </div>
                                     </li>

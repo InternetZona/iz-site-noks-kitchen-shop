@@ -55,9 +55,16 @@
                     </span>
                 {/if}
             </div>
+
             <div class="col s6 push-s6 m2 valign-wrapper">
                 <div class="product__bar">
-                    <a href="#" class="product__bar-btn favorite-btn favorite--empty"></a>
+
+                    {$favorite = $smarty.cookies.favorite|json_decode:true}
+                    {if in_array($object.id, $favorite)}
+                        <a href="#" class="product__bar-btn favorite-btn" data-id="{$object.id}"></a>
+                    {else}
+                        <a href="#" class="product__bar-btn favorite-btn favorite--empty" data-id="{$object.id}"></a>
+                    {/if}
                 </div>
             </div>
             <div class="col s6 pull-s6 m4 valign-wrapper">
