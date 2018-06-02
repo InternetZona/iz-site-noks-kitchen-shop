@@ -213,6 +213,12 @@ jQuery(function($){
 
     },
 
+    clear: function() {
+
+      $.cookie('basket', JSON.stringify([]), {path: '/'});
+      this.refresh();
+    },
+
     controllers: {
 
       refresh: function(list) {
@@ -290,9 +296,7 @@ jQuery(function($){
       Basket.remove(id);
 
     });
-
   }
-
 });
 
 jQuery(function($){
@@ -412,6 +416,20 @@ jQuery(function($) {
                   html: 'Сообщение успешно отправлено!'
                 });
 
+                if ($(form).attr('name') === 'order') {
+                  let confirmTpl = '<h4 style="color: #848181;">Спасибо ваш заказ успешно оформлен!</h4>'
+                    + '<p>В ближайшее время с вами свяжется наш менеджер.</p>';
+
+                  $('.cart__alert-content').html(confirmTpl);
+                  $('.cart').addClass('cart--empty');
+
+                  $('.quick-cart').addClass('quick-cart--empty');
+                  $('.quick-cart__counter-badge').html(0);
+                  $('.quick-cart__counter-cost').html(0);
+
+                  $.cookie('basket', JSON.stringify([]), {path: '/'});
+                }
+
                 let $modal = $(form).closest('.modal');
 
                 if ($modal.length > 0) {
@@ -420,7 +438,6 @@ jQuery(function($) {
                   if (modalInstance !== null) {
                     modalInstance.close();
                   }
-
                 }
 
                 form.reset();
