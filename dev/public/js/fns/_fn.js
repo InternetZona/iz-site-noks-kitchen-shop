@@ -51,7 +51,7 @@ jQuery(function($) {
             value: $form.data('tpl'),
           },{
             key: 'parent',
-            'value': $form.data('catalog'),
+            value: $form.data('catalog'),
           },{
             key: 'action',
             value: 'web/catalog/getdata',
@@ -374,19 +374,32 @@ jQuery(function($) {
 
     Inputmask({"mask": "+7 (999) 999-99-99"}).mask(document.querySelectorAll('input[type="tel"]'));
 
-    $forms.each(function(i, data) {
+    $forms.each(function() {
       let $this = $(this);
 
       let validator = {
         ignore: [],
         submitHandler: function(form) {
+          let $form = $(form),
+            data = $form.serialize() + '&template=' + $form.attr('name');
 
-          let $form = $(form);
+          if ($form.attr('name') === 'order') {
+            let basketList = ($.cookie('basket') !== undefined) ? JSON.parse($.cookie('basket')) : [];
+
+            if (basketList.length > 0) {
+              let basketData = basketList.map(function(elem){
+                let key = "basket["+ elem.id +"]";
+                return encodeURIComponent(key) + '=' + elem.price;
+              }).join('&');
+
+              data += '&' + basketData;
+            }
+          }
 
           $.ajax({
             url: 'assets/components/modxsite/connectors/connector.php',
             method: 'post',
-            data: $form.serialize() + '&template=' + $form.attr('name'),
+            data: data,
 
             beforeSend: function() {
               $form.find('[type="submit"]').prop('disabled', true);

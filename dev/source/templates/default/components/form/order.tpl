@@ -1,5 +1,6 @@
-<form class="form" autocomplete="off">
-    <input type="hidden" name="web/form">
+<form name="order" class="form form--ajax" autocomplete="off">
+    <input type="hidden" name="action" value="web/form">
+    <input type="hidden" name="subject" value="Заказ кухни">
     <div class="form__field">
         <label>Ваше имя:</label>
         <input type="text" name="username" class="input-field browser-default full">
@@ -8,13 +9,13 @@
         <div class="col s12 m6 l12">
             <div class="form__field">
                 <label>Ваш телефон:</label>
-                <input type="tel" name="phone" class="input-field browser-default full">
+                <input type="tel" name="phone" class="input-field browser-default full required-group">
             </div>
         </div>
         <div class="col s12 m6 l12">
             <div class="form__field">
                 <label>Электронная почта:</label>
-                <input type="text" name="email" class="input-field browser-default full">
+                <input type="text" name="email" class="input-field browser-default full required-group">
             </div>
         </div>
     </div>
