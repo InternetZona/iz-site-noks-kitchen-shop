@@ -1,4 +1,6 @@
 const jQuery = require('jquery');
+const Inputmask = require("inputmask");
+
 require("jquery.cookie");
 require("jquery-validation");
 require("jquery-validation/dist/additional-methods");
@@ -157,7 +159,6 @@ jQuery(function($) {
     }
   }
 });
-
 
 jQuery(function($){
 
@@ -370,6 +371,8 @@ jQuery(function($) {
   let $forms = $('.form--ajax');
 
   if ($forms.length > 0) {
+
+    Inputmask({"mask": "+7 (999) 999-99-99"}).mask(document.querySelectorAll('input[type="tel"]'));
 
     $forms.each(function(i, data) {
       let $this = $(this);
