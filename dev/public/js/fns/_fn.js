@@ -415,7 +415,7 @@ jQuery(function($) {
                 let $modal = $(form).closest('.modal');
 
                 if ($modal.length > 0) {
-                  let modalInstance = M.Modal.getInstance();
+                  let modalInstance = M.Modal.getInstance($modal);
 
                   if (modalInstance !== null) {
                     modalInstance.close();
