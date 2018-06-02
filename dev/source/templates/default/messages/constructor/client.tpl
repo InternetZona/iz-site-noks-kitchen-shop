@@ -8,7 +8,7 @@
     <tbody>
     <tr>
         <td style="font-size:12px;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;text-align:left;padding:7px">
-            {($properties.username) ? "<b>Имя:</b> {$properties.ussername}<br>" : ""}
+            {($properties.username) ? "<b>Имя:</b> {$properties.username}<br>" : ""}
             {($properties.email) ? "<b>E-mail:</b> {$properties.email}<br>" : ""}
             {($properties.phone) ? "<b>Телефон:</b> {$properties.phone}<br>" : ""}
         </td>
