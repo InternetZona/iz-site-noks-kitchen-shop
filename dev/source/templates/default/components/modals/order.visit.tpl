@@ -1,11 +1,11 @@
-<div id="modal-order-visit" class="modal modal-medium">
+<div id="modal-order-visit" class="modal">
+    <div class="modal-header">
+        Заказать замер
+        <button class="modal-close" title="Закрыть (Esc)">
+            <i class="material-icons">close</i>
+        </button>
+    </div>
     <div class="modal-content">
-        <div class="h4 modal-title">
-            Заказать замер
-            <button class="modal-close" title="Закрыть (Esc)">
-                <i class="material-icons">close</i>
-            </button>
-        </div>
-
+        {include file="components/form/visit.tpl"}
     </div>
 </div>

@@ -208,3 +208,22 @@
     }
   }
 }
+
+.menu {
+  margin-top: .5rem;
+
+  &__title{
+    font-size: 13px;
+    font-weight: bold;
+    color: $off-black;
+  }
+
+  > li {
+    a {
+      font-size: 13px;
+      line-height: 27px;
+      color: #848181;
+    }
+  }
+
+}

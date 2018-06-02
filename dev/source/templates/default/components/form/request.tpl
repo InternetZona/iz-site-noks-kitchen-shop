@@ -1,5 +1,6 @@
-<form name="request" class="form form--request" autocomplete="off">
-    <input type="hidden" name="action" value="form">
+<form name="request" class="form form--request form--ajax" autocomplete="off">
+    <input type="hidden" name="action" value="web/form">
+    <input type="hidden" name="subject" value="Заявка на бесплатный дизайн-проект">
     <div class="row row--grid">
         <div class="col m12 l4">
             <div class="form__title">

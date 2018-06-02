@@ -8,10 +8,11 @@
       margin-top: 0;
       height: 25px;
       outline: 0;
+      background-size: contain;
     }
     .swiper-button-prev{
       right: 0;
-      margin-right: 10px;
+      margin-right: 20px;
       left: auto;
     }
     .swiper-button-next{
@@ -46,5 +47,30 @@
         opacity: 1;
       }
     }
+  }
+}
+
+.images__feed {
+  margin-bottom: 2rem;
+
+  figure{
+    margin: 0;
+  }
+
+  &__title {
+    @extend h6;
+    color: $primary-color;
+    font-weight: bold;
+    border-left: 2px solid $primary-color;
+    padding: .5rem 60px .5rem 1rem;
+    margin-bottom: -28px;
+    margin-top: 0;
+  }
+  &__content {
+    padding-top: 38px;
+  }
+  &__item {
+    padding: 0;
+    display: inline-block;
   }
 }

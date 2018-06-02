@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {snippet name="MetaX@MetaX"}
+    {snippet name="SEOManager"}
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{$template_url}css/style.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/style.css')}"  media="screen, projection" />

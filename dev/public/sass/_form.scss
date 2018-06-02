@@ -8,10 +8,34 @@
     }
   }
 
+  .error{
+    font-size: 12px;
+    color: $secondary-color;
+  }
+
+  &-wrapper {
+    padding: 2rem;
+    border: 5px solid #f1f1f1;
+    margin-top: .5rem;
+  }
+
+  .confirm-checkbox {
+     span {
+      font-size: 13px!important;
+      line-height: 16px;
+    }
+  }
+
   &__field {
+    margin-bottom: 20px;
     @media #{$small-and-down} {
       width: 100%;
     }
+  }
+
+  textarea.browser-default {
+    height: auto!important;
+    resize: none;
   }
 
   label{
@@ -34,6 +58,12 @@
 
     @media #{$medium-and-up} {
       max-width: 290px;
+    }
+
+    &.full {
+      @media #{$medium-and-up} {
+        max-width: 100%;
+      }
     }
 
     &:focus{
@@ -75,5 +105,20 @@
     font-size: .85rem;
     padding-left: 2rem;
     padding-right: 2rem;
+
+    &--inverse {
+      background: transparent;
+      border: 2px solid $primary-color;
+      color: $primary-color;
+      font-weight: bold;
+      height: 40px;
+
+      &:hover,
+      &:focus {
+        color: white;
+        background: $primary-color;
+      }
+    }
   }
+
 }

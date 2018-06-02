@@ -1,4 +1,4 @@
-.button-action{
+.button-action {
   @extend .btn;
   @extend .z-depth-0;
   font-size: .85rem;
@@ -13,5 +13,29 @@
     margin-left: auto;
     margin-right: auto;
     display: block;
+  }
+}
+
+.button{
+  @extend .btn-flat;
+  @extend .btn-small;
+
+  font-size: .85rem;
+  color: $primary-color;
+  font-weight: bold;
+  border: 2px solid $primary-color;
+  text-transform: none;
+  opacity: 1;
+  height: 30px;
+  line-height: 26px;
+  padding: 0 30px;
+  border-radius: 0;
+  box-shadow: none!important;
+
+  &:hover,
+  &:focus{
+    background: $primary-color;
+    color: white;
+    opacity: .9;
   }
 }

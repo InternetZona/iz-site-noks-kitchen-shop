@@ -1,6 +1,54 @@
 .modal{
   outline: none!important;
 
+  &-medium {
+    @media #{$large-and-up} {
+      width: 35%;
+    }
+  }
+
+  &-header{
+    padding: 1rem 2rem;
+    background: #f1f1f1;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+
+    @media #{$medium-and-down} {
+      font-size: 16px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    opacity: .75;
+    padding: 0;
+    z-index: 1;
+    background: transparent!important;
+    border: 0!important;
+    box-shadow: none!important;
+
+    > i {
+      line-height: 30px;
+      color: $secondary-color;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+
+
   &.right-sheet {
     top: 0!important;
     left: auto;
@@ -24,33 +72,6 @@
 
     #modal-testimonial-video > & {
       padding: 0;
-    }
-  }
-
-  &-close {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    background-color: rgba(0, 0, 0, .3);
-    opacity: .75;
-    border: 1px solid rgba(0, 0, 0, .4);
-    padding: 0;
-    transition: all .3s ease-in 0s;
-    z-index: 1;
-
-    > i {
-      line-height: 30px;
-      color: white;
-    }
-
-    &:hover,
-    &:focus {
-      opacity: 1;
-      background-color: $secondary-color;
-      border-color: $secondary-color;
     }
   }
 
@@ -111,4 +132,5 @@
     }
 
   }
+
 }

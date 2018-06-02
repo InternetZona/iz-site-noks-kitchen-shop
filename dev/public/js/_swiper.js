@@ -21,7 +21,8 @@ import Swiper from 'swiper';
       elem.id === 'swiper-blog' ||
       elem.id === 'swiper-testimonials' ||
       elem.id === 'swiper-portfolio' ||
-      elem.id === 'swiper-related'
+      elem.id === 'swiper-related' ||
+      elem.id === 'swiper-feed'
     ) {
       setTimeout(new Swiper('#' + elem.id, {
         autoplay: false,

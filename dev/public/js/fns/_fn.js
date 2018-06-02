@@ -1,5 +1,7 @@
 const jQuery = require('jquery');
-const cookie = require("jquery.cookie");
+require("jquery.cookie");
+require("jquery-validation");
+require("jquery-validation/dist/additional-methods");
 
 jQuery(function($) {
 
@@ -180,13 +182,40 @@ jQuery(function($){
         basketList.push(params);
         $.cookie('basket', JSON.stringify(basketList), { path: '/' });
 
+        M.toast({html: 'Товар добавлен в корзину.'});
+
         this.controllers.refresh(basketList);
       }
+    },
+
+    remove: function(id) {
+      let basketList = ($.cookie('basket') !== undefined) ? JSON.parse($.cookie('basket')) : [],
+        found = false;
+
+      $.each(basketList, function( index , data ) {
+
+        if (data.id === id) {
+          basketList.splice(index, 1);
+          found = true;
+        }
+
+        return !found;
+      });
+
+      if (found) {
+
+        $.cookie('basket', JSON.stringify(basketList), {path: '/'});
+        let summary = this.controllers.refresh(basketList);
+
+        $('.cart__total-price').text(number_formmat(summary.total));
+      }
+
     },
 
     controllers: {
 
       refresh: function(list) {
+
         let total = 0;
 
         let $cart = $('.quick-cart'),
@@ -204,7 +233,6 @@ jQuery(function($){
 
           $cart.removeClass('quick-cart--empty');
 
-          M.toast({html: 'Товар добавлен в корзину.'});
         } else {
 
           $cart.addClass('quick-cart--empty');
@@ -213,6 +241,11 @@ jQuery(function($){
         }
 
         $badge.text(list.length);
+
+        return {
+          total : total,
+          count : list.length
+        };
       },
     },
 
@@ -232,6 +265,29 @@ jQuery(function($){
         };
 
       Basket.add(data);
+    });
+
+  }
+
+  const $removeItemBtn = $('.cart__item-remove');
+
+  if ($removeItemBtn.length > 0) {
+
+    $removeItemBtn.on('click', function(e) {
+      e.preventDefault();
+
+      let $this = $(this),
+        $cart = $this.closest('.cart'),
+        id = $this.data('id');
+
+      if ($cart.find('.cart__item').length <= 1) {
+        $cart.addClass('cart--empty');
+      }
+
+      $this.closest('.cart__item').remove();
+
+      Basket.remove(id);
+
     });
 
   }
@@ -304,6 +360,151 @@ jQuery(function($){
       }
 
       $this.blur();
+    });
+
+  }
+
+});
+
+jQuery(function($) {
+  let $forms = $('.form--ajax');
+
+  if ($forms.length > 0) {
+
+    $forms.each(function(i, data) {
+      let $this = $(this);
+
+      let validator = {
+        ignore: [],
+        submitHandler: function(form) {
+
+          let $form = $(form);
+
+          $.ajax({
+            url: 'assets/components/modxsite/connectors/connector.php',
+            method: 'post',
+            data: $form.serialize() + '&template=' + $form.attr('name'),
+
+            beforeSend: function() {
+              $form.find('[type="submit"]').prop('disabled', true);
+            },
+
+            success: function(response) {
+              if (response.success) {
+
+                M.toast({
+                  html: 'Сообщение успешно отправлено!'
+                });
+
+                let $modal = $(form).closest('.modal');
+
+                if ($modal.length > 0) {
+                  let modalInstance = M.Modal.getInstance();
+
+                  if (modalInstance !== null) {
+                    modalInstance.close();
+                  }
+
+                }
+
+                form.reset();
+
+              } else {
+                M.toast({
+                  html: 'Ошибка отправки запроса.'
+                });
+              }
+            },
+
+            error: function(XMLHttpRequest, textStatus, errorThrown){
+              M.toast({
+                html: 'Ошибка отправки запроса.'
+              });
+            },
+
+            complete: function() {
+              $form.find('[type="submit"]').prop('disabled', false);
+            },
+          });
+
+          return false;
+        },
+        focusCleanup: true,
+        errorClass: 'error',
+        validClass: '',
+        errorElement: 'span',
+        focusInvalid: false,
+
+        errorPlacement: function(error, element) {
+          element.parent().append(error);
+          return true;
+        },
+
+        rules: {
+
+          agree: {
+            required: true,
+          },
+        },
+
+        messages: {
+          email: {
+            require_from_group: "Укажите ваш E-mail.",
+            required: "Укажите ваш E-mail.",
+            email: "Неправильный формат электронной почты.",
+          },
+
+          phone: {
+            require_from_group: "Укажите ваш номер телефона.",
+            required: "Укажите ваш номер телефона.",
+          },
+
+          agree: {
+            required: "Подтвердите согласие."
+          },
+        },
+      };
+
+      switch ($this.attr('name')) {
+        case 'callback':
+        case 'request':
+
+          validator.rules = Object.assign({}, validator.rules, {
+            phone: {
+              required: true,
+            },
+          });
+          break;
+
+        case 'feedback':
+
+          validator.rules = Object.assign({}, validator.rules, {
+            email: {
+              required: true,
+              email: true,
+            },
+          })
+          break;
+
+        case 'visit':
+        case 'project':
+
+          validator.rules = Object.assign({}, validator.rules, {
+            phone: {
+              require_from_group: [1, ".required-group"],
+            },
+
+            email: {
+              require_from_group: [1, ".required-group"],
+              email: true,
+            },
+          });
+          break;
+
+        default: ;
+      }
+
+      $this.validate(validator);
     });
 
   }
