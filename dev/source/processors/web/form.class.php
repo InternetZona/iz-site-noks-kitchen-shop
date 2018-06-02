@@ -8,13 +8,13 @@ require_once dirname(dirname(__FILE__)) . '/site/web/form.class.php';
 
 class modWebFormProcessor extends modSiteWebFormProcessor
 {
-    protected $contragentEmailTpl = 'messages/web/';
+    protected $contragentEmailsDir = 'messages/web/';
     protected $manager_group_ids = array(2);
 
     public function initialize()
     {
         $this->setDefaultProperties(array(
-            'contragentEmailSubject'    => 'Спасибо за обращение!',
+            'contragentEmailSubject'    => 'Заказ кухни.',
             'emailsenderName'           => 'Кухни Нокс'
         ));
 
@@ -38,17 +38,25 @@ class modWebFormProcessor extends modSiteWebFormProcessor
     {
         parent::sendNotification();
 
-        /*if ($contragentEmail = $this->getProperty('email', false)
-            AND filter_var($contragentEmail, FILTER_VALIDATE_EMAIL)
-        ) {
-            $this->sendContragentEmail($contragentEmail);
-        }*/
+        if ($this->getProperty('template') == 'order') {
+
+            if ($contragentEmail = $this->getProperty('email', false)
+                AND filter_var($contragentEmail, FILTER_VALIDATE_EMAIL)
+            ) {
+
+                $this->sendContragentEmail($contragentEmail);
+            }
+        }
         return ;
     }
 
     protected function sendContragentEmail($to)
     {
-        if ($message = $this->getMessage($this->contragentEmailTpl)) {
+
+        $template = $this->contragentEmailsDir . "{$this->getProperty('template')}.tpl";
+
+        if ($message = $this->getMessage($template)) {
+
             $this->modx->getService('mail', 'mail.modPHPMailer');
             $this->modx->mail->set(modMail::MAIL_BODY, $message);
             $this->modx->mail->set(modMail::MAIL_FROM, $this->modx->getOption('emailsender'));
