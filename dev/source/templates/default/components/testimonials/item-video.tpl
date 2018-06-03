@@ -12,9 +12,9 @@
                     <span class="rate">
                             {for $i=1 to 5}
                                 {if $i > $data.rate}
-                                    <i class="material-icons tiny">star_border</i>
+                                    <i class="far fa-star"></i>
                                     {else}
-                                    <i class="material-icons tiny">star</i>
+                                    <i class="fas fa-star"></i>
                                 {/if}
                             {/for}
                         </span>
