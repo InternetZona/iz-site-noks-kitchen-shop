@@ -1,6 +1,10 @@
 <ul class="sidenav" id="mobile-menu">
 
-    <li class="sidenav__header"></li>
+    <li class="sidenav__header">
+        <a href="#" class="sidenav__close right">
+            <i class="fas fa-times"></i>
+        </a>
+    </li>
     <li>
 
         <ul class="collapsible">

@@ -65,11 +65,23 @@ const Plyr = require('plyr');
     M.Tabs.init(elem, options);
   });
 
-  let sidenav = document.querySelectorAll('.sidenav');
+  Array.from(document.querySelectorAll('.sidenav')).map((elem) => {
 
-  if (sidenav !== null) {
-    M.Sidenav.init(sidenav, {});
-  }
+    let closeBtn = elem.querySelector('.sidenav__close');
+
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      console.log('clicked');
+
+      let instance = M.Sidenav.getInstance(this.closest('.sidenav'));
+
+      instance.close();
+    });
+
+    M.Sidenav.init(elem, {});
+
+  });
 
   Array.from(document.querySelectorAll('select')).map((elem) => {
     M.FormSelect.init(elem);

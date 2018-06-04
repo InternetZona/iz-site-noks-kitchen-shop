@@ -2,7 +2,7 @@
     <div class="modal-header">
         Написать сообщение
         <button class="modal-close" title="Закрыть (Esc)">
-            <i class="material-icons">close</i>
+            <i class="fas fa-times"></i>
         </button>
     </div>
     <div class="modal-content">

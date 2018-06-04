@@ -1,7 +1,9 @@
 <div id="modal-filter" class="modal right-sheet modal-filter">
     <div class="modal-content">
         <div class="modal-header">Фильтры
-            <a href="#" class="modal-close right"><i class="material-icons">close</i></a>
+            <button class="modal-close" title="Закрыть (Esc)">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
         <form id="form-filter-mobile">
 
