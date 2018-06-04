@@ -244,3 +244,10 @@
     padding-left: 3px;
   }
 }
+
+.catalog-infinity {
+  @extend .z-depth-0;
+  text-transform: none;
+  letter-spacing: 0;
+  background: $primary-color;
+}

@@ -23,6 +23,8 @@
                 ,'limit'    => $limit
                 ,'filter' => $smarty.get.filter
                 ,'sorting'  => $smarty.get.sorting|default:false
+                ,'getPage'  => true
+                ,'page'     => $smarty.get.page|default:1
             ]}
         {/block}
 
@@ -81,13 +83,24 @@
 
         {if $result.success && $result.count > 0}
 
-            <div class="row">
+            {$paging = false}
+            {$page = $smarty.get.page|default:1}
+
+            {if $page > 1}
+                {$paging = ($result.total > ($limit * $page)) ? 'true' : 'false'}
+                {elseif $page}
+                {$paging = ($result.total > $limit) ? 'true' : 'false'}
+            {/if}
+
+            <div class="row catalog-grid" data-getpage="{$paging}">
                 {foreach $result.object as $object}
                     <div class="col s12 m6 l4">
                         {include file="components/product/item.tpl" object=$object}
                     </div>
                 {/foreach}
             </div>
+
+            [[+page.nav:notempty=`<div class="center-align"><a href="#" class="catalog-infinity btn" data-page="{$smarty.get.page|default:1}">Показать еще <i class="fas fa-sync fa-fw"></i></a></div>`]]
 
         {/if}
 

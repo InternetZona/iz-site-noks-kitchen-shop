@@ -124,7 +124,7 @@ jQuery(function($) {
         for (let i=0; i < params.length; i++) {
           let param = params[i].split('=');
 
-          if (param[0] != 'limit') {
+          if (param[0] !== 'limit') {
             query += params[i] + '&';
           }
         }
@@ -543,6 +543,73 @@ jQuery(function($) {
 
   }
 
+});
+
+jQuery(function($) {
+
+  let $infinityBtn = $('.catalog-infinity');
+
+  if ($infinityBtn.length > 0) {
+
+    $infinityBtn.on('click', function(e) {
+      e.preventDefault();
+
+      let $currBtn = $(this),
+        currentPage = parseInt($currBtn.data('page')),
+        $catalogContainer = $('.catalog-grid'),
+        hasNext = $catalogContainer.data('getpage');
+
+      if (hasNext) {
+        let urlData = location.href.split("#")[0].split("?"),
+          urlQuery = urlData[1],
+          query = '';
+
+        if (urlQuery) {
+          let params = urlQuery.split('&');
+
+          for (let i=0; i < params.length; i++) {
+            let param = params[i].split('=');
+
+            if (param[0] !== 'page') {
+              query += params[i] + '&';
+            }
+          }
+        }
+
+        query += 'page=' + (currentPage + 1);
+
+        let url = urlData[0] + '?' + query;
+
+        $.ajax({
+          url: url,
+          method: 'get',
+          beforeSend: function() {
+            $currBtn.addClass('disabled');
+            $currBtn.find('[data-fa-i2svg]').addClass('fa-spin');
+          },
+          success: function(res) {
+            let $page = $(res),
+              $pageCatalog = $page.find('.catalog-grid'),
+              $products = $pageCatalog.children();
+
+            $products.css('display', 'none');
+            $catalogContainer.append($products);
+            $products.fadeIn(800);
+
+            $catalogContainer.data('getpage', $pageCatalog.data('getpage'));
+
+            if (!$pageCatalog.data('getpage')) {
+              $currBtn.hide();
+            } else {
+              $currBtn.data('page', currentPage + 1);
+              $currBtn.removeClass('disabled');
+              $currBtn.find('[data-fa-i2svg]').removeClass('fa-spin');
+            }
+          }
+        });
+      }
+    });
+  }
 });
 
 function getQueryUrl(str)
