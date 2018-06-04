@@ -250,4 +250,9 @@
   text-transform: none;
   letter-spacing: 0;
   background: $primary-color;
+
+  &:hover,
+  &:focus {
+    background: $primary-color;
+  }
 }
