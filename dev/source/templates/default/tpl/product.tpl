@@ -153,9 +153,15 @@
                                                 </ul>
                                             </div>
                                             <div class="col s12 m2">
-                                                <div class="product-equip__title hide-on-med-and-up">Цена</div>
-                                                <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
-                                                <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}">Купить</a>
+                                                <div class="row">
+                                                    <div class="col s12">
+                                                        <div class="product-equip__title hide-on-med-and-up">Цена</div>
+                                                        <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+                                                    </div>
+                                                    <div class="col s12">
+                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}">Купить</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </li>
