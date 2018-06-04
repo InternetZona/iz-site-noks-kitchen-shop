@@ -175,10 +175,24 @@
       display: inline-block;
       font-size: 13px;
 
+      @media #{$small-and-down} {
+        padding: 0 .5rem;
+        width: 100%;
+
+        label {
+          font-weight: bold;
+        }
+      }
+
       .select-wrapper {
         display: inline-block;
         margin-left: 10px;
         margin-right: 10px;
+
+        @media #{$small-and-down} {
+          margin-left: 0;
+          width: 100%;
+        }
 
         input.select-dropdown{
           height: 36px;

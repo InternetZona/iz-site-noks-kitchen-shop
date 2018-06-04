@@ -72,8 +72,6 @@ const Plyr = require('plyr');
     closeBtn.addEventListener('click', function(e) {
       e.preventDefault();
 
-      console.log('clicked');
-
       let instance = M.Sidenav.getInstance(this.closest('.sidenav'));
 
       instance.close();
