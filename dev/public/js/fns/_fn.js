@@ -521,6 +521,7 @@ jQuery(function($) {
 
         case 'visit':
         case 'project':
+        case 'order':
 
           validator.rules = Object.assign({}, validator.rules, {
             phone: {
