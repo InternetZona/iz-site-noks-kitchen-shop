@@ -7,7 +7,7 @@
                 <a href="{$modx->makeUrl({config name=site_start})}" class="brand-logo hide-on-med-and-up">Кухни из массива</a>
             {/if}
             <a href="#" data-target="mobile-menu" class="sidenav-trigger hide-on-med-and-up">
-                <i class="material-icons">menu</i>
+                <i class="fas fa-bars"></i>
             </a>
             {include file="components/menu/main.tpl"}
         </div>

@@ -41,51 +41,24 @@
 
     .messengers {
       .phone {
+
         a{
           color: $off-black;
           font-size: 15px;
         }
-
-        i {
-          margin-left: 15px;
-        }
-
-        .whatsapp {
-          display: inline-block;
-          width: 21px;
-          height: 21px;
-          background: url(../img/whatsapp.png) center center no-repeat;
-          background-size: contain;
-          margin-left: 30px;
-        }
-
-        .telegram {
-          display: inline-block;
-          width: 21px;
-          height: 21px;
-          background: url(../img/telegram.png) center center no-repeat;
-          background-size: contain;
-        }
-
-        .viber {
-          display: inline-block;
-          width: 21px;
-          height: 21px;
-          background: url(../img/viber.png) center center no-repeat;
-          background-size: contain;
-        }
+         span {
+           display: inline-block;
+           font-size: 1.8rem;
+           margin-left: 2rem;
+         }
       }
       .app {
         font-size: 13px;
         color: $primary-color;
 
-        .skype {
+        span {
           display: inline-block;
-          width: 21px;
-          height: 21px;
-          background: url(../img/skype.png) center center no-repeat;
-          background-size: contain;
-          margin-right: 15px;
+          font-size: 1.8rem;
         }
       }
     }

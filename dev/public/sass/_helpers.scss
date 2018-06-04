@@ -89,9 +89,17 @@
   @extend h6;
 }
 
+.text-primary {
+  color: $primary-color;
+}
+
 .content-wrapper {
   strong {
     font-weight: 700!important;
+  }
+
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    @extend .text--bold;
   }
 
   ul {

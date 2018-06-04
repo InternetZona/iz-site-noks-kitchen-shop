@@ -15,8 +15,18 @@
             <div class="contacts-area width-overlay">
                 <div class="block__title">Мессенджеры:</div>
                 <ul class="messengers">
-                    <li class="phone valign-wrapper"><a href="#">+7 (812) 640-88-20</a> <i class="whatsapp"></i><i class="telegram"></i><i class="viber"></i></li>
-                    <li class="app valign-wrapper"><i class="skype"></i> Skype_noks</li>
+                    <li class="phone valign-wrapper"><a href="#">+7 (812) 640-88-20</a>
+                        <span class="text-primary">
+                            <i class="fab fa-whatsapp fa-fw"></i>
+                            <i class="fab fa-telegram-plane fa-fw"></i>
+                            <i class="fab fa-viber fa-fw"></i>
+                        </span>
+                    </li>
+                    <li class="app valign-wrapper">
+                        <span class="text-primary">
+                            <i class="fab fa-skype fa-fw"></i>
+                        </span> Skype_noks
+                    </li>
                 </ul>
             </div>
         </div>
