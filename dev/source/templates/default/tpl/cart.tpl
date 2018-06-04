@@ -44,7 +44,7 @@
                                         <div class="cart__item-summary">
                                             <div class="cart__item-title">{$product->pagetitle}</div>
 
-                                            {$price= $product->getTVValue('price_discount')|default:$product->getTVValue('price')}
+                                            {$price= $row.price|default:$product->getTVValue('price_discount')|default:$product->getTVValue('price')}
                                             {$total= $total + $price}
                                             <div class="cart__item-content">
 

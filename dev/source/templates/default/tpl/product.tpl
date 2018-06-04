@@ -2,7 +2,13 @@
 
 {block name=main}
     <div class="section container">
-        {snippet name="BreadCrumb@BreadCrumb"}
+        <div class="breadcrumbs">
+            <a href="{config name=base_url}" class="breadcrumb">Главная</a>
+
+            {snippet name=ProductCrumbs}
+
+            <span class="breadcrumb">{{field name=menutitle}|default:{field name=pagetitle}}</span>
+        </div>
 
         <div class="section page__content page--product">
 
