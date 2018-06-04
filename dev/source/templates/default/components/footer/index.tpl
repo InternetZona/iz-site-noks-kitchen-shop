@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="row">
+        <div class="row row--grid">
             <div class="col s12 m6 l3">
                 {include file="components/menu/index.tpl" title="Покупателю" ids="80,2,3,4,5,12" parent="0"}
             </div>
