@@ -42,6 +42,11 @@
 .breadcrumbs{
   line-height: 12px;
   margin-bottom: 12px;
+
+  .breadcrumb {
+    line-height: 16px;
+  }
+
   a.breadcrumb{
     color: $off-black;
     font-size: 12px;
