@@ -267,6 +267,8 @@
         text-decoration: underline;
         line-height: 16px;
         margin: 0;
+        position: relative;
+        z-index:1;
 
         &:hover,
         &:focus{
