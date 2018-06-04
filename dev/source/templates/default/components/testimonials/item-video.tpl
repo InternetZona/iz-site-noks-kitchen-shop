@@ -1,7 +1,12 @@
 <div class="card box-testimonials box-testimonials--video">
     <a href="#modal-testimonial-video" class="modal-trigger" data-testimonial-video="{$data.hash}">
         <div class="card-image">
-            <img src="{$template_url}img/video-preview.jpg">
+            {snippet name="pThumb" params=[
+            "input" => $data.preview
+            ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=80"
+            ] assign=thumbImage}
+
+            <img src="{$thumbImage}">
         </div>
     </a>
     <div class="card-content">
