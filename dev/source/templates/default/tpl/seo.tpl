@@ -30,7 +30,7 @@
 
         {processor action="web/catalog/getdata" ns="modcatalog" params=$params assign=result}
 
-        <div class="hide-on-small-and-down">
+        <div class="hide-on-med-and-down">
             <form id="desktop-controller" class="form form-catalog-controller" data-catalog="21" data-tpl="{$productType->template_id}">
                 <input type="hidden" name="limit" value="{$limit}">
 
@@ -70,13 +70,13 @@
             </form>
         </div>
 
-        <div class="hide-on-med-and-up row row--grid">
-            <div class="col s8 valign-wrapper">
+        <div class="hide-on-large-only row row--grid">
+            <div class="col s8 m10 valign-wrapper">
                 <div class="summary-wrapper">
                     Всего товаров: <strong class="text--bold">{$result.total}</strong>
                 </div>
             </div>
-            <div class="col s4 valign-wrapper">
+            <div class="col s4 m2 valign-wrapper">
                 <a href="#modal-filter" class="modal-trigger filter__modal-trigger">Фильтр</a>
             </div>
         </div>

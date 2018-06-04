@@ -40,6 +40,7 @@
                             {/if}
 
                             <a class='quick-cart__trigger' href='{$modx->makeUrl(83)}'>
+                                <i class="fas fa-shopping-cart"></i>
                                 <span class="quick-cart__trigger-text">Корзина</span>
                             </a>
                             <span class="quick-cart__counter">

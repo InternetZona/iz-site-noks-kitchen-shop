@@ -20,7 +20,6 @@ import Swiper from 'swiper';
     } else if (
       elem.id === 'swiper-blog' ||
       elem.id === 'swiper-testimonials' ||
-      elem.id === 'swiper-portfolio' ||
       elem.id === 'swiper-related' ||
       elem.id === 'swiper-feed'
     ) {
@@ -35,6 +34,29 @@ import Swiper from 'swiper';
           },
           768: {
             slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          992: {
+            slidesPerView: 3,
+          }
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      }), 100);
+    } else if (elem.id === 'swiper-portfolio') {
+      setTimeout(new Swiper('#' + elem.id, {
+        autoplay: false,
+        slidesPerView: 5,
+        spaceBetween: 30,
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 3,
             spaceBetween: 15,
           },
           992: {

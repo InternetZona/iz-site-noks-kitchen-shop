@@ -28,41 +28,56 @@
 
         {processor action="web/catalog/getdata" ns="modcatalog" params=$params assign=result}
 
-        <form id="form-catalog-controller" class="form" data-catalog="21" data-tpl="{$productType->template_id}">
-            <input type="hidden" name="limit" value="{$limit}">
+        <div class="hide-on-med-and-down">
+            <form id="desktop-controller" class="form form-catalog-controller" data-catalog="21" data-tpl="{$productType->template_id}">
+                <input type="hidden" name="limit" value="{$limit}">
 
-            {if $productFilters = $productType->getMany('ProductTypeFilters')}
-                {include file="components/filter/index.tpl" productFilters=$productFilters}
-            {/if}
-            <div class="sorting--wrapper">
-                <div class="row row--grid">
-                    <div class="col m6 valign-wrapper">
-                        Всего товаров: <strong class="text--bold">{$result.total}</strong>
-                    </div>
-                    <div class="col m6 valign-wrapper">
-                        <div class="right-align width-overlay">
-                            <div class="sorting-control--wrapper">
-                                Сортировать
-                                {include file="components/filter/sort.tpl"}
+                {if $productFilters = $productType->getMany('ProductTypeFilters')}
+                    {include file="components/filter/index.tpl" productFilters=$productFilters}
+                {/if}
+                <div class="sorting--wrapper">
+                    <div class="row row--grid">
+                        <div class="col m6 valign-wrapper">
+                            <div class="summary-wrapper">
+                                Всего товаров: <strong class="text--bold">{$result.total}</strong>
                             </div>
-                            <div class="switch-limit--wrapper">
-                                Выводить по:
-                                <ul class="switch-limit">
-                                    {$active = ($limit == 15) ? 'active' :''}
-                                    <li><a href="#" data-limit="15" class="{$active}">15</a></li>
-                                    {$active = ($limit == 30) ? 'active' :''}
-                                    <li><a href="#" data-limit="30" class="{$active}">30</a></li>
-                                    {$active = ($limit == 45) ? 'active' :''}
-                                    <li><a href="#" data-limit="45" class="{$active}">45</a></li>
-                                    {$active = ($limit == 0) ? 'active' :''}
-                                    <li><a href="#" data-limit="0" class="{$active}">Все</a></li>
-                                </ul>
+                        </div>
+                        <div class="col m6 valign-wrapper">
+                            <div class="right-align width-overlay">
+                                <div class="sorting-control--wrapper">
+                                    Сортировать
+                                    {include file="components/filter/sort.tpl"}
+                                </div>
+                                <div class="switch-limit--wrapper">
+                                    Выводить по:
+                                    <ul class="switch-limit">
+                                        {$active = ($limit == 15) ? 'active' :''}
+                                        <li><a href="#" data-limit="15" class="{$active}">15</a></li>
+                                        {$active = ($limit == 30) ? 'active' :''}
+                                        <li><a href="#" data-limit="30" class="{$active}">30</a></li>
+                                        {$active = ($limit == 45) ? 'active' :''}
+                                        <li><a href="#" data-limit="45" class="{$active}">45</a></li>
+                                        {$active = ($limit == 0) ? 'active' :''}
+                                        <li><a href="#" data-limit="0" class="{$active}">Все</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </form>
+        </div>
+
+        <div class="hide-on-large-only row row--grid">
+            <div class="col s8 m10 valign-wrapper">
+                <div class="summary-wrapper">
+                    Всего товаров: <strong class="text--bold">{$result.total}</strong>
+                </div>
             </div>
-        </form>
+            <div class="col s4 m2 valign-wrapper">
+                <a href="#modal-filter" class="modal-trigger filter__modal-trigger">Фильтр</a>
+            </div>
+        </div>
 
         {if $result.success && $result.count > 0}
 
