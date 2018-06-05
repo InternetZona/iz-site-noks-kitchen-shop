@@ -25,6 +25,8 @@
             ,'limit'    => $limit
             ,'filter' => {snippet name="getSeoFilter"}
             ,'sorting'  => $smarty.get.sorting|default:false
+            ,'getPage'  => true
+            ,'page'     => $smarty.get.page|default:1
             ]}
         {/block}
 
