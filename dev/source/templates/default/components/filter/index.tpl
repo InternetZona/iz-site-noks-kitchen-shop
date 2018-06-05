@@ -7,7 +7,7 @@
 
                     <li class="filter__item">
                         <select name="filter[{$filter->tv_key}]" class="filter__control">
-                            <option value="" selected>-</option>
+                            <option value="" selected>Все</option>
                             {if $filterValues = $filter->getMany('FilterValues')}
 
                                 {$lock = false}

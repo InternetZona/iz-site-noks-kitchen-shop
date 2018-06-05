@@ -55,6 +55,9 @@
         </div>
     </li>
     <li>
+        <a href="{$modx->makeUrl(12)}">Полезные советы</a>
+    </li>
+    <li>
         <a href="{$modx->makeUrl(17)}">Портфолио проектов</a>
     </li>
     <li>

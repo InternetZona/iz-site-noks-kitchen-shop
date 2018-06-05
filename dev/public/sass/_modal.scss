@@ -1,5 +1,7 @@
 .modal{
   outline: none!important;
+  top: 5%!important;
+  max-height: 85%;
 
   &-medium {
     @media #{$large-and-up} {
@@ -8,7 +10,7 @@
   }
 
   &-header{
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
     background: #f1f1f1;
     position: relative;
     text-align: center;

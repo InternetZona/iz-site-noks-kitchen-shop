@@ -9,11 +9,8 @@
         <label>Ваш телефон:</label>
         <input type="tel" name="phone" class="input-field browser-default full">
     </div>
-    <p class="confirm-checkbox">
-        <label>
-            <input type="checkbox" class="filled-in" name="agree" value="1" />
-            <span>Даю согласие на использование, обработку и хранение персональных данных.</span>
-        </label>
+    <p>
+        <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
     </p>
     <div class="center-align">
         <button type="submit" class="form__submit form__submit--inverse">Отправить</button>

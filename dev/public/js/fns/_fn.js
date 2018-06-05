@@ -475,7 +475,7 @@ jQuery(function($) {
 
         rules: {
 
-          agree: {
+          username: {
             required: true,
           },
         },
@@ -493,7 +493,11 @@ jQuery(function($) {
           },
 
           agree: {
-            required: "Подтвердите согласие."
+            required: "Подтвердите согласие.",
+          },
+
+          username: {
+            required: 'Напишите ваше имя.',
           },
         },
       };

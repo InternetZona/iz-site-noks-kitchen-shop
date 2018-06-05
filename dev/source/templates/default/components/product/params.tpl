@@ -1,9 +1,6 @@
 {if $productType = $modx->getObject('catalogProductType', [
     'template_id'   => $product->template
 ])}
-
-
-
     {if $productFilters = $productType->getMany('ProductTypeFilters')}
 
         <ul class="product__params">

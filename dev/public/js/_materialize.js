@@ -98,6 +98,7 @@ const Plyr = require('plyr');
       config = {
         constrainWidth: false,
         coverTrigger: false,
+        hover: true,
         onOpenStart: function() {
           this.el.classList.add('open');
         },
@@ -109,5 +110,4 @@ const Plyr = require('plyr');
 
     M.Dropdown.init(elem, config);
   });
-
 })();

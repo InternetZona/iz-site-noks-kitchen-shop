@@ -8,7 +8,7 @@
             ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=80"
         ] assign=thumbImage}
 
-        <img src="{$thumbImage}">
+        <a href="{$object.uri}"><img src="{$thumbImage}"></a>
 
         {$_li = ''}
         {if $styleValue = $modx->getObject('catalogFilterValue', $object.tvs.style.value)}

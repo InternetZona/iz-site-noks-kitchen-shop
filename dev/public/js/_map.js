@@ -13,7 +13,7 @@
         
         let map = new ymaps.Map("map", {
             center: [55.660546, 37.246317],
-            zoom: 17,
+            zoom: 15,
             controls: [],
           }),
           

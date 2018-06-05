@@ -8,7 +8,7 @@
                     <div class="swiper-slide center-align">
                         {snippet name="pThumb" params=[
                             "input" => $data.image
-                            ,"options" => "&w=1140&h=480&zc=1&aoe=0&far=0&q=70"
+                            ,"options" => "&w=1140&h=336&zc=1&aoe=0&far=0&q=80"
                         ] assign=thumbImage}
 
                         <img src="{$thumbImage}" class="responsive-img">

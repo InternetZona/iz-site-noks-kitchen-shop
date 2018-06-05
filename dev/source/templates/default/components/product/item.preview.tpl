@@ -5,16 +5,16 @@
 
         {snippet name="pThumb" params=[
         "input" => $tvImages[0].image
-        ,"options" => "&w=192&h=168&zc=1&aoe=0&far=0&q=70"
+        ,"options" => "&w=192&h=168&zc=1&aoe=0&far=0&q=80"
         ] assign=thumbImage}
 
-        <img src="{$thumbImage}">
+        <a href="{$object.uri}"><img src="{$thumbImage}"></a>
     </div>
     <div class="card-content">
         <div class="row">
             <div class="col s12 xl8 valign-wrapper">
                 <a href="{$object.uri}" class="card-title">
-                    {$object.pagetitle}
+                    {$object.menutitle|default:$object.pagetitle}
                 </a>
             </div>
             <div class="col s12 xl4 valign-wrapper">

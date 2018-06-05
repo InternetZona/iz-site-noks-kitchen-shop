@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col s12 m9 xl10 valign-wrapper">
                                         <div class="cart__item-summary">
-                                            <div class="cart__item-title">{$product->pagetitle}</div>
+                                            <div class="cart__item-title"><a href="{$product->uri}">{$product->pagetitle}</a></div>
 
                                             {$price= $row.price|default:$product->getTVValue('price_discount')|default:$product->getTVValue('price')}
                                             {$total= $total + $price}
