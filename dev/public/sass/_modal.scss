@@ -79,6 +79,10 @@
 
   &-testimonial {
 
+    .modal-close {
+      top: 2rem;
+    }
+
     .collection{
       margin: 0;
       border: none;
@@ -135,4 +139,11 @@
 
   }
 
+}
+
+#modal-testimonial-video{
+  .modal-close {
+    color: white;
+    z-index: 1;
+  }
 }
