@@ -5,7 +5,7 @@
 
         {snippet name="pThumb" params=[
         "input" => $tvImages[0].image
-        ,"options" => "&w=192&h=168&zc=1&aoe=0&far=0&q=80"
+        ,"options" => "&w=275&h=215&zc=1&aoe=0&far=0&q=80"
         ] assign=thumbImage}
 
         <a href="{$object.uri}"><img src="{$thumbImage}"></a>

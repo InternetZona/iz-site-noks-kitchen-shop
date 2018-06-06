@@ -27,14 +27,16 @@
 
     <div class="col col--width-2">
 
-        <div class="dd-panel__title left-align">Меню</div>
+        <div class="dd-panel__title left-align">Полезные советы</div>
 
         <ul class="nav-inner">
             {snippet name="Wayfinder" params=[
-            'startId'   => 0,
-            'where'     => '[{"id:not in":[1,23]}]',
-            'outerTpl'  => 'wf.outer.tpl',
-            'level'     => 1
+            'startId'   => 12
+            ,'outerTpl'  => 'wf.outer.tpl'
+            ,'level'     => 1
+            ,'limit'    => 5
+            ,'sortBy'   => 'publishedon'
+            ,'sortOrder'    => 'desc'
             ]}
         </ul>
 

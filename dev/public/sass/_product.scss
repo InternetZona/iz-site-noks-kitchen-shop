@@ -266,6 +266,12 @@
   &--preview {
     padding: .5rem;
 
+    .card-image {
+      a {
+        padding: 0;
+      }
+    }
+
     .card-content {
       padding: .5rem 0 0;
     }
