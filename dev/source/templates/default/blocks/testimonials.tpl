@@ -53,6 +53,9 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
+                <div class="center-align">
+                    <a href="{$modx->makeUrl(18)}" class="button-action" style="width: auto;">Все отзывы</a>
+                </div>
             {/if}
         </div>
     </div>
