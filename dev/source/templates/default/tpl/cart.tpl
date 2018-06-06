@@ -5,6 +5,8 @@
 
     {if $basket && is_array($basket)}
 
+        {assign var=relatedProducts value=[]}
+
         <div class="row">
             <div class="col s12 m6 l7 xl8">
 
@@ -21,6 +23,10 @@
                     {foreach $basket as $row}
 
                         {if $product = $modx->getObject('modResource', $row.id)}
+
+                            {if $tvRelatedProducts = $product->getTVValue('relatedProducts')}
+                                {append var=relatedProducts value=$tvRelatedProducts}
+                            {/if}
 
                             <li class="cart__item">
                                 <div class="row row--grid">
@@ -76,6 +82,10 @@
                 </div>
             </div>
         </div>
+
+        {if $relatedProducts}
+            {include file="blocks/product.related.tpl" tv=implode('||', $relatedProducts) title="К этим моделям подходят"}
+        {/if}
 
         {else}
 

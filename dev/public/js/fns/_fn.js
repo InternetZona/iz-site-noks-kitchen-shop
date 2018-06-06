@@ -186,6 +186,12 @@ jQuery(function($){
         M.toast({html: 'Товар добавлен в корзину.'});
 
         this.controllers.refresh(basketList);
+
+        let $cart = $('.cart');
+
+        if ($cart.length > 0) {
+          window.location.reload();
+        }
       }
     },
 

@@ -18,7 +18,7 @@
 
             {foreach $result.object as $object}
                 <li>
-                    <a href="{$object.uri}">{$object.menutitle|default:$object->pagetitle}</a>
+                    <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
                 </li>
             {/foreach}
         </ul>

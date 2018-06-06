@@ -13,7 +13,7 @@
 {if $result.success && $result.count > 0}
     <div class="block-related">
         <div class="section__title">
-            К этой модели подходят
+            {$title|default:"К этой модели подходят"}
         </div>
         <div class="section__content">
 
