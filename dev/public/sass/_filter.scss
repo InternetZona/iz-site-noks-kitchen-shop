@@ -89,8 +89,15 @@
       .caret {
         height: 18px;
         width: 18px;
-        opacity: .6;
+        opacity: .75;
         z-index: 1;
+        transition: all .3s ease 0s;
+      }
+
+      &:hover {
+        .caret {
+          opacity: 1;
+        }
       }
     }
   }
