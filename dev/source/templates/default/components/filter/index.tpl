@@ -42,5 +42,9 @@
 
             <label class="filter__label">Цена</label>
         </li>
+        <li class="filter__item">
+
+            <a href="#" class="button-reset">Сбросить фильтр</a>
+        </li>
     </ul>
 </div>

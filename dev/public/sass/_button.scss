@@ -39,3 +39,10 @@
     opacity: .9;
   }
 }
+
+.button-reset {
+  @extend .button-action;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 5px;
+}

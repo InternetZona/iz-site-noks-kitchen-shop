@@ -58,6 +58,10 @@
       }
     }
 
+    @media #{$large-and-up} {
+      width: 140px;
+    }
+
     .select-wrapper {
       input.select-dropdown{
         height: 36px;
