@@ -6,8 +6,7 @@
             <div class="contacts-area width-overlay">
                 <div class="block__title">Телефоны:</div>
                 <ul class="phones">
-                    <li class="phone valign-wrapper"><a href="#">+7 (495) 640-87-19</a> <span>Пн-Пт с 9:00 до 18:00</span></li>
-                    <li  class="phone valign-wrapper"><a href="#">+7 (812) 640-88-20</a></li>
+                    <li class="phone valign-wrapper"><a href="tel:84952088802">8 (495) 208-88-02</a> <span>Пн-Пт с 9:00 до 18:00</span></li>
                 </ul>
             </div>
         </div>
@@ -15,7 +14,7 @@
             <div class="contacts-area width-overlay">
                 <div class="block__title">Мессенджеры:</div>
                 <ul class="messengers">
-                    <li class="phone valign-wrapper"><a href="#">+7 (812) 640-88-20</a>
+                    <li class="phone valign-wrapper"><a href="tel:79265127861">+7 (926) 512-78-61</a>
                         <span class="text-primary">
                             <i class="fab fa-whatsapp fa-fw"></i>
                             <i class="fab fa-telegram-plane fa-fw"></i>

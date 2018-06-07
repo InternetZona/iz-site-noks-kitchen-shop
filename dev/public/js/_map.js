@@ -13,8 +13,8 @@
         
         let map = new ymaps.Map("map", {
             center: [55.660546, 37.246317],
-            zoom: 15,
-            controls: [],
+            zoom: 14,
+            controls: ['zoomControl'],
           }),
           
           placemark = new ymaps.Placemark(map.getCenter(), {}, {

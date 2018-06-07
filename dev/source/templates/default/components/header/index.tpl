@@ -94,10 +94,7 @@
                             Пн.-Пт. 9:00-18:00
                         </li>
                         <li>
-                            <a class="header__contacts-phone" href="#">8 (812) 640-88-20</a>
-                        </li>
-                        <li>
-                            <a class="header__contacts-phone" href="#">8 (495) 640-88-20</a>
+                            <a class="header__contacts-phone" href="tel:84952088802">8 (495) 208-88-02</a>
                         </li>
                     </ul>
                 </div>
