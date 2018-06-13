@@ -8,7 +8,7 @@
     <div class="col s12 m6 xl12">
         <div class="form__field">
             <label>Электронная почта:</label>
-            <input type="text" name="email" class="input-field browser-default full">
+            <input type="email" name="email" class="input-field browser-default full">
         </div>
     </div>
     <div class="form__field">

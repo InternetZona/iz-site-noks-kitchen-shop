@@ -6,6 +6,7 @@
 ]
 ,'sort' => 'publishedon'
 ,'dir'  => 'desc'
+,'limit'    => 0
 ]}
 
 {processor action="web/catalog/getdata" ns='modcatalog' params=$params assign=result}

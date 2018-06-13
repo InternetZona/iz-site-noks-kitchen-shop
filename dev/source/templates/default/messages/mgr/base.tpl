@@ -4,7 +4,7 @@
 
     {block name=client}
 
-        {include file="messages/constructor/title.tpl" text="Информация от пользоватетля сайта"}
+        {include file="messages/constructor/title.tpl" text="Информация от пользователя сайта"}
         {include file="messages/constructor/client.tpl"}
 
     {/block}

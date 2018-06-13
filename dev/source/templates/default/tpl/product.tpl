@@ -19,7 +19,19 @@
                 <div class="col s12 m6 l4">
                     <h1>{field name=pagetitle}</h1>
                     <ul class="product__params">
-                        <li>Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{{tv name=price_discount}|default:{tv name=price}|number_format:0:',':' '}</span></li>
+                        <li>
+                            {$discount = {tv name=price_discount}|default:0}
+
+                            {if $discount}
+                                <div class="product-discount">
+                                    <span class="product__old-price">{{tv name=price}|number_format:0:',':' '}</span>
+                                    <span class="product--economy">экономия {({tv name=price} - $discount)|number_format:0:',':' '}</span>
+                                </div>
+                                Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{$discount|number_format:0:',':' '}</span>
+                                {else}
+                                Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{{tv name=price_discount}|default:{tv name=price}|number_format:0:',':' '}</span>
+                            {/if}
+                        </li>
                         {if $productionTime = {tv name=productionTime}}
                             <li>Срок изготовления: <span>{$productionTime}</span></li>
                         {/if}

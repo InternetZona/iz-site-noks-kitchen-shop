@@ -10,9 +10,15 @@
                 {foreach $filterValues as $data}
                     {if $data->res_id}
                         {if $resource = $modx->getObject('modResource', $data->res_id)}
-                            <li>
-                                <a href="{$resource->uri}">{$resource->menutitle|default:$resource->pagetitle}</a>
-                            </li>
+                            {if $resource->id == {field name=id}}
+                                <li class="active">
+                                    <a href="{$resource->uri}">{$resource->menutitle|default:$resource->pagetitle}</a>
+                                </li>
+                                {else}
+                                <li>
+                                    <a href="{$resource->uri}">{$resource->menutitle|default:$resource->pagetitle}</a>
+                                </li>
+                            {/if}
                         {/if}
                     {/if}
                 {/foreach}

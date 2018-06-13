@@ -17,9 +17,15 @@
         <ul class="nav-inner">
 
             {foreach $result.object as $object}
-                <li>
-                    <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
-                </li>
+                {if $object.id == {field name=id}}
+                    <li class="active">
+                        <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                    </li>
+                {else}
+                    <li>
+                        <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                    </li>
+                {/if}
             {/foreach}
         </ul>
 

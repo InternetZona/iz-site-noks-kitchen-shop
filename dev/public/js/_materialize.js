@@ -98,7 +98,7 @@ const Plyr = require('plyr');
       config = {
         constrainWidth: false,
         coverTrigger: false,
-        hover: true,
+        hover: (window.innerWidth > 1140),
         onOpenStart: function() {
           this.el.classList.add('open');
         },

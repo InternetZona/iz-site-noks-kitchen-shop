@@ -102,6 +102,48 @@
           }
         }
       }
+
+      .product-discount {
+        padding-left: 95px;
+
+        .product__old-price {
+          color: #b3b3b3;
+          font-size: 14px;
+          text-decoration: line-through;
+          font-weight: normal;
+          padding-right: 13px;
+          position: relative;
+
+          &:after {
+            content: "\20BD";
+            position: absolute;
+            right: 0;
+            padding-right: 2px;
+            top: -5px;
+          }
+        }
+
+        .product--economy {
+          @extend .product__cost;
+          margin-left: 12px;
+          background: #fef30c;
+          font-size: 11px;
+          padding-left: 2px;
+          text-decoration: none;
+          color: $off-black;
+          position: relative;
+          top: -2px;
+          padding-right: 10px;
+
+          &:after {
+            content: "\20BD";
+            position: absolute;
+            right: 0;
+            padding-right: 2px;
+            top: -6px;
+          }
+        }
+      }
     }
   }
 

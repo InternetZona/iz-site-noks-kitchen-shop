@@ -5,6 +5,10 @@
 .contacts {
   &-area {
 
+    @media #{$small-and-down} {
+      padding-top: 1rem;
+    }
+
     .button{
       height: 40px;
       line-height: 36px;

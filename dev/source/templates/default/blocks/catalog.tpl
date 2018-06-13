@@ -35,5 +35,8 @@
             {/foreach}
 
         </div>
+        <div class="center-align">
+            <a href="{$modx->makeUrl(24)}" class="button-action" style="width: auto;">Показать еще</a>
+        </div>
     </div>
 </div>

@@ -8,7 +8,7 @@
 
                 </div>
                 <div class="col s8 m12">
-                    <a href="#" class="header__phone hide-on-med-and-up">8 495 640-68-19</a>
+                    <a href="tel:84952088802" class="header__phone hide-on-med-and-up">8 (495) 208-88-02</a>
 
                     {include file="components/menu/topbar.tpl"}
 

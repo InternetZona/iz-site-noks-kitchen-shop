@@ -3,7 +3,7 @@
         <div class="card-image">
             <img src="{$template_url}img/text-bg.jpg">
             <p>
-                {$data.text|truncate:200:"...":true}
+                {$data.text|truncate:200:"...":false}
             </p>
         </div>
     </a>

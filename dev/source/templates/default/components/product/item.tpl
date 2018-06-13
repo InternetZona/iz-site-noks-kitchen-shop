@@ -33,7 +33,7 @@
     </div>
     <div class="card-content">
         <a href="{$object.uri}" class="card-title">
-            {$object.pagetitle}
+            {$object.menutitle|default:$object.pagetitle}
         </a>
         <div class="row row--grid">
             <div class="col s12 m6 valign-wrapper">

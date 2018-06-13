@@ -1,6 +1,6 @@
 <ul id="desktop-menu" class="hide-on-small-and-down">
     <li>
-        <a class="dropdown-trigger dd-panel" href="#" data-target="dd-catalog-style">Стиль кухонь</a>
+        <a class="dropdown-trigger dd-panel" href="#" data-target="dd-catalog-style">Стили кухни</a>
         <div id="dd-catalog-style" class="dropdown-content">
             <div class="row row--grid">
 
@@ -54,11 +54,9 @@
             </div>
         </div>
     </li>
-    <li>
+    {$active = ({field name=id} == 12) ? 'active': ''}
+    <li class="{$active}">
         <a href="{$modx->makeUrl(12)}">Полезные советы</a>
-    </li>
-    <li>
-        <a href="{$modx->makeUrl(17)}">Портфолио проектов</a>
     </li>
     <li>
         <a href="{$modx->makeUrl(38)}">Акции</a>

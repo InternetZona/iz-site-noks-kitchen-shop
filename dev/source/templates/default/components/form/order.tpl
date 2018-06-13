@@ -15,7 +15,7 @@
         <div class="col s12 m6 l12">
             <div class="form__field">
                 <label>Электронная почта:</label>
-                <input type="text" name="email" class="input-field browser-default full required-group">
+                <input type="email" name="email" class="input-field browser-default full required-group">
             </div>
         </div>
     </div>

@@ -28,7 +28,7 @@
                 <button type="submit" class="form__submit">Отправить</button>
             </div>
         </div>
-        <div class="col s12">
+        <div class="col s12offset-l4 l8">
             <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
         </div>
     </div>

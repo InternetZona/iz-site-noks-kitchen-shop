@@ -2,7 +2,7 @@
 
 {block name=page_content prepend}
     <div class="row row--grid">
-        <div class="col s12 m4 valign-wrapper">
+        <div class="col s12 m6 l4">
             <div class="contacts-area width-overlay">
                 <div class="block__title">Телефоны:</div>
                 <ul class="phones">
@@ -10,7 +10,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col s12 m4 valign-wrapper">
+        <div class="col s12 m6 l4 valign-wrapper">
             <div class="contacts-area width-overlay">
                 <div class="block__title">Мессенджеры:</div>
                 <ul class="messengers">
@@ -29,7 +29,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col s12 m4 valign-wrapper">
+        <div class="col s12 m12 l4 valign-wrapper">
             <div class="contacts-area width-overlay">
 
                 <a href="#modal-feedback" class="modal-trigger button">Написать письмо</a>

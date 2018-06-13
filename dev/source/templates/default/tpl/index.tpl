@@ -20,6 +20,10 @@
     </div>
 {/block}
 
+<a href="#" class="scroll-up">
+    Наверх
+</a>
+
 {include file="components/footer/index.tpl"}
 {include file="components/navbar/sidenav.tpl"}
 

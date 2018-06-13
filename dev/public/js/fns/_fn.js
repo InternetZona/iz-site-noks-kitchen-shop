@@ -639,3 +639,25 @@ function number_formmat (number) {
 
   return str;
 }
+
+
+jQuery(function($) {
+  let $scrollUp = $('.scroll-up');
+
+  if ($scrollUp.length > 0) {
+
+    $(window).on('scroll', function() {
+      if($(window).scrollTop() >= 100 ){
+        $scrollUp.show();
+      } else {
+        $scrollUp.hide();
+      }
+    })
+
+    $scrollUp.on('click', function(e) {
+      e.preventDefault();
+
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+  }
+});

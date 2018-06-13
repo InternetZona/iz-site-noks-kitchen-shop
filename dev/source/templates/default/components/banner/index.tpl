@@ -2,7 +2,7 @@
 
 {if $tvData && is_array($tvData)}
     <div class="section">
-        <div id="swiper-banner" class="swiper-container swiper-content">
+        <div id="swiper-banner" class="swiper-container swiper-content hide-on-small-and-down">
             <div class="swiper-wrapper">
                 {foreach $tvData as $data}
                     <div class="swiper-slide center-align">

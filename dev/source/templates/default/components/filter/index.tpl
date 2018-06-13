@@ -44,7 +44,7 @@
         </li>
         <li class="filter__item">
 
-            <a href="{$modx->makeUrl({field name=id})}" class="button-reset">Сбросить фильтр</a>
+            <a href="{$modx->makeUrl(24)}" class="button-reset">Сбросить фильтр</a>
         </li>
     </ul>
 </div>
