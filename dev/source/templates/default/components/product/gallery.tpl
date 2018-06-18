@@ -50,11 +50,6 @@
                                     ,"options" => "&w={$width}&h={$height}&zc=1&aoe=0&far=0&q=70"
                                 ] assign=thumbImage}
 
-                                {snippet name="pThumb" params=[
-                                    "input" => $data.image
-                                    ,"options" => "&w={$width}&h={$height}&zc=1&aoe=0&far=0&q=70"
-                                ] assign=thumbImage}
-
 
                                 <a href="{$thumbImage}" data-size="{$width}x{$height}">
 
@@ -63,7 +58,7 @@
                                     ,"options" => "&w=605&h=425&zc=1&aoe=0&far=0&q=70"
                                     ] assign=thumbImage}
 
-                                    <img src="{$thumbImage}" class="responsive-img" />
+                                    <img src="{$thumbImage}" class="responsive-img" alt="{field name=pagetitle} - {$data.MIGX_id}" />
                                 </a>
                             </figure>
                         {/foreach}
@@ -82,7 +77,7 @@
                                     ,"options" => "&w=115&h=85&zc=1&aoe=0&far=0&q=70"
                                     ] assign=thumbImage}
 
-                                    <img src="{$thumbImage}" class="responsive-img">
+                                    <img src="{$thumbImage}" class="responsive-img" alt="{field name=pagetitle} - {$data.MIGX_id}">
                                 </div>
                             {/foreach}
                         </div>

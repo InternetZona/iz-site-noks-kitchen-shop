@@ -44,7 +44,9 @@
         </li>
         <li class="filter__item">
 
-            <a href="{$modx->makeUrl(24)}" class="button-reset">Сбросить фильтр</a>
+            {$url = ({field name=parent} != 23) ? $modx->makeUrl({field name=parent}) : $modx->makeUrl({field name=id}) }
+
+            <a href="{$url}" class="button-reset">Сбросить фильтр</a>
         </li>
     </ul>
 </div>

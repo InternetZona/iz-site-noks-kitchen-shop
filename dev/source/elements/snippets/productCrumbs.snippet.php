@@ -22,7 +22,7 @@ if ($productType = $modx->getObject('catalogProductType', array(
                     $q->innerJoin('modTemplateVarResource', 'ResourceTV', "ResourceTV.contentid = modResource.id AND ResourceTV.tmplvarid = tv.id AND ResourceTV.value = {$modx->resource->getTVValue($filter->tv_key)}");
 
                     if ($resource = $modx->getObject('modResource', $q)) {
-                        $title = ($resource->manutitle) ? $resource->menutitle : $resource->pagetitle ;
+                        $title = ($resource->menutitle) ? $resource->menutitle : $resource->pagetitle ;
                         $output .= "<a href=\"{$resource->uri}\" class=\"breadcrumb\">{$title}</a>";
                     }
                 }

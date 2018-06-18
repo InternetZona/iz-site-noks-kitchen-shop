@@ -1,6 +1,6 @@
 <div class="section block-catalog">
     <div class="section__title">
-        Каталог
+        <h1>Кухни из массива дерева</h1>
     </div>
     <div class="section_content">
         <div class="row">

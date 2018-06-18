@@ -1,5 +1,12 @@
-#map {
+.map {
   height: 500px;
+
+  &--wrapper {
+
+    + .map--wrapper {
+      margin-top: 3rem;
+    }
+  }
 }
 
 .contacts {

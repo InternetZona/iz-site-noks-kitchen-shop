@@ -1,7 +1,7 @@
 (function() {
-  let container = document.getElementById('map');
+  let maps = document.querySelectorAll('.map');
 
-  if (container != null) {
+  if (maps != null) {
     let script = document.createElement('script');
 
     script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
@@ -11,24 +11,33 @@
       
       ymaps.ready(function(){
         
-        let map = new ymaps.Map("map", {
-            center: [55.660546, 37.246317],
+        let master = new ymaps.Map("map-master", {
+            center: [55.781839, 37.581987],
             zoom: 14,
             controls: ['zoomControl'],
           }),
           
-          placemark = new ymaps.Placemark(map.getCenter(), {}, {
-            // iconLayout: 'default#image',
-            // iconImageHref: 'assets/components/modxsite/templates/default/images/marker.png',
-            // iconImageSize: [48, 54],
-            // iconImageOffset: [-5, -38]
-          });
+          placemarkMaster = new ymaps.Placemark(master.getCenter());
 
-        map.behaviors.disable('scrollZoom');
-        map.behaviors.disable('multiTouch');
+        master.behaviors.disable('scrollZoom');
+        master.behaviors.disable('multiTouch');
 
-        map.geoObjects
-          .add(placemark);
+        master.geoObjects
+          .add(placemarkMaster);
+
+        let branch = new ymaps.Map("map-branch", {
+            center: [55.660546, 37.246317],
+            zoom: 14,
+            controls: ['zoomControl'],
+          }),
+
+          placemarkBranch = new ymaps.Placemark(branch.getCenter());
+
+        branch.behaviors.disable('scrollZoom');
+        branch.behaviors.disable('multiTouch');
+
+        branch.geoObjects
+          .add(placemarkBranch);
       });
     }
 

@@ -620,6 +620,9 @@ button.swiper-pagination-bullet {
 
 #swiper-banner {
   .swiper-pagination{
+    @media #{$small-and-down} {
+      display: none!important;
+    }
     &-bullet{
       width: 65px;
       height: 4px;
