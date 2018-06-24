@@ -137,6 +137,53 @@
       }
     }
 
+    .product--sale-info {
+      position: relative;
+
+      .old-price{
+        position: absolute;
+        left: 0;
+        top: 4px;
+
+        @media #{$medium-and-up} {
+          top: -15px;
+        }
+
+        .product__cost {
+          color: #b3b3b3;
+          font-size: 13px;
+          text-decoration: line-through;
+          font-weight: normal;
+          padding-right: 7px;
+          position: relative;
+
+          &:after {
+            content: "\20BD";
+            position: absolute;
+            right: 0;
+            top: -2px;
+          }
+
+        }
+
+        .bonus-sum{
+          @extend .product__cost;
+          margin-left: 12px;
+          background: #fef30c;
+          font-size: 11px;
+          padding-left: 2px;
+          text-decoration: none;
+          color: $off-black;
+          position: relative;
+          top: -2px;
+
+          &:after {
+            top: -1px;
+          }
+        }
+      }
+    }
+
     &-control {
       position: absolute;
       right: 0;

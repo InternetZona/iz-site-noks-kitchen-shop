@@ -50,7 +50,11 @@
                                         <div class="cart__item-summary">
                                             <div class="cart__item-title"><a href="{$product->uri}">{$product->pagetitle}</a></div>
 
-                                            {$price= $row.price|default:$product->getTVValue('price_discount')|default:$product->getTVValue('price')}
+                                            {$fullPrice = $product->getTVValue('price')|default:0}
+                                            {$discountPrice = $product->getTVValue('price_discount')|default:0}
+
+                                            {$price = ($discountPrice) ? $discountPrice : $fullPrice}
+
                                             {$total= $total + $price}
                                             <div class="cart__item-content">
 
@@ -58,7 +62,22 @@
                                                     <a href="#" class="cart__item-remove" data-id="{$product->id}"><small>Удалить</small></a>
                                                 </div>
 
-                                                Стоимость: <span class="cart__item-price">{$price|number_format:0:',':' '}</span>
+                                                {if $discountPrice}
+                                                    <div class="product--sale-info">
+
+                                                        <div class="old-price">
+                                                            <span class="product__cost">
+                                                                {$fullPrice|number_format:0:'.':' '}
+                                                            </span>
+                                                            <span class="bonus-sum">экономия {($fullPrice - $discountPrice)|number_format:0:'.':' '}</span>
+                                                        </div>
+
+                                                        Стоимость: <span class="cart__item-price">{$discountPrice|number_format:0:',':' '}</span>
+
+                                                    </div>
+                                                {else}
+                                                    Стоимость: <span class="cart__item-price">{$fullPrice|number_format:0:',':' '}</span>
+                                                {/if}
                                             </div>
                                         </div>
                                     </div>
