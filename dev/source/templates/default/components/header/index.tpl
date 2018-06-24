@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col s4 hide-on-med-and-up">
 
-                    {include file="components/logo/index.tpl" image="logo.png"}
+                    {include file="components/logo/index.tpl" image="noks-logo-s.svg"}
 
                 </div>
                 <div class="col s8 m12">

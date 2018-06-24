@@ -479,4 +479,41 @@
       padding: .5rem 1rem;
     }
   }
+
+  &-sale-preview {
+    @extend .z-depth-0;
+    border: 2px solid #eff3f4;
+
+    @media (max-width: 480px) {
+      display: block!important;
+    }
+
+    .card-image {
+
+      @media (max-width: 480px) {
+        display: block;
+        max-width: 100%!important;
+      }
+    }
+
+    .card-title {
+      margin-bottom: 0!important;
+
+      > a{
+        font-size: 1.3rem;
+        color: $off-black;
+        font-weight: bold;
+
+        &:hover,
+        &:focus {
+          color: rgba($off-black, .9);
+        }
+      }
+
+      + p {
+        margin-top: 1rem;
+      }
+    }
+  }
+
 }

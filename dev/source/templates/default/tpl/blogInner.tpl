@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="col l3 pull-l9">
-            {include file="components/menu/folder.tpl"}
+            {include file="components/menu/folder.tpl" parent=12 title="Полезные советы"}
         </div>
     </div>
 
