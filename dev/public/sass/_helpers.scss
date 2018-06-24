@@ -306,7 +306,16 @@
 
 .link__social {
   display: inline-block;
-  padding: 0 4px;
+  opacity: .8;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+
+  + .link_social {
+    margin-left: 6px;
+  }
 }
 
 .alert {

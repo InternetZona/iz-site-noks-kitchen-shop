@@ -21,7 +21,9 @@
                     <li><a href="#modal-order-project" class="modal-trigger">Заказать проект</a></li>
                 </ul>
                 <div class="menu__title">Наши соц. сети</div>
-                <a href="https://www.instagram.com/noks_mebel/" class="link__social black white-text"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://www.instagram.com/noks_mebel/" class="link__social" target="_blank">
+                    <img src="{$template_url}img/insta.png">
+                </a>
             </div>
         </div>
         <hr>
