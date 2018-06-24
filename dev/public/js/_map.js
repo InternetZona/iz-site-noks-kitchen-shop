@@ -1,7 +1,7 @@
 (function() {
   let maps = document.querySelectorAll('.map');
 
-  if (maps != null) {
+  if (maps.length> 0) {
     let script = document.createElement('script');
 
     script.src = "https://api-maps.yandex.ru/2.1/?lang=ru_RU";
