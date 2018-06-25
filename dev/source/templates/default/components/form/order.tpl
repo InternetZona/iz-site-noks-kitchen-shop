@@ -20,6 +20,10 @@
         </div>
     </div>
     <div class="form__field">
+        <label>Адрес доставки:</label>
+        <input type="text" name="address" class="input-field browser-default full">
+    </div>
+    <div class="form__field">
         <label>Комментарий:</label>
         <textarea name="comment" class="input-field browser-default full" rows="2"></textarea>
     </div>

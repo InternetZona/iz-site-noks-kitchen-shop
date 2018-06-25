@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col s6 pull-s6 m4 valign-wrapper">
-                <a href="#" class="product__order-btn" data-id="{$object.id}" data-price="{$object.tvs.price_discount.value|default:$object.tvs.price.value}">Купить</a>
+                <a href="#" class="product__order-btn" data-id="{$object.id}" data-price="{$object.tvs.price_discount.value|default:$object.tvs.price.value}">Заказать</a>
             </div>
         </div>
     </div>
@@ -79,7 +79,22 @@
         {$_li = $_li|cat:'<li><span class="badge badge--hit">хит</span></li>'}
     {/if}
     {if $object.tvs.issale.value}
-        {$_li = $_li|cat:'<li><span class="badge badge--discount">скидка</span></li>'}
+
+        {$fullPrice = $object.tvs.price.value|default:0}
+        {$discountPrice = $object.tvs.price_discount.value|default:0}
+
+        {$discountPersent = 0}
+        {if ($fullPrice > $discountPrice) && $discountPrice}
+            {$discountPersent = 100 - (100 * $discountPrice) / $fullPrice}
+        {/if}
+
+        {if $discountPersent}
+            {$_li = $_li|cat:'<li><span class="badge badge--discount">скидка '|cat:"-{$discountPersent|number_format:0:',':' '}%</span></li>"}
+
+        {else}
+
+            {$_li = $_li|cat:'<li><span class="badge badge--discount">скидка</span></li>'}
+        {/if}
     {/if}
     {if $object.tvs.isnew.value}
         {$_li = $_li|cat:'<li><span class="badge badge--new">новинка</span></li>'}

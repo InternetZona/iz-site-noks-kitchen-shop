@@ -2,7 +2,7 @@
     'parent'    => 12
     ,'dir'      => 'DESC'
     ,'sort'     => 'publishedon'
-    ,'limit'    => 4
+    ,'limit'    => 10
     ,'cache'    => true
 ]}
 {processor action="site/web/resources/getdata" params=$params ns="modxsite" assign=result}
@@ -24,6 +24,9 @@
                 </div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
+            </div>
+            <div class="center-align">
+                <a href="{$modx->makeUrl(12)}" class="button-action" style="width: auto;">Все полезные советы</a>
             </div>
         </div>
     </div>

@@ -212,7 +212,7 @@
           bottom: 1rem;
           left: -1px;
           width: 2px;
-          background: white;
+          background: rgba(255,255,255,.3);
         }
       }
     }
@@ -297,9 +297,10 @@
   }
 
   .collapsible-header{
-    padding: 0 32px;
+    padding: 1rem 32px;
     position: relative;
     display: block;
+    line-height: 18px;
 
     &:after {
       position: absolute;
@@ -312,10 +313,16 @@
     }
   }
 
+  .collapsible-body li a {
+    padding: 1rem 32px;
+  }
+
   li {
     > a{
       position: relative;
       font-size: 13px;
+      height: auto;
+      line-height: 18px;
 
       &:after {
         position: absolute;

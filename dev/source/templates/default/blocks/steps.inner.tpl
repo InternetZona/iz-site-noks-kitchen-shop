@@ -11,7 +11,7 @@
                 <div class="row row--grid">
 
                     {foreach $tvData as $k => $data}
-                        <div class="col l3">
+                        <div class="col s12 l3">
                             <div class="step__item">
                                 <div class="step__icon">
                                     <img src="{$data.icon}">

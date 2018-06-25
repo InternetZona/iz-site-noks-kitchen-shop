@@ -1,9 +1,9 @@
 {assign var=params value=[
     'parent'    => 21
-    ,'filtering'    => [
+    ,'filter'    => [
         'istop'    => 1
     ]
-    ,'limit'    => 3
+    ,'limit'    => 0
     ,'dir'      => 'RAND()'
 ]}
 
@@ -16,22 +16,19 @@
         </div>
         <div class="section__content">
 
-            <div class="row">
-                {$i = 0}
-                {foreach $result.object as $object}
-                    {$responsiveClass=""}
+            <div id="swiper-recomendation" class="swiper-container swiper-content">
+                <div class="swiper-wrapper">
 
-                    {if $i > 1}
-                        {$responsiveClass = "hide-on-med-and-down"}
-                    {elseif $i > 0}
-                        {$responsiveClass = "hide-on-small-and-down"}
-                    {/if}
+                    {foreach $result.object as $object}
+                        <div class="swiper-slide">
+                            {include file="components/product/item.tpl" object=$object}
+                        </div>
+                    {/foreach}
 
-                    <div class="col s12 m6 l4 {$responsiveClass}">
-                        {include file="components/product/item.tpl" object=$object}
-                    </div>
-                    {$i = $i + 1}
-                {/foreach}
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>

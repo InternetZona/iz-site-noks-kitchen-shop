@@ -642,43 +642,13 @@ button.swiper-pagination-bullet {
   }
 }
 
-#swiper-blog{
-  .swiper-button-prev,
-  .swiper-button-next {
-    @media #{$medium-and-up} {
-      display: none;
-    }
-  }
-
-  @media #{$small-and-down} {
-    padding-top: 25px;
-    top: -5px;
-
-    .swiper-button-prev,
-    .swiper-button-next {
-      top: 0;
-      margin-top: 0;
-      height: 25px;
-      outline: 0;
-      background-size: contain;
-    }
-
-    .swiper-button-prev{
-      right: 49%;
-      left: auto;
-    }
-    .swiper-button-next{
-      left: 49%;
-      right: auto;
-    }
-  }
-}
-
+#swiper-blog,
 #swiper-portfolio,
 #swiper-testimonials,
 #swiper-sales,
 #swiper-related,
-#swiper-semi{
+#swiper-semi,
+#swiper-recomendation{
   padding-top: 35px;
   top: -5px;
 

@@ -70,7 +70,8 @@ import Swiper from 'swiper';
       }), 100);
     } else if (
       elem.id === 'swiper-sales' ||
-      elem.id === 'swiper-semi'
+      elem.id === 'swiper-semi' ||
+      elem.id == 'swiper-recomendation'
     ) {
       setTimeout(new Swiper('#' + elem.id, {
         autoplay: false,

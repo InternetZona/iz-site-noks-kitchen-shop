@@ -233,12 +233,15 @@
       left:0;
       right: 0;
       bottom: 0;
-      opacity: 0;
       padding: 0.5rem;
       transition: opacity .25s ease 0s;
       background: rgba(white, .55);
       font-size: 13px;
       font-weight: bold;
+
+      @media #{$large-and-up} {
+        opacity: 0;
+      }
 
       > ul {
         margin: 0;
@@ -349,7 +352,7 @@
         opacity: 1;
         height: 30px;
         line-height: 26px;
-        padding: 0 30px;
+        padding: 0 20px;
         border-radius: 0;
         box-shadow: none!important;
 
@@ -360,6 +363,7 @@
           opacity: .9;
         }
       }
+
       &__bar {
 
         @media #{$large-and-up} {

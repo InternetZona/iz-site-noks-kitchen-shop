@@ -11,6 +11,7 @@
             {($properties.username) ? "<b>Имя:</b> {$properties.username}<br>" : ""}
             {($properties.email) ? "<b>E-mail:</b> {$properties.email}<br>" : ""}
             {($properties.phone) ? "<b>Телефон:</b> {$properties.phone}<br>" : ""}
+            {($properties.address) ? "<b>Адрес доставки:</b> {$properties.address}<br>" : ""}
         </td>
         <td style="font-size:12px;border-right:1px solid #dddddd;border-bottom:1px solid #dddddd;text-align:left;padding:7px">
             {($properties.comment) ? "{$properties.comment|default:"-"}" : ""}
