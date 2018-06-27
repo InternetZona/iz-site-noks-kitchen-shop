@@ -46,7 +46,7 @@
 
             {$url = ({field name=parent} != 23) ? $modx->makeUrl({field name=parent}) : $modx->makeUrl({field name=id}) }
 
-            <a href="{$url}" class="button-reset">Сбросить фильтр</a>
+            <a href="{$url}" class="button-reset" onclick="yaCounter49093180.reachGoal('filtr');">Сбросить фильтр</a>
         </li>
     </ul>
 </div>

@@ -171,7 +171,7 @@
                                                         <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
                                                     </div>
                                                     <div class="col s12">
-                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}">Купить</a>
+                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
                                                     </div>
                                                 </div>
                                             </div>
