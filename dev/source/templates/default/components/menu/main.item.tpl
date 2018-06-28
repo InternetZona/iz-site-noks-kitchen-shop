@@ -33,6 +33,7 @@
             <ul class="nav-inner">
                 {snippet name="Wayfinder" params=[
                     'startId'   => 12
+                    ,'includeDocs'  => $articles|default:''
                     ,'outerTpl'  => 'wf.outer.tpl'
                     ,'level'     => 1
                     ,'limit'    => 5

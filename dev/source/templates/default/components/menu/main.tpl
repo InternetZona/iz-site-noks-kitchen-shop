@@ -4,7 +4,7 @@
         <div id="dd-catalog-style" class="dropdown-content">
             <div class="row row--grid">
 
-                {include file="components/menu/main.item.tpl" tv="style" title="Стиль"}
+                {include file="components/menu/main.item.tpl" tv="style" title="Стиль" articles="220"}
                 {include file="components/navbar/products.preview.tpl"}
 
             </div>
@@ -15,7 +15,7 @@
         <div id="dd-catalog-material" class="dropdown-content">
             <div class="row row--grid">
 
-                {include file="components/menu/main.item.tpl" tv="material" title="Материал"}
+                {include file="components/menu/main.item.tpl" tv="material" title="Материал" articles="130, 219"}
                 {include file="components/navbar/products.preview.tpl"}
 
             </div>
@@ -26,7 +26,7 @@
         <div id="dd-catalog-color" class="dropdown-content">
             <div class="row row--grid">
 
-                {include file="components/menu/main.item.tpl" tv="colour" title="Цвет"}
+                {include file="components/menu/main.item.tpl" tv="colour" title="Цвет" articles="79, 220"}
                 {include file="components/navbar/products.preview.tpl"}
 
             </div>
@@ -48,7 +48,7 @@
         <div id="dd-catalog-products" class="dropdown-content">
             <div class="row row--grid">
 
-                {include file="components/menu/main.item2.tpl"}
+                {include file="components/menu/main.item2.tpl" articles="129"}
                 {include file="components/navbar/products.preview.tpl"}
 
             </div>
