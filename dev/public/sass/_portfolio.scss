@@ -1,4 +1,5 @@
-.portfolio{
+.portfolio,
+.catalog {
   &-feed{
     margin-bottom: 2rem;
 
@@ -21,6 +22,10 @@
 
     figure{
       margin: 0;
+
+      figcaption {
+        font-size: .85rem;
+      }
     }
 
     &__title {
