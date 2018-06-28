@@ -24,7 +24,7 @@
                     <li class="app valign-wrapper">
                         <span class="text-primary">
                             <i class="fab fa-skype fa-fw"></i>
-                        </span> Skype_noks
+                        </span> Мебель Нокс
                     </li>
                 </ul>
             </div>
