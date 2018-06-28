@@ -33,15 +33,7 @@
         </div>
     </li>
     <li>
-        <a  href='#' class="dropdown-trigger dd-panel" data-target='dd-catalog-fasade'>Каталог фасадов</a>
-        <div id="dd-catalog-fasade" class="dropdown-content">
-            <div class="row row--grid">
-
-                {include file="components/menu/main.item.tpl" tv="fasade_filter" title="Фасады"}
-                {include file="components/navbar/products.preview.tpl"}
-
-            </div>
-        </div>
+        <a href="{$modx->makeUrl(269)}">Каталог фасадов</a>
     </li>
     <li>
         <a  href='#' class="dropdown-trigger dd-panel" data-target='dd-catalog-products'>Сопутствующие товары</a>
