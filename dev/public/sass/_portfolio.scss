@@ -1,5 +1,6 @@
 .portfolio,
-.catalog {
+.catalog,
+.fasade {
   &-feed{
     margin-bottom: 2rem;
 
@@ -77,5 +78,23 @@
   &__item {
     padding: 0;
     display: inline-block;
+  }
+}
+
+.fasade{
+
+  &-feed {
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    .swiper-container {
+      padding-top: 2rem;
+    }
+
+    .box-item{
+      margin-bottom: 0;
+    }
   }
 }

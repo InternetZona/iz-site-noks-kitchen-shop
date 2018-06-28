@@ -95,7 +95,9 @@ import Swiper from 'swiper';
           prevEl: '.swiper-button-prev',
         },
       }), 100);
-    } else if ((-1 !== elem.id.indexOf('swiper-gallery')) || (-1 !== elem.id.indexOf('swiper-catalog'))) {
+    } else if ((-1 !== elem.id.indexOf('swiper-gallery')) ||
+      (-1 !== elem.id.indexOf('swiper-catalog')) ||
+      (-1 !== elem.id.indexOf('swiper-fasade')) ) {
       setTimeout(new Swiper('#' + elem.id, {
         autoplay: false,
         slidesPerView: 5,
