@@ -63,9 +63,10 @@
 
                             </div>
                         </div>
+
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
                             {$price = {tv name=price_discount}|default:{tv name=price}}
-                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}">Купить</a>
+                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -168,10 +169,27 @@
                                                 <div class="row">
                                                     <div class="col s12">
                                                         <div class="product-equip__title hide-on-med-and-up">Цена</div>
-                                                        <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+
+                                                        {if $data.price_discount}
+                                                            <div class="product--sale-info">
+                                                                <div class="old-price">
+                                                                    <span class="product__cost">
+                                                                        {$data.price|number_format:0:'.':' '}
+                                                                    </span>
+                                                                    <span class="bonus-sum">экономия {($data.price - $data.price_discount)|number_format:0:'.':' '}</span>
+                                                                </div>
+                                                                <span class="product__cost">
+                                                                    {$data.price_discount|number_format:0:'.':' '}
+                                                                </span>
+                                                            </div>
+                                                            {else}
+
+                                                            <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+
+                                                        {/if}
                                                     </div>
                                                     <div class="col s12">
-                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
+                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-discount="{$data.price_discount}" data-price="{$data.price}" onclick="yaCounter49093180.reachGoal('buy');">Заказать</a>
                                                     </div>
                                                 </div>
                                             </div>
