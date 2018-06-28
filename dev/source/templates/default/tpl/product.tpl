@@ -66,7 +66,7 @@
 
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
                             {$price = {tv name=price_discount}|default:{tv name=price}}
-                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}">Заказать</a>
+                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}" onclick="yaCounter49093180.reachGoal('buy');">Заказать</a>
                         </div>
                     </div>
                 </div>
