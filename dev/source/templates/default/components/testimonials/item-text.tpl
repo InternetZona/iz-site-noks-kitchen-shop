@@ -22,6 +22,7 @@
                             {/for}
                         </span>
                 </p>
+                <img src="{$data.image}" class="responsive-img inner-image">
             </li>
         </ul>
     </div>
