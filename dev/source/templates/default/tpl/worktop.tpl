@@ -15,11 +15,13 @@
                 <div class="catalog-feed">
                     <div class="catalog-feed__title">{$data.title}</div>
 
-                    <div id="swiper-catalog-{$data@index}" class="swiper-container swiper-content catalog-feed__content">
-                        <div class="swiper-wrapper gallery-photoswipe">
-                            {foreach $items as $row}
+                    <div class="catalog-feed__content row row--grid">
 
-                                <figure class="swiper-slide center-align">
+                        {foreach $items as $row}
+
+                            <div class="col s12 m4 xl3">
+
+                                <figure class="center-align">
 
                                     {snippet name="pThumb" params=[
                                     "input" => $row.image
@@ -42,10 +44,9 @@
                                         </ul>
                                     </figcaption>
                                 </figure>
-                            {/foreach}
-                        </div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
+                            </div>
+                        {/foreach}
+
                     </div>
                 </div>
 

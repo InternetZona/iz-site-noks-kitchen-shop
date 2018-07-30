@@ -19,34 +19,31 @@
                         {$data.description}
                     </div>
 
-                    <div id="swiper-fasade-{$data@index}" class="swiper-container swiper-content">
-                        <div class="swiper-wrapper">
+                    <div class="row row--grid">
 
-                            {foreach $items as $item}
-                                <div class="swiper-slide">
-                                    <div class="card box-item">
-                                        <div class="card-image">
+                        {foreach $items as $item}
 
-                                            {snippet name="pThumb" params=[
-                                            "input" => $item.image
-                                            ,"options" => "&w=320&h=480&zc=1&aoe=0&far=0&q=80"
-                                            ] assign=thumbImage}
+                            <div class="col s6 m4 l3 xl2">
+                                <div class="card box-item">
+                                    <div class="card-image">
 
-                                            <img src="{$thumbImage}" class="responsive-img">
-                                        </div>
-                                        <div class="card-content">
+                                        {snippet name="pThumb" params=[
+                                        "input" => $item.image
+                                        ,"options" => "&w=320&h=480&zc=1&aoe=0&far=0&q=80"
+                                        ] assign=thumbImage}
+
+                                        <img src="{$thumbImage}" class="responsive-img">
+                                    </div>
+                                    <div class="card-content">
                                             <span class="card-title">
                                                 <a href="{$modx->makeUrl($item.product)}">{$item.title}</a>
                                             </span>
-                                        </div>
                                     </div>
                                 </div>
-                            {/foreach}
+                            </div>
 
-                        </div>
+                        {/foreach}
 
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-button-next"></div>
                     </div>
                 </div>
 

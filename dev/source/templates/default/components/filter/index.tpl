@@ -36,12 +36,14 @@
 
             {/foreach}
         {/if}
-        <li class="filter__item">
+        {if {field name=template} != 18 AND {tv name=productType} != 5}
+            <li class="filter__item">
 
-            {include file="components/filter/range.tpl"}
+                {include file="components/filter/range.tpl"}
 
-            <label class="filter__label">Цена</label>
-        </li>
+                <label class="filter__label">Цена</label>
+            </li>
+        {/if}
         <li class="filter__item">
 
             {$url = ({field name=parent} != 23) ? $modx->makeUrl({field name=parent}) : $modx->makeUrl({field name=id}) }

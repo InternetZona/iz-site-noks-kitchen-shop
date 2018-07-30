@@ -331,3 +331,12 @@
     border: 2px solid #eee;
   }
 }
+
+.fasade-feed {
+  .row {
+    > .col {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
