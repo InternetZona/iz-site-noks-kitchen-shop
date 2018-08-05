@@ -32,9 +32,11 @@
                                 Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{{tv name=price_discount}|default:{tv name=price}|number_format:0:',':' '}</span>
                             {/if}
                         </li>
-                        {if $productionTime = {tv name=productionTime}}
-                            <li>Срок изготовления: <span>{$productionTime}</span></li>
+
+                        {if {field name=template} == 9}
+                            <li>Цена включает: <span>фасады, корпус, цоколь, ножки, ручки, петли, ящики, сушка</span></li>
                         {/if}
+
                     </ul>
 
                     {include file="components/product/params.tpl" product=$modx->resource}
