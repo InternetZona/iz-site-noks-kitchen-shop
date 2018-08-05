@@ -125,6 +125,10 @@
         }
       }
     }
+
+    @media #{$large-and-up} {
+      cursor: default;
+    }
   }
 
   &-inner {
