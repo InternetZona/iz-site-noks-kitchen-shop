@@ -25,6 +25,9 @@
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-button-next"></div>
             </div>
+            <div class="center-align">
+                <a href="{$modx->makeUrl(273)}" class="button-action" style="width: auto;">Все бренды</a>
+            </div>
         </div>
     </div>
 
