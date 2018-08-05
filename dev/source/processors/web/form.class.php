@@ -38,7 +38,9 @@ class modWebFormProcessor extends modSiteWebFormProcessor
     {
         parent::sendNotification();
 
-        if ($this->getProperty('template') == 'order') {
+        $template = $this->getProperty('template');
+
+        if ($template == 'order' || $template == 'checkout') {
 
             if ($contragentEmail = $this->getProperty('email', false)
                 AND filter_var($contragentEmail, FILTER_VALIDATE_EMAIL)
@@ -61,7 +63,13 @@ class modWebFormProcessor extends modSiteWebFormProcessor
             $this->modx->mail->set(modMail::MAIL_BODY, $message);
             $this->modx->mail->set(modMail::MAIL_FROM, $this->modx->getOption('emailsender'));
             $this->modx->mail->set(modMail::MAIL_FROM_NAME, $this->getProperty('emailsenderName'));
-            $this->modx->mail->set(modMail::MAIL_SUBJECT, $this->getProperty('contragentEmailSubject'));
+
+            if ($this->getProperty('template') == 'checkout') {
+                $this->modx->mail->set(modMail::MAIL_SUBJECT, 'Оплата заказа.');
+            } else {
+                $this->modx->mail->set(modMail::MAIL_SUBJECT, $this->getProperty('contragentEmailSubject'));
+            }
+
             $this->modx->mail->address('to', $this->getProperty('email'));
             $this->modx->mail->setHTML(true);
             if (!$this->modx->mail->send()) {
