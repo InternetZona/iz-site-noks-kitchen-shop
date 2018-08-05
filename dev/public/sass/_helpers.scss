@@ -286,11 +286,6 @@
   transition: all .3s ease 0s;
   border-radius: 2px;
 
-  @media #{$small-and-down} {
-    display: none!important;
-    opacity: 0;
-  }
-
   &:hover {
     opacity: 1;
   }
