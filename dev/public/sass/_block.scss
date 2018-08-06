@@ -40,4 +40,32 @@
   &-sales{
     padding-top: 30px;
   }
+
+  &-free{
+    .modal-trigger{
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    img {
+      z-index: 0!important;
+    }
+
+    .card-content {
+      p{
+        color: $off-black;
+      }
+    }
+
+    &:focus,
+    &:hover{
+      .card-content {
+        p{
+          color: $secondary-color;
+        }
+      }
+    }
+  }
 }

@@ -33,4 +33,5 @@
 
 {block name=modals append}
     {include file="components/modals/testimonials.tpl"}
+    {include file="components/modals/free.tpl"}
 {/block}

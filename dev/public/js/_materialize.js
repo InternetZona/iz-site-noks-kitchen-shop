@@ -52,6 +52,22 @@ const Plyr = require('plyr');
           }
         };
         break;
+      case 'modal-free':
+
+        config = {
+          onOpenStart: function() {
+            let trigger = this._openingTrigger,
+              index = trigger.dataset.contentId,
+              content = freeList[index] || '';
+
+            this.el.querySelector('.modal-content .content-wrapper').innerHTML = content;
+          },
+          onCloseEnd: function() {
+            this.el.querySelector('.modal-content .content-wrapper').innerHTML = "";
+          }
+        };
+
+        break;
       default:
     }
 
