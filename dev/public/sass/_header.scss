@@ -12,6 +12,7 @@
     display: inline-block;
     width: 100%;
     height: 82px;
+    position: relative;
 
     @media #{$small-and-down} {
       margin-top: 9px;
@@ -20,6 +21,26 @@
     &-brand {
       display: inline-block;
       vertical-align: middle;
+    }
+
+    small {
+      position: absolute;
+      bottom: 3px;
+      display: block;
+      padding: 0 1px;
+      background: white;
+      font-weight: bold;
+      color: #a6346c;
+
+      @media #{$large-and-up} {
+        font-size: .9rem;
+        right: 0;
+      }
+
+      @media #{$extra-large-and-up} {
+        font-size: .95rem;
+        right: 7px;
+      }
     }
 
     &-text{

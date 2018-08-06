@@ -5,6 +5,7 @@
             <img class="responsive-img" src="{$template_url}img/{$image}" alt="{config name=site_name}">
         </span>
         <span class="header__logo-text">Кухни из<br>массива</span>
+        <small>С фасадами из Италии</small>
     </div>
 
 {else}
