@@ -25,6 +25,11 @@
   }
 
   &-helps{
+
+    &:hover{
+      @extend .z-depth-2;
+    }
+
     .card-image{
       padding-left: 2rem;
       padding-right: 1rem;
@@ -34,6 +39,11 @@
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
+      color: $off-black!important;
+    }
+
+    p{
+      color: $off-black!important;
     }
   }
 
