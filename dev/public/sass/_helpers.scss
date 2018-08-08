@@ -108,6 +108,17 @@
     height: auto;
   }
 
+  .image-wrapper {
+    float: left;
+    width: 100%;
+
+    @media #{$large-and-up} {
+      max-width: 50%;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
   .h1,.h2,.h3,.h4,.h5,.h6,
   h1,h2,h3,h4,h5,h6 {
     @extend .text--bold;

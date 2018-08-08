@@ -16,89 +16,95 @@ jQuery(function($) {
         $form = $this.closest('form'),
         urlParams = [];
 
-      $form.on('click', function() {
-        let $this = $(this);
+      if ($form.attr('id') === 'list-controller') {
 
-        $this.find('.filter__popup.open').removeClass('open');
-      });
+        $form.submit();
+      } else {
 
-      $.each($form.find('select'), function() {
-        let $this = $(this),
-          value = $this.prop('value') || '';
+        $form.on('click', function() {
+          let $this = $(this);
 
-        if ('' !== value) {
-          urlParams.push({
-            key: $this.attr('name'),
-            value: value,
-          });
-        }
-      });
+          $this.find('.filter__popup.open').removeClass('open');
+        });
 
-      let query = urlParams.map(function(elem){
-        return encodeURIComponent(elem.key) + '=' + elem.value;
-      }).join('&');
+        $.each($form.find('select'), function() {
+          let $this = $(this),
+            value = $this.prop('value') || '';
 
-      let url = getQueryUrl(query);
+          if ('' !== value) {
+            urlParams.push({
+              key: $this.attr('name'),
+              value: value,
+            });
+          }
+        });
 
-      if (location.href !== url) {
+        let query = urlParams.map(function(elem){
+          return encodeURIComponent(elem.key) + '=' + elem.value;
+        }).join('&');
 
-        if ($this.hasClass('filter__control--sorting')) {
-          location.href = url;
-        } else {
+        let url = getQueryUrl(query);
 
-          let setup = Array({
-            key: 'where[template]',
-            value: $form.data('tpl'),
-          },{
-            key: 'parent',
-            value: $form.data('catalog'),
-          },{
-            key: 'action',
-            value: 'web/catalog/getdata',
-          }).map(function(elem){
-            return encodeURIComponent(elem.key) + '=' + elem.value;
-          }).join('&');
+        if (location.href !== url) {
+
+          if ($this.hasClass('filter__control--sorting')) {
+            location.href = url;
+          } else {
+
+            let setup = Array({
+              key: 'where[template]',
+              value: $form.data('tpl'),
+            },{
+              key: 'parent',
+              value: $form.data('catalog'),
+            },{
+              key: 'action',
+              value: 'web/catalog/getdata',
+            }).map(function(elem){
+              return encodeURIComponent(elem.key) + '=' + elem.value;
+            }).join('&');
 
 
-          $.ajax({
-            url: 'assets/components/modcatalog/connectors/connector.php',
-            data: query + '&' + setup,
-            method: 'get',
-            beforeSend: function() {
-              let tpl = '<div class="filter__popup">Поиск товаров ...</div>',
-                $instance = $this.closest('.select-wrapper').find('.filter__popup');
+            $.ajax({
+              url: 'assets/components/modcatalog/connectors/connector.php',
+              data: query + '&' + setup,
+              method: 'get',
+              beforeSend: function() {
+                let tpl = '<div class="filter__popup">Поиск товаров ...</div>',
+                  $instance = $this.closest('.select-wrapper').find('.filter__popup');
 
-              if ($instance.length > 0) {
-                $instance.html('Поиск товаров ...');
-              } else {
-                $instance = $(tpl);
-                $this.closest('.select-wrapper').append($instance);
-              }
-
-              $instance.addClass('open');
-            },
-
-            success: function(response) {
-              let objectCount =  Object.keys(response.object).length,
-                total = 0;
-
-              if (objectCount > 0 && response.total > 0) {
-                total = (objectCount > response.total) ? objectCount : response.total;
-              }
-
-              let $instanse = $this.closest('.select-wrapper').find('.filter__popup');
-
-              if ($instanse.length > 0) {
-                let html = 'Найдено товаров: <strong class="text--bold filter--total">' + total + '</strong>';
-
-                if (total > 0) {
-                  html += '<a href="' + url + '">Показать</a>';
+                if ($instance.length > 0) {
+                  $instance.html('Поиск товаров ...');
+                } else {
+                  $instance = $(tpl);
+                  $this.closest('.select-wrapper').append($instance);
                 }
 
-                $instanse.html(html);
+                $instance.addClass('open');
+              },
+
+              success: function(response) {
+                let objectCount =  Object.keys(response.object).length,
+                  total = 0;
+
+                if (objectCount > 0 && response.total > 0) {
+                  total = (objectCount > response.total) ? objectCount : response.total;
+                }
+
+                let $instanse = $this.closest('.select-wrapper').find('.filter__popup');
+
+                if ($instanse.length > 0) {
+                  let html = 'Найдено товаров: <strong class="text--bold filter--total">' + total + '</strong>';
+
+                  if (total > 0) {
+                    html += '<a href="' + url + '">Показать</a>';
+                  }
+
+                  $instanse.html(html);
+                }
               }
-            }
-          });
+            });
+          }
         }
       }
     });

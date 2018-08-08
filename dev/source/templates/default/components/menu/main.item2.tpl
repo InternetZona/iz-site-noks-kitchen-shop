@@ -35,15 +35,15 @@
 
         <div class="dd-panel__title left-align">Полезные советы</div>
 
-        <ul class="nav-inner">
+        <ul class="nav-inner bolder">
             {snippet name="Wayfinder" params=[
-                'startId'   => 12
-                ,'includeDocs'  => $articles|default:''
-                ,'outerTpl'  => 'wf.outer.tpl'
-                ,'level'     => 1
-                ,'limit'    => 5
-                ,'sortBy'   => 'publishedon'
-                ,'sortOrder'    => 'desc'
+            'startId'   => 12
+            ,'includeDocs'  => implode(',', $articles)
+            ,'outerTpl'  => 'wf.outer.tpl'
+            ,'level'     => 1
+            ,'limit'    => 5
+            ,'sortBy'   => 'publishedon'
+            ,'sortOrder'    => 'desc'
             ]}
         </ul>
 
