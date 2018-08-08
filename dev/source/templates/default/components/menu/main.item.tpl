@@ -2,6 +2,15 @@
     {if $filterValues = $filter->getMany('FilterValues')}
 
         <div class="col col--width-2">
+            <div class="dd-panel__title left-align">
+
+                {if {field name=id} == 24}
+                    <a class="active" href="{$modx->makeUrl(24)}">Все кухни</a>
+                    {else}
+                    <a href="{$modx->makeUrl(24)}">Все кухни</a>
+                {/if}
+
+            </div>
 
             <div class="dd-panel__title left-align">{$title}</div>
 
@@ -30,9 +39,10 @@
 
             <div class="dd-panel__title left-align">Полезные советы</div>
 
-            <ul class="nav-inner">
+            <ul class="nav-inner bolder">
                 {snippet name="Wayfinder" params=[
                     'startId'   => 12
+                    ,'includeDocs'  => implode(',', $articles)
                     ,'outerTpl'  => 'wf.outer.tpl'
                     ,'level'     => 1
                     ,'limit'    => 5

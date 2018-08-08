@@ -1,7 +1,7 @@
 {assign var=params value=[
 'parent'    => 21
-,'filter'    => [
-    'istop'    => 1
+,'where' => [
+    'id:IN' => explode('||', $ids)
 ]
 ,'limit'    => 2
 ,'dir'      => 'RAND()'

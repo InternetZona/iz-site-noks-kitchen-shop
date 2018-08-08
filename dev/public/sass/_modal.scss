@@ -104,6 +104,12 @@
             color: $primary-color;
           }
         }
+
+        .inner-image {
+          display: block!important;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
       }
     }
 
@@ -148,7 +154,8 @@
   }
 }
 
-#modal-policy {
+#modal-policy,
+#modal-free {
   .modal-close {
     top: 2rem;
   }

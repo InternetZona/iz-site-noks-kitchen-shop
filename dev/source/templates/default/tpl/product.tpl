@@ -28,13 +28,18 @@
                                     <span class="product--economy">экономия {({tv name=price} - $discount)|number_format:0:',':' '}</span>
                                 </div>
                                 Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{$discount|number_format:0:',':' '}</span>
+
+                                {$discountPersent = 100 - (100 * $discount) / {tv name=price}}
+                                <span class="badge--discount">скидка -{$discountPersent|number_format:0:',':' '|cat:"%"}</span>
                                 {else}
                                 Стоимость: {if {field name=template} == 9}от{/if} <span class="product__cost">{{tv name=price_discount}|default:{tv name=price}|number_format:0:',':' '}</span>
                             {/if}
                         </li>
-                        {if $productionTime = {tv name=productionTime}}
-                            <li>Срок изготовления: <span>{$productionTime}</span></li>
+
+                        {if {field name=template} == 9}
+                            <li>Цена включает: <span>фасады, корпус, цоколь, ножки, ручки, петли, ящики, сушка</span></li>
                         {/if}
+
                     </ul>
 
                     {include file="components/product/params.tpl" product=$modx->resource}
@@ -63,9 +68,10 @@
 
                             </div>
                         </div>
+
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
                             {$price = {tv name=price_discount}|default:{tv name=price}}
-                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}">Купить</a>
+                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}" onclick="yaCounter49093180.reachGoal('buy');">Заказать</a>
                         </div>
                     </div>
                 </div>
@@ -168,10 +174,27 @@
                                                 <div class="row">
                                                     <div class="col s12">
                                                         <div class="product-equip__title hide-on-med-and-up">Цена</div>
-                                                        <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+
+                                                        {if $data.price_discount}
+                                                            <div class="product--sale-info">
+                                                                <div class="old-price">
+                                                                    <span class="product__cost">
+                                                                        {$data.price|number_format:0:'.':' '}
+                                                                    </span>
+                                                                    <span class="bonus-sum">экономия {($data.price - $data.price_discount)|number_format:0:'.':' '}</span>
+                                                                </div>
+                                                                <span class="product__cost">
+                                                                    {$data.price_discount|number_format:0:'.':' '}
+                                                                </span>
+                                                            </div>
+                                                            {else}
+
+                                                            <span class="product__cost">{$data.price|number_format:0:',':' '}</span>
+
+                                                        {/if}
                                                     </div>
                                                     <div class="col s12">
-                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$data.price}">Купить</a>
+                                                        <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-discount="{$data.price_discount}" data-price="{$data.price}" onclick="yaCounter49093180.reachGoal('buy');">Заказать</a>
                                                     </div>
                                                 </div>
                                             </div>

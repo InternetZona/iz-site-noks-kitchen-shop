@@ -68,7 +68,7 @@
                 </div>
             </div>
             <div class="col s6 pull-s6 m4 valign-wrapper">
-                <a href="#" class="product__order-btn" data-id="{$object.id}" data-price="{$object.tvs.price_discount.value|default:$object.tvs.price.value}">Заказать</a>
+                <a href="#" class="product__order-btn" data-id="{$object.id}" data-price="{$object.tvs.price_discount.value|default:$object.tvs.price.value}" onclick="yaCounter49093180.reachGoal('zakaz');">Заказать</a>
             </div>
         </div>
     </div>

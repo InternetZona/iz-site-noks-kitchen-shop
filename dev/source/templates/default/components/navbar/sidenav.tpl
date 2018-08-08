@@ -28,10 +28,7 @@
                 </div>
             </li>
             <li>
-                <div class="collapsible-header">Каталог фасадов <span class="right"><i class="fas fa-angle-right"></i></span></div>
-                <div class="collapsible-body">
-                    {include file="components/menu/sidenav.item.tpl" tv="fasade_filter"}
-                </div>
+                <a href="{$modx->makeUrl(269)}">Каталог фасадов</a>
             </li>
             <li>
                 <div class="collapsible-header">Сопутствующие товары <span class="right"><i class="fas fa-angle-right"></i></span></div>

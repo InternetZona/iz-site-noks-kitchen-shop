@@ -3,7 +3,7 @@
 {if $tvData && is_array($tvData)}
     <div class="section block-free">
         <div class="section__title">
-            Помощь покупателю
+            Почему выбирают нас
         </div>
         <div class="section_content">
             <div class="row row--grid">

@@ -240,6 +240,53 @@
           }
         }
 
+        .product--sale-info {
+          position: relative;
+
+          .old-price{
+
+            @media #{$medium-and-up} {
+              > span {
+                margin-left: 0!important;
+                display: inline-block;
+              }
+            }
+
+            .product__cost {
+              color: #b3b3b3;
+              font-size: 14px;
+              text-decoration: line-through;
+              font-weight: normal;
+              padding-right: 10px;
+
+              &:after {
+                padding-right: 2px;
+                top: -1px;
+              }
+            }
+
+            .bonus-sum{
+              @extend .product__cost;
+              margin-left: 12px;
+              background: #fef30c;
+              font-size: 11px;
+              padding-left: 2px;
+              text-decoration: none;
+              color: $off-black;
+              position: relative;
+              top: -2px;
+
+              @media #{$medium-and-up} {
+                margin-right: -15px!important;
+              }
+
+              &:after {
+                top: 0;
+              }
+            }
+          }
+        }
+
         .product__order-btn {
           @extend .btn-flat;
           @extend .btn-small;

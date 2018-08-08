@@ -77,12 +77,12 @@
                 <div class="col offset-m1 m3 l5 xl4 valign-wrapper">
                     <ul class="header__action">
                         <li class="header__action-item">
-                            <a href="#modal-order-visit" class="button-action modal-trigger">
+                            <a href="#modal-order-visit" class="button-action modal-trigger" onclick="yaCounter49093180.reachGoal('zamer');">
                                 <i class="icon icon--ruler"></i>
                                 Заказать замер</a>
                         </li>
                         <li class="header__action-item">
-                            <a href="#modal-order-project" class="button-action modal-trigger">
+                            <a href="#modal-order-project" class="button-action modal-trigger" onclick="yaCounter49093180.reachGoal('proekt');">
                                 <i class="icon icon--project"></i>
                                 Заказать проект</a>
                         </li>
@@ -101,10 +101,10 @@
                 <div class="col hide-on-med-and-down hide-on-large-only show-on-extra-large xl2 valign-wrapper right-align">
                     <ul class="header__link">
                         <li>
-                            <a href="#modal-callback" class="header__link-item modal-trigger">Заказать звонок</a>
+                            <a href="#modal-callback" class="header__link-item modal-trigger" onclick="yaCounter49093180.reachGoal('call');">Заказать звонок</a>
                         </li>
                         <li>
-                            <a href="#modal-feedback" class="header__link-item modal-trigger">Написать сообщение</a>
+                            <a href="#modal-feedback" class="header__link-item modal-trigger" onclick="yaCounter49093180.reachGoal('soob');">Написать сообщение</a>
                         </li>
                     </ul>
                 </div>

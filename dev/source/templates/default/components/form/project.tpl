@@ -27,6 +27,6 @@
         <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
     </p>
     <div class="center-align">
-        <button type="submit" class="form__submit form__submit--inverse">Отправить</button>
+        <button type="submit" class="form__submit form__submit--inverse" onclick="yaCounter49093180.reachGoal('proekt_send');">Отправить</button>
     </div>
 </form>

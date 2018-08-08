@@ -103,6 +103,22 @@
     font-weight: 700!important;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .image-wrapper {
+    float: left;
+    width: 100%;
+
+    @media #{$large-and-up} {
+      max-width: 50%;
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+  }
+
   .h1,.h2,.h3,.h4,.h5,.h6,
   h1,h2,h3,h4,h5,h6 {
     @extend .text--bold;
@@ -282,11 +298,6 @@
   transition: all .3s ease 0s;
   border-radius: 2px;
 
-  @media #{$small-and-down} {
-    display: none!important;
-    opacity: 0;
-  }
-
   &:hover {
     opacity: 1;
   }
@@ -325,5 +336,46 @@
     text-align: center;
     font-size: 1.1rem;
     border: 2px solid #eee;
+  }
+}
+
+.fasade-feed {
+  .row {
+    > .col {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+.brand-list{
+  margin-top: 0;
+
+  &__item {
+    margin-bottom: 20px;
+    padding: 1rem;
+    border: 2px solid #f1f1f1;
+
+    .row {
+      margin-bottom: 0;
+      @extend .valign-wrapper;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    color: $primary-color;
+
+    &:hover,
+    &:focus {
+      color: $secondary-color;
+    }
+  }
+
+  &__image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

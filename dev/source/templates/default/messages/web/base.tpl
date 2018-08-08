@@ -12,7 +12,7 @@
     <p style="margin-top: 0;margin-bottom: 20px;">
         ---<br>
         С уважением,<br>
-        Команда НОКС
+        Команда НОКС МЕБЕЛЬ
     </p>
 
 {/block}

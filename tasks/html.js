@@ -17,7 +17,7 @@ gulp.task('html', () =>
       removeComments: true,
       collapseWhitespace: true,
       collapseBooleanAttributes: true,
-      removeAttributeQuotes: true,
+      removeAttributeQuotes: false,
       removeRedundantAttributes: false,
       removeEmptyAttributes: true,
       removeScriptTypeAttributes: true,

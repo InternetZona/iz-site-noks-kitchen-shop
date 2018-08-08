@@ -25,6 +25,11 @@
   }
 
   &-helps{
+
+    &:hover{
+      @extend .z-depth-2;
+    }
+
     .card-image{
       padding-left: 2rem;
       padding-right: 1rem;
@@ -34,6 +39,11 @@
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
+      color: $off-black!important;
+    }
+
+    p{
+      color: $off-black!important;
     }
   }
 
@@ -166,6 +176,10 @@
           .rate{
             color: $primary-color;
           }
+        }
+
+        .inner-image {
+          display: none;
         }
       }
     }
@@ -518,6 +532,11 @@
         margin-top: 1rem;
       }
     }
+  }
+
+  &-brand {
+    margin: 0;
+    @extend .z-depth-0;
   }
 
 }

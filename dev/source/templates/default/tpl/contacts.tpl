@@ -24,7 +24,7 @@
                     <li class="app valign-wrapper">
                         <span class="text-primary">
                             <i class="fab fa-skype fa-fw"></i>
-                        </span> Skype_noks
+                        </span> Мебель Нокс
                     </li>
                 </ul>
             </div>
@@ -32,7 +32,7 @@
         <div class="col s12 m12 l4 valign-wrapper">
             <div class="contacts-area width-overlay">
 
-                <a href="#modal-feedback" class="modal-trigger button">Написать письмо</a>
+                <a href="#modal-feedback" class="modal-trigger button" onclick="yaCounter49093180.reachGoal('write');">Написать письмо</a>
 
             </div>
         </div>

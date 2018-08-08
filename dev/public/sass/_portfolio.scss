@@ -1,4 +1,6 @@
-.portfolio{
+.portfolio,
+.catalog,
+.fasade {
   &-feed{
     margin-bottom: 2rem;
 
@@ -21,6 +23,10 @@
 
     figure{
       margin: 0;
+
+      figcaption {
+        font-size: .85rem;
+      }
     }
 
     &__title {
@@ -41,10 +47,20 @@
       opacity: .75;
       transition: opacity .3s ease-in-out;
       display: inline-block;
+      position: relative;
 
       &:hover,
       &:focus{
         opacity: 1;
+      }
+
+      .item__zoom {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        padding:5px;
+        color: $off-black;
+        background: rgba(white, .5);
       }
     }
   }
@@ -72,5 +88,23 @@
   &__item {
     padding: 0;
     display: inline-block;
+  }
+}
+
+.fasade{
+
+  &-feed {
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    .swiper-container {
+      padding-top: 2rem;
+    }
+
+    .box-item{
+      margin-bottom: 0;
+    }
   }
 }

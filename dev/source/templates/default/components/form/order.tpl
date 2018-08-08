@@ -1,4 +1,4 @@
-<form name="order" class="form form--ajax" autocomplete="off">
+<form name="order" class="form form--ajax" autocomplete="off" data-order="{$smarty.now}">
     <input type="hidden" name="action" value="web/form">
     <input type="hidden" name="subject" value="Заказ кухни">
     <div class="form__field">
@@ -31,6 +31,6 @@
         <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
     </p>
     <div class="center-align">
-        <button type="submit" class="form__submit form__submit--inverse">Оформить заказ</button>
+        <button type="submit" class="form__submit form__submit--inverse" onclick="yaCounter49093180.reachGoal('korz');">Оформить заказ</button>
     </div>
 </form>

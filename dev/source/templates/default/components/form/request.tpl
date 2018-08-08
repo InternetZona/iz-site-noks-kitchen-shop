@@ -25,7 +25,7 @@
         </div>
         <div class="col s12 m4 l2 valign-wrapper">
             <div class="form__field">
-                <button type="submit" class="form__submit">Отправить</button>
+                <button type="submit" class="form__submit" onclick="yaCounter49093180.reachGoal('dizayn');">Отправить</button>
             </div>
         </div>
         <div class="col s12offset-l4 l8">
