@@ -2,15 +2,6 @@
     {if $filterValues = $filter->getMany('FilterValues')}
 
         <div class="col col--width-2">
-            <div class="dd-panel__title left-align">
-
-                {if {field name=id} == 24}
-                    <a class="active" href="{$modx->makeUrl(24)}">Все кухни</a>
-                    {else}
-                    <a href="{$modx->makeUrl(24)}">Все кухни</a>
-                {/if}
-
-            </div>
 
             <div class="dd-panel__title left-align">{$title}</div>
 
@@ -39,16 +30,41 @@
 
             <div class="dd-panel__title left-align">Полезные советы</div>
 
-            <ul class="nav-inner bolder">
-                {snippet name="Wayfinder" params=[
-                    'startId'   => 12
-                    ,'includeDocs'  => implode(',', $articles)
-                    ,'outerTpl'  => 'wf.outer.tpl'
-                    ,'level'     => 1
+            <ul class="nav-inner">
+                {$params = [
+                    'where' => [
+                        'id:IN' => $articles
+                    ]
+                    ,'sort' => 'publishedon'
+                    ,'dir'  => 'desc'
                     ,'limit'    => 5
-                    ,'sortBy'   => 'publishedon'
-                    ,'sortOrder'    => 'desc'
+                    ,'cached'   => true
                 ]}
+
+                {processor action="site/web/resources/getdata" ns="modxsite" params=$params assign=rotationResult}
+
+                {if $rotationResult.success && $rotationResult.count > 0}
+
+                    {foreach $rotationResult.object as $object}
+
+                        {if $object.id == {field name=id}}
+
+                            <li class="active">
+                                <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                            </li>
+
+                            {else}
+
+                            <li>
+                                <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                            </li>
+
+                        {/if}
+
+                    {/foreach}
+
+                {/if}
+
             </ul>
 
         </div>

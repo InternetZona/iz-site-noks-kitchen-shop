@@ -8,6 +8,10 @@
 {$mainpage = $mainPageResult.object}
 
 <ul id="desktop-menu" class="hide-on-small-and-down">
+    {$active = ({field name=id} == 24) ? 'active': ''}
+    <li class="{$active}">
+        <a href="{$modx->makeUrl(24)}">Все кухни</a>
+    </li>
     <li>
         <a class="dropdown-trigger dd-panel" href="#" data-target="dd-catalog-style">Стили кухни</a>
         <div id="dd-catalog-style" class="dropdown-content">

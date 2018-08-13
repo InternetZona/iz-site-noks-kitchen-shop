@@ -5,7 +5,7 @@
             <img class="responsive-img" src="{$template_url}img/{$image}" alt="{config name=site_name}">
         </span>
         <span class="header__logo-text">Кухни из<br>массива</span>
-        <small>С фасадами из Италии</small>
+        <small class="hide-on-small-and-down">С фасадами из Италии</small>
     </div>
 
 {else}
@@ -14,5 +14,6 @@
             <img class="responsive-img" src="{$template_url}img/{$image}" alt="{config name=site_name}">
         </a>
         <span class="header__logo-text">Кухни из<br>массива</span>
+        <small class="hide-on-small-and-down">С фасадами из Италии</small>
     </div>
 {/if}

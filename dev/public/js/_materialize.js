@@ -68,6 +68,22 @@ const Plyr = require('plyr');
         };
 
         break;
+      case 'modal-help':
+
+        config = {
+          onOpenStart: function() {
+            let trigger = this._openingTrigger,
+              index = trigger.dataset.contentId,
+              content = helpList[index] || '';
+
+            this.el.querySelector('.modal-content .content-wrapper').innerHTML = content;
+          },
+          onCloseEnd: function() {
+            this.el.querySelector('.modal-content .content-wrapper').innerHTML = "";
+          }
+        };
+
+        break;
       default:
     }
 
