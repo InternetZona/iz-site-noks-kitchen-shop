@@ -35,8 +35,8 @@
                     'where' => [
                         'id:IN' => $articles
                     ]
-                    ,'sort' => 'publishedon'
-                    ,'dir'  => 'desc'
+                    ,'sort' => 'parent'
+                    ,'dir'  => 'asc'
                     ,'limit'    => 5
                     ,'cached'   => true
                 ]}
@@ -49,15 +49,35 @@
 
                         {if $object.id == {field name=id}}
 
-                            <li class="active">
-                                <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
-                            </li>
+                            {if $object.parent == 38}
+
+                                <li class="active" style="margin-top: 2rem; margin-bottom: -1rem;">
+                                    <a class="text--bold" href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                                </li>
+
+                                {else}
+
+                                <li class="active">
+                                    <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                                </li>
+
+                            {/if}
 
                             {else}
 
-                            <li>
-                                <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
-                            </li>
+                            {if $object.parent == 38}
+
+                                <li style="margin-top: 2rem; margin-bottom: -1rem;">
+                                    <a class="text--bold" href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                                </li>
+
+                            {else}
+
+                                <li>
+                                    <a href="{$object.uri}">{$object.menutitle|default:$object.pagetitle}</a>
+                                </li>
+
+                            {/if}
 
                         {/if}
 
