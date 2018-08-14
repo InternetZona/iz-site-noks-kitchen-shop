@@ -6,7 +6,7 @@
                 {include file="components/menu/index.tpl" title="Сервис" ids="20, 81, 78" parent="0"}
             </div>
             <div class="col s12 m6 l3">
-                {include file="components/menu/index.tpl" title="Каталоги" ids="24, 41, 42, 43, 44, 45, 46" parent="23"}
+                {include file="components/menu/index.tpl" title="Каталоги" ids="24, 41, 42, 44, 45, 46" parent="23"}
                 {include file="components/menu/index.tpl" title="Акции и спецпредложения" ids="38" parent="0"}
             </div>
             <div class="col s12 m6 l3">

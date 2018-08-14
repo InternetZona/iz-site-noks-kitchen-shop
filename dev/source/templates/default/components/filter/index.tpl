@@ -5,32 +5,36 @@
 
                 {if $filter = $productFilter->getOne('Filter')}
 
-                    <li class="filter__item">
-                        <select name="filter[{$filter->tv_key}]" class="filter__control">
-                            <option value="" selected>Все</option>
-                            {if $filterValues = $filter->getMany('FilterValues')}
+                    {if $filter->id != 5}
 
-                                {$lock = false}
+                        <li class="filter__item">
+                            <select name="filter[{$filter->tv_key}]" class="filter__control">
+                                <option value="" selected>Все</option>
+                                {if $filterValues = $filter->getMany('FilterValues')}
 
-                                {foreach $filterValues as $data}
+                                    {$lock = false}
 
-                                    {$selected = ''}
+                                    {foreach $filterValues as $data}
 
-                                    {if !$lock }
-                                        {if $smarty.get.filter.{$filter->tv_key} == $data->id}
-                                            {$selected = 'selected'}
-                                            {$lock = true}
-                                        {elseif $modx->resource->getTVValue($filter->tv_key) == $data->id}
-                                            {$selected = 'selected'}
+                                        {$selected = ''}
+
+                                        {if !$lock }
+                                            {if $smarty.get.filter.{$filter->tv_key} == $data->id}
+                                                {$selected = 'selected'}
+                                                {$lock = true}
+                                            {elseif $modx->resource->getTVValue($filter->tv_key) == $data->id}
+                                                {$selected = 'selected'}
+                                            {/if}
                                         {/if}
-                                    {/if}
 
-                                    <option value="{$data->id}" {$selected}>{$data->name}</option>
-                                {/foreach}
-                            {/if}
-                        </select>
-                        <label class="filter__label">{$filter->name}</label>
-                    </li>
+                                        <option value="{$data->id}" {$selected}>{$data->name}</option>
+                                    {/foreach}
+                                {/if}
+                            </select>
+                            <label class="filter__label">{$filter->name}</label>
+                        </li>
+
+                    {/if}
 
                 {/if}
 

@@ -23,10 +23,7 @@
         {include file="blocks/free.tpl"}
         {include file="blocks/featured.tpl"}
         {include file="blocks/request.tpl"}
-
-        {if $smarty.get.state == 'update'}
-            {include file="blocks/brands.tpl"}
-        {/if}
+        {include file="blocks/brands.tpl"}
 
     </div>
 {/block}
@@ -34,4 +31,5 @@
 {block name=modals append}
     {include file="components/modals/testimonials.tpl"}
     {include file="components/modals/free.tpl"}
+    {include file="components/modals/help.tpl"}
 {/block}
