@@ -6,6 +6,7 @@
         ,'dir'      => 'DESC'
         ,'sort'     => 'publishedon'
         ,'cache'    => true
+        ,'limit'    => 0
     ]}
     {processor action="site/web/resources/getdata" params=$params ns="modxsite" assign=result}
 

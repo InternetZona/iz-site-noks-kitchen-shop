@@ -1,20 +1,18 @@
-{assign var=params value=[
-'parent'    => 21
-,'where' => [
-    'id:IN' => explode('||', $ids)
-]
-,'limit'    => 2
-,'dir'      => 'RAND()'
-]}
+{$itemList = array_splice($data|json_decode:true, 0, 2)}
 
-{processor action="web/catalog/getdata" ns='modcatalog' params=$params assign=result}
+{foreach $itemList as $item}
+    {assign var=params value=[
+        'id'    => $item.itemId
+        ,'cache'    => true
+        ,'current'  => true
+    ]}
 
-{if $result.success && $result.count > 0}
-    {foreach $result.object as $object}
+    {processor action="web/catalog/getdata" ns='modcatalog' params=$params assign=result}
 
-        <div class="col col--width-3 {if $object@iteration is even}hide-on-large-only hide-on-med-and-down show-on-extra-large{/if}">
-            <div class="dd-panel__title center-align">Нокс рекомендует</div>
-            {include file="components/product/item.preview.tpl" object=$object}
+    {if $result.success && $result.count > 0}
+        <div class="col col--width-3 {if $item@iteration is even}hide-on-large-only hide-on-med-and-down show-on-extra-large{/if}">
+            <div class="dd-panel__title center-align">{$item.title}</div>
+            {include file="components/product/item.preview.tpl" object=$result.object}
         </div>
-    {/foreach}
-{/if}
+    {/if}
+{/foreach}
