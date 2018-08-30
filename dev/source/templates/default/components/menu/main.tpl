@@ -20,7 +20,7 @@
                 {include file="components/menu/main.item.tpl" tv="style" title="Стиль" articles=explode('||', $mainpage.tvs.articleRotationStyle.value)}
 
                 {if $mainpage}
-                    {include file="components/navbar/products.preview.tpl" ids=$mainpage.tvs.productRotationStyle.value}
+                    {include file="components/navbar/products.preview.tpl" data=$mainpage.tvs.productRotationStyle.value}
                 {/if}
 
             </div>
@@ -34,7 +34,7 @@
                 {include file="components/menu/main.item.tpl" tv="material" title="Материал" articles=explode('||', $mainpage.tvs.articleRotationMaterial.value)}
 
                 {if $mainpage}
-                    {include file="components/navbar/products.preview.tpl" ids=$mainpage.tvs.productRotationMaterial.value}
+                    {include file="components/navbar/products.preview.tpl" data=$mainpage.tvs.productRotationMaterial.value}
                 {/if}
 
             </div>
@@ -47,7 +47,7 @@
 
                 {include file="components/menu/main.item.tpl" tv="colour" title="Цвет" articles=explode('||',$mainpage.tvs.articleRotationColor.value)}
                 {if $mainpage}
-                    {include file="components/navbar/products.preview.tpl" ids=$mainpage.tvs.productRotationColor.value}
+                    {include file="components/navbar/products.preview.tpl" data=$mainpage.tvs.productRotationColor.value}
                 {/if}
 
             </div>
@@ -64,7 +64,7 @@
                 {include file="components/menu/main.item2.tpl" articles=explode('||', $mainpage.tvs.articleRotationItem.value)}
 
                 {if $mainpage}
-                    {include file="components/navbar/products.preview.tpl" ids=$mainpage.tvs.productRotationItem.value}
+                    {include file="components/navbar/products.preview.tpl" data=$mainpage.tvs.productRotationItem.value}
                 {/if}
 
             </div>
