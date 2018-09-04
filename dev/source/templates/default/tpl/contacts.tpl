@@ -6,7 +6,8 @@
             <div class="contacts-area width-overlay">
                 <div class="block__title">Телефоны:</div>
                 <ul class="phones">
-                    <li class="phone valign-wrapper"><a href="tel:84952088802">8 (495) 208-88-02</a> <span>Пн-Пт с 9:00 до 18:00</span></li>
+                    <li class="phone valign-wrapper"><a href="tel:84952088802">8 (495) 208-88-02</a> <span>Пн.-Вс. 10:00-20:00</span></li>
+                    <li class="phone valign-wrapper"><strong>Посещение шоу-рума в выходные дни по предварительной записи</strong></li>
                 </ul>
             </div>
         </div>
