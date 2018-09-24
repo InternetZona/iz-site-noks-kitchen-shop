@@ -12,7 +12,7 @@
 {if $result.success && $result.count > 0}
     <div class="block-sales">
         <div class="section__title">
-            Акционные товары
+            Товары со скидкой
         </div>
         <div class="section__content">
 

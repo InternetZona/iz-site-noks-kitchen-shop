@@ -12,7 +12,7 @@
 {if $result.success && $result.count > 0}
     <div class="block-recomendation">
         <div class="section__title">
-            Нокс рекомендует
+            Лидеры продаж
         </div>
         <div class="section__content">
 

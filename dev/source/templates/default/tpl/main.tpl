@@ -14,9 +14,9 @@
     </div>
 
     <div class="container">
+        {include file="blocks/recomendation.tpl"}
         {include file="blocks/steps.tpl"}
         {include file="blocks/request.tpl"}
-        {include file="blocks/recomendation.tpl"}
         {include file="blocks/blog.tpl"}
         {include file="blocks/testimonials.tpl"}
         {include file="blocks/portfolio.tpl"}

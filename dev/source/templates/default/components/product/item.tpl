@@ -100,7 +100,7 @@
         {$_li = $_li|cat:'<li><span class="badge badge--new">новинка</span></li>'}
     {/if}
     {if $object.tvs.istop.value}
-        {$_li = $_li|cat:'<li><span class="badge badge--top">наш выбор</span></li>'}
+        {$_li = $_li|cat:'<li><span class="badge badge--top">лидер продаж</span></li>'}
     {/if}
 
     {if !empty($_li)}

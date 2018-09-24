@@ -27,9 +27,13 @@
                 </a>
                 <!--noindex-->
                 <div class="menu__title">Другие наши проекты</div>
+                <ul class="menu">
+                    <li>
                 <a rel="nofollow" href="https://noks.ru" target="_blank">
-                    <img src="/favicon.ico"> Корпусная мебель на заказ
+                    <img src="{$template_url}img/logo-min.png"> Корпусная мебель на заказ
                 </a>
+                    </li>
+                </ul>
                 <!--/noindex-->
             </div>
         </div>
