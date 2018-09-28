@@ -6,11 +6,12 @@
         <a href="{$modx->makeUrl({config name=site_start})}" class="brand-logo hide-on-med-and-up">Кухни из массива с фасадами из Италии</a>
     {/if}
     </div>
+    <div class="clear"></div>
     <nav class="z-depth-0 nav">
         <div class="nav-wrapper">
             <a href="#" data-target="mobile-menu" class="sidenav-trigger hide-on-med-and-up on_mobile_pages">
                 <i class="fas fa-bars"></i>
-            <div class="hide-on-med-only hide-on-large-only">КАК КУПИТЬ</div>
+            <span class="hide-on-med-only hide-on-large-only">КАК КУПИТЬ</span>
             </a>
             {include file="components/menu/main.tpl"}
         </div>
@@ -19,7 +20,7 @@
         <div class="nav-wrapper">
             <a href="#" data-target="mobile-menu" class="sidenav-trigger hide-on-med-and-up on_mobile_catalog">
                 <i class="fas fa-bars"></i>
-            <div class="hide-on-med-only hide-on-large-only">КАТАЛОГ</div>
+            <span class="hide-on-med-only hide-on-large-only">КАТАЛОГ</span>
             </a>
         </div>
     </nav>
