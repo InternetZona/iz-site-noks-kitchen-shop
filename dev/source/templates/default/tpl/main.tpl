@@ -24,7 +24,7 @@
         {include file="blocks/featured.tpl"}
         {include file="blocks/request.tpl"}
         {include file="blocks/brands.tpl"}
-
+{tv name=footertext}
     </div>
 {/block}
 
