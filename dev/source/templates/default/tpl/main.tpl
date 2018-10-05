@@ -24,7 +24,10 @@
         {include file="blocks/featured.tpl"}
         {include file="blocks/request.tpl"}
         {include file="blocks/brands.tpl"}
-{tv name=footertext}
+        <div class="row">
+            <div class="col s12 m6 l6">{tv name=footertext}</div>
+            <div class="col s12 m6 l6">{tv name=footertext2}</div>
+        </div>
     </div>
 {/block}
 
