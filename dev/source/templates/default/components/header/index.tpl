@@ -70,7 +70,7 @@
     </div>
     <div class="header__content hide-on-small-and-down">
         <div class="container">
-            <div class="row row--grid">
+            <div class="row">
                 <div class="col l4 valign-wrapper">
                     {include file="components/logo/index.tpl" image="logo-big.png"}
                 </div>

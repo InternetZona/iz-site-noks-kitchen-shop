@@ -25,6 +25,16 @@
                 <a href="https://www.instagram.com/noks_mebel/" class="link__social" target="_blank">
                     <img src="{$template_url}img/insta.png">
                 </a>
+                <!--noindex-->
+                <div class="menu__title">Другие наши сайты</div>
+                <ul class="menu">
+                    <li>
+                <a class="centertext" rel="nofollow" href="https://noks.ru" target="_blank">
+                    <img src="{$template_url}img/logo-min.png"> <div>Корпусная мебель на заказ</div>
+                </a>
+                    </li>
+                </ul>
+                <!--/noindex-->
             </div>
         </div>
         <hr>
