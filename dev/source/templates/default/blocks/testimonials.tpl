@@ -7,6 +7,7 @@
 {processor action="site/web/resources/getdata" params=$params ns="modxsite" assign=result}
 
 {if $result.success && $result.count > 0}
+    <!--noindex-->
     <div class="section block-testimonials">
         <div class="section__title">
             Отзывы клиентов
@@ -59,4 +60,5 @@
             {/if}
         </div>
     </div>
+    <!--/noindex-->
 {/if}
