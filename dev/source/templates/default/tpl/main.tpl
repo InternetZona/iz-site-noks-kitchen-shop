@@ -3,7 +3,9 @@
 {block name=main}
     <div class="container">
         {include file="components/banner/index.tpl"}
+        <!--noindex-->
         {include file="blocks/helps.tpl"}
+        <!--/noindex-->
         {include file="blocks/catalog.tpl"}
     </div>
 
