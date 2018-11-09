@@ -1,12 +1,16 @@
-<div class="card box-blog">
-    <a href="{$object.uri}">
+<div class="card box-product blog">
         <div class="card-image">
-            {snippet name="pThumb" params=[
-                "input" => $object.tvs.image.value
-                ,"options" => "&w=263&h=190&zc=1&aoe=0&far=0&q=70"
-            ] assign=thumbImage}
-            <img src="{$thumbImage}">
-            <span class="card-title">{$object.pagetitle}</span>
+            <span class="card-title">{$object.name}</span>
+            <div class="product__params-reveal">
+                <ul>
+                {if $object.res|is_array}
+                        {foreach from=$object.res item="item"}
+                            <li><a href="{$modx->makeUrl({$item})}">{snippet name="pdoField" params=['id' => {$item} ,'field' => 'pagetitle']}</a></li>
+                        {/foreach}
+                {else if $object.res}
+                    <li><a href="{$modx->makeUrl({$object.res})}">{snippet name="pdoField" params=['id' => {$object.res} ,'field' => 'pagetitle']}</a></li>
+                {/if}
+                </ul>
+            </div>
         </div>
-    </a>
 </div>
