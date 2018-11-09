@@ -1,5 +1,10 @@
 <div class="card box-product blog">
         <div class="card-image">
+            {snippet name="pThumb" params=[
+            "input" => $object.image
+            ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=80"
+            ] assign=thumbImage}
+            <img src="{$thumbImage}">
             <span class="card-title">{$object.name}</span>
             <div class="product__params-reveal">
                 <ul>
