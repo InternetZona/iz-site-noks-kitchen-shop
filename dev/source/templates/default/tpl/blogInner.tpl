@@ -30,6 +30,7 @@
     {if $page = $modx->getObject('modResource', 12)}
     {if $result = json_decode($page->getTVValue('blogs'), true)}
         <div class="leftmenu">
+            <div class="h4">Другие статьи</div>
                 {foreach $result as $object}
                     <span class="card-title">{$object.name}</span>
                     <div class="product__params-reveal">
