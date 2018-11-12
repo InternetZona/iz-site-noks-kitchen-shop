@@ -10,7 +10,7 @@
 <ul id="desktop-menu" class="hide-on-small-and-down">
     {$active = ({field name=id} == 24) ? 'active': ''}
     <li class="{$active}">
-        <a href="{$modx->makeUrl(24)}">Все кухни</a>
+        <a href="{$modx->makeUrl(24)}">Все кухни из массива</a>
     </li>
     <li>
         <a class="dropdown-trigger dd-panel" href="#" data-target="dd-catalog-style">Стили кухни</a>
