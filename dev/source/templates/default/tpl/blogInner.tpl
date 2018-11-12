@@ -27,10 +27,26 @@
 
             <div class="col l3 pull-l9">
 
-                {block name=folder_menu}
-                    {include file="components/menu/folder.tpl" parent=12 title="Полезные советы"}
-                {/block}
-
+    {if $page = $modx->getObject('modResource', 12)}
+    {if $result = json_decode($page->getTVValue('blogs'), true)}
+        <div class="leftmenu">
+                {foreach $result as $object}
+                    <span class="card-title">{$object.name}</span>
+                    <div class="product__params-reveal">
+                        <ul>
+                            {if $object.res|is_array}
+                                {foreach from=$object.res item="item"}
+                                    <li><a href="{$modx->makeUrl({$item})}">{snippet name="pdoField" params=['id' => {$item} ,'field' => 'pagetitle']}</a></li>
+                                {/foreach}
+                            {else if $object.res}
+                                <li><a href="{$modx->makeUrl({$object.res})}">{snippet name="pdoField" params=['id' => {$object.res} ,'field' => 'pagetitle']}</a></li>
+                            {/if}
+                        </ul>
+                    </div>
+                {/foreach}
+        </div>
+{/if}
+    {/if}
             </div>
         </div>
 
