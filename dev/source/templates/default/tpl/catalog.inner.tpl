@@ -6,7 +6,7 @@
 
     {if $productType}
 
-        {$limit = 15}
+        {$limit = 100}
 
         {if isset($smarty.get.limit)}
             {$limit = (in_array($smarty.get.limit, [0, 15, 30, 45])) ? $smarty.get.limit : $limit }
