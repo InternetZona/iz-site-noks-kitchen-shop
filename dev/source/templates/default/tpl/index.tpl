@@ -36,7 +36,6 @@
     {include file="components/modals/feedback.tpl"}
     {include file="components/modals/order.project.tpl"}
     {include file="components/modals/order.visit.tpl"}
-    {include file="components/modals/policy.tpl"}
 {/block}
 
 <script async src="{$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')}"></script>
