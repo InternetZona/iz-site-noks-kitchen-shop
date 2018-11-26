@@ -10,7 +10,7 @@
         <input type="tel" name="phone" class="input-field browser-default full">
     </div>
     <p>
-        <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
+        <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="/policy.doc">персональных данных</a></small>
     </p>
     <div class="center-align">
         <button type="submit" class="form__submit form__submit--inverse" onclick="yaCounter49093180.reachGoal('call_send');">Отправить</button>
