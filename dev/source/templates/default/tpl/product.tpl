@@ -42,8 +42,10 @@
 
                     </ul>
 
-                    {if $producttext = {tv name=producttext}}
+                    {if {field name=template} == 9}
+                    {if $producttext = {config name=producttext}}
                     <div class="producttext">{$producttext}</div>
+                    {/if}
                     {/if}
 
                     {include file="components/product/params.tpl" product=$modx->resource}
