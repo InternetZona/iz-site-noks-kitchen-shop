@@ -42,6 +42,10 @@
 
                     </ul>
 
+                    {if $producttext = {tv name=producttext}}
+                    <div class="producttext">{$producttext}</div>
+                    {/if}
+
                     {include file="components/product/params.tpl" product=$modx->resource}
 
                     {if $params = {tv name=params}|json_decode:true}
