@@ -7,7 +7,7 @@
     <link type="text/css" rel="stylesheet" href="{$template_url}css/style.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/style.css')}"  media="screen, projection" />
     <link type="text/css" rel="stylesheet" href="{$template_url}css/izstyle.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/izstyle.css')}"  media="screen,projection"/>
     <script src="{$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')}"></script>
-    <script async src="{$template_url}js/izscripts.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/izscrpts.js')}"></script>
+    <script async src="{$template_url}js/izscripts.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/izscripts.js')}"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
@@ -36,7 +36,6 @@
     {include file="components/modals/feedback.tpl"}
     {include file="components/modals/order.project.tpl"}
     {include file="components/modals/order.visit.tpl"}
-    {include file="components/modals/policy.tpl"}
 {/block}
 
 <script async src="{$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')}"></script>

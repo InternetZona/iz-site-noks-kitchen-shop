@@ -41,7 +41,7 @@
 
                             <a class='quick-cart__trigger' href='{$modx->makeUrl(83)}'>
                                 <span class="quick-cart__trigger-text">Корзина</span>
-                            </a>
+
                             <span class="quick-cart__counter">
 
                                 {if $basket}
@@ -62,6 +62,7 @@
                                     <span class="quick-cart__counter-cost"><em>0</em> руб</span>
                                 {/if}
                             </span>
+                            </a>
                         </li>
                     </ul>
                 </div>

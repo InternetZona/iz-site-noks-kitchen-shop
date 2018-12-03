@@ -42,6 +42,12 @@
 
                     </ul>
 
+                    {if {field name=template} == 9}
+                    {if $producttext = {config name=producttext}}
+                    <div class="producttext">{$producttext}</div>
+                    {/if}
+                    {/if}
+
                     {include file="components/product/params.tpl" product=$modx->resource}
 
                     {if $params = {tv name=params}|json_decode:true}

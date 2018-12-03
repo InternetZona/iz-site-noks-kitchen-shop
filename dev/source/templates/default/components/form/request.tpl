@@ -1,6 +1,7 @@
 <form name="request" class="form form--request form--ajax" autocomplete="off">
     <input type="hidden" name="action" value="web/form">
     <input type="hidden" name="subject" value="Заявка на бесплатный дизайн-проект">
+    <input type="hidden" name="ref" value="{$smarty.cookies.ref}">
     <div class="row row--grid">
         <div class="col s12 m12 l4">
             <div class="form__title">
@@ -29,7 +30,7 @@
             </div>
         </div>
         <div class="col s12offset-l4 l8">
-            <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="#modal-policy" class="modal-trigger trigger-policy">персональных данных</a></small>
+            <small>Нажимая на кнопку "Отправить", Вы даете согласие на обработку своих <a href="/policy.doc">персональных данных</a></small>
         </div>
     </div>
 </form>
