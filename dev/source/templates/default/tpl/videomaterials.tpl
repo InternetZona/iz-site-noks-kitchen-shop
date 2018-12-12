@@ -1,6 +1,7 @@
 {extends file="basepage.tpl"}
 
 {block name=page_content}
+    {field name="content"}
 
     {$tvData = {tv name=videomaterials}|json_decode:true}
 

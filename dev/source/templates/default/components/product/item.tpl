@@ -20,7 +20,7 @@
         {/if}
 
         {if $materialValue = $modx->getObject('catalogFilterValue', $object.tvs.material.value)}
-            {$_li = $_li|cat:"<li>Массив: {$materialValue->name}</li>"}
+            {$_li = $_li|cat:"<li>Массив дерева: {$materialValue->name}</li>"}
         {/if}
 
         {if $_li ne ''}
