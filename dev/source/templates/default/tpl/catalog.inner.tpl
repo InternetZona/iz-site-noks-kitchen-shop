@@ -1,6 +1,7 @@
 {extends file="basepage.tpl"}
 
 {block name=page_content prepend}
+<div class="content-wrapper">{tv name="prependtext"}</div>
     {assign var=productType value=$modx->getObject('catalogProductType', {tv name=productType}|default:0)}
 
     {if $productType}
@@ -104,7 +105,6 @@
         {/if}
 
     {/if}
-    <div class="content-wrapper">{tv name="prependtext"}</div>
 {/block}
 
 {block name=aside}
