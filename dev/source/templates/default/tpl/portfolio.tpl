@@ -21,12 +21,11 @@
                             {foreach $images as $row}
 
                                 <figure class="swiper-slide center-align">
-
                                     {snippet name="pThumb" params=[
                                         "input" => $row.image
                                         ,"options" => "&w=1024&h=768&zc=0&aoe=0&far=0&q=70"
                                     ] assign=thumbImage}
-                                    <figcaption>{$row.title}</figcaption>
+
                                     <a href="{$thumbImage}" data-size="1024x768" class="portfolio-feed__item">
                                         {snippet name="pThumb" params=[
                                             "input" => $row.image,
@@ -35,6 +34,7 @@
 
                                         <img src="{$thumbImage}" class="responsive-img" />
                                     </a>
+                                    <div>{$row.title}</div>
                                 </figure>
                             {/foreach}
                         </div>
