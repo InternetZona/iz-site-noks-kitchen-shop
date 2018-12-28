@@ -75,6 +75,7 @@
                 <div class="col l4 valign-wrapper">
                     {include file="components/logo/index.tpl" image="logo-big.png"}
                 </div>
+
                 <div class="col offset-m1 m3 l5 xl4 valign-wrapper">
                     <ul class="header__action">
                         <li class="header__action-item">
@@ -87,8 +88,15 @@
                                 <i class="icon icon--project"></i>
                                 Заказать проект</a>
                         </li>
+                    <!-- Поиск -->
+                    <li class="hide-on-med-and-down">
+                    <div class="searchlanding">[[!SimpleSearchForm]]</div>
+                    <div id="site-search-results" class="site-search-results"></div>
+                    </li>
+                    <!--/Поиск -->
                     </ul>
                 </div>
+
                 <div class="col m3 xl2 right-align valign-wrapper">
                     <ul class="header__contacts">
                         <li class="header__contacts-time">
