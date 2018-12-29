@@ -105,7 +105,8 @@
                         <li>
                             <a class="header__contacts-phone" href="tel:84952088802">8 (495) 208-88-02</a>
                         </li>
-                    </ul>
+                            <li class="header__contacts-time"><a class="holiday" href="{$modx->makeUrl(342)}">Работа в праздники</a></li>
+                        </ul>
                 </div>
                 <div class="col hide-on-med-and-down hide-on-large-only show-on-extra-large xl2 valign-wrapper right-align">
                     <ul class="header__link">
