@@ -14,7 +14,7 @@
                 {include file="components/menu/index.tpl" title="Сотрудничество" ids="222" parent="0"}
                 <div class="menu__title">Выгодные условия</div>
                 <ul class="menu">
-                    <li class="first"><img src="{$template_url}img/tinkoff.png"></li>
+                    <li class="first"><a href="{$modx->makeUrl(345)}"><img src="{$template_url}img/tinkoff.png"></a></li>
                     <li class="first"><a href="{$modx->makeUrl(344)}"><img src="{$template_url}img/halva.png"></a></li>
                 </ul>
             </div>
