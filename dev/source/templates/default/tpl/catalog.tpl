@@ -52,7 +52,7 @@
         {include file="blocks/recomendation.tpl"}
         {include file="blocks/blog.tpl"}
         {include file="blocks/testimonials.tpl"}
-        {include file="blocks/portfolio.tpl"}
+    {*   {include file="blocks/portfolio.tpl"} *}
         {include file="blocks/free.tpl"}
         {include file="blocks/featured.tpl"}
         {include file="blocks/request.tpl"}
