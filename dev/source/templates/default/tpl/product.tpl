@@ -81,7 +81,7 @@
                         </div>
                     </div>
 
-                    {/if}
+                    {else}
                     <div class="row row--grid">
                         <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
                             {$price = {tv name=price_discount}|default:{tv name=price}}
@@ -99,6 +99,7 @@
                             </div>
                         </div>
                     </div>
+                    {/if}
                 </div>
             </div>
 
