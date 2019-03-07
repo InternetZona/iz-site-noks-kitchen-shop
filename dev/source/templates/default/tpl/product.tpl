@@ -76,7 +76,8 @@
 
                     <div class="row">
                         <div class="col s12 m6 l6">
-                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-discount="{$data.price_discount}" data-price="{$data.price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
+                            {$price = {tv name=price_discount}|default:{tv name=price}}
+                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
                         </div>
                     </div>
 
