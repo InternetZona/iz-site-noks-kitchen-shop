@@ -63,13 +63,10 @@
                     <div class="product__divider"></div>
 
                     <div class="row row--grid">
-                    <div class="col l12 valign-wrapper">
-                        <a href="#modal-calculation" class="button-action modal-trigger #f44336 red">
-                            Заказать расчет под свой размер</a>
-                    </div>
-                    </div>
-
-                    <div class="row row--grid">
+                        <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
+                            {$price = {tv name=price_discount}|default:{tv name=price}}
+                            <a href="#modal-calculation" class="computation button-action modal-trigger" onclick="yaCounter49093180.reachGoal('buy');">Заказать расчет</a>
+                        </div>
                         <div class="col s6 push-s6 m2 valign-wrapper">
                             <div class="product__bar">
                                 {$favorite = $smarty.cookies.favorite|json_decode:true}
@@ -80,10 +77,6 @@
                                 {/if}
 
                             </div>
-                        </div>
-                        <div class="col s6 pull-s6 m8 offset-m2 pull-m2 valign-wrapper">
-                            {$price = {tv name=price_discount}|default:{tv name=price}}
-                            <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
                         </div>
                     </div>
                 </div>
