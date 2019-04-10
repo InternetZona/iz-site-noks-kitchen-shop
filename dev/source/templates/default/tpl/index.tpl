@@ -4,10 +4,28 @@
     {snippet name="SEOManager"}
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{$template_url}css/style.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/style.css')}"  media="screen, projection" />
-    <link type="text/css" rel="stylesheet" href="{$template_url}css/izstyle.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/izstyle.css')}"  media="screen,projection"/>
-    <script src="{$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')}"></script>
-    <script async src="{$template_url}js/izscripts.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/izscripts.js')}"></script>
+
+    [[MinifyX?
+    &minifyCss=`1`
+    &minifyJs=`1`
+    &registerCss=`default`
+    &registerJs=`default`
+    &cssSources=`
+    {$template_url}css/style.css?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/style.css')},
+    {$template_url}css/izstyle.css??{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'css/izstyle.css')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/css/style.css?{filemtime('ajax-form/css/style.css')}
+    `
+    &jsSources=`
+    {$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')},
+    {$template_url}js/izscripts.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/izscripts.js')},
+    {$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/js/jquery.knob.js?{filemtime('ajax-form/js/jquery.knob.js')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/js/jquery.ui.widget.js?{filemtime('ajax-form/js/jquery.ui.widget.js')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/js/jquery.iframe-transport.js?{filemtime('ajax-form/js/jquery.iframe-transport.js')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/js/jquery.fileupload.js?{filemtime('ajax-form/js/jquery.fileupload.js')},
+    https://{$smarty.server.HTTP_HOST}/ajax-form/js/script.js?{filemtime('ajax-form/js/script.js')}
+    `
+    ]]
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     {literal}
@@ -61,8 +79,6 @@
     {include file="components/modals/order.visit.tpl"}
     {include file="components/modals/calculation.tpl"}
 {/block}
-
-<script async src="{$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')}"></script>
 
 {block name=js_inject}
     {chunk name="jsInject"}
