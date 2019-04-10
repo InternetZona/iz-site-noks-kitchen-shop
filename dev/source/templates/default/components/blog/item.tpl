@@ -5,7 +5,7 @@
             ,"options" => "&w=360&h=225&zc=1&aoe=0&far=0&q=80"
             ] assign=thumbImage}
             <img src="{$thumbImage}">
-            <span class="card-title">{$object.name}</span>
+            <div class="card-title">{$object.name}</div>
             <div class="product__params-reveal">
                 <ul>
                 {if $object.res|is_array}
