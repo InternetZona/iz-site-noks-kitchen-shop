@@ -141,6 +141,13 @@
                     <div id="tab-content" class="tab__item col s12">
                         <div class="content-wrapper">
                             {$content}
+
+                            {if {field name=pagetitle}|strpos:"Кухня" !== false}
+                                    <a href="{$modx->makeUrl(24)}" class="view-title">
+                                        Смотреть: все виды кухонь из массива
+                                    </a>
+                            {/if}
+
                         </div>
                     </div>
                 {/if}
