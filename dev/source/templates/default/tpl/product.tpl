@@ -77,7 +77,7 @@
                                 {$price = {tv name=price_discount}|default:{tv name=price}}
                                 <a href="#" class="product__order-btn btn-block" data-id="{field name=id}" data-price="{$price}" onclick="yaCounter49093180.reachGoal('buy');">Купить</a>
                             </div>
-                            <div class="col s6 push-s6 m2 valign-wrapper">
+                            <div class="col s6 m2 valign-wrapper">
                                 <div class="product__bar">
                                     {$favorite = $smarty.cookies.favorite|json_decode:true}
                                     {if in_array({field name=id}, $favorite)}
@@ -96,7 +96,7 @@
                             {$price = {tv name=price_discount}|default:{tv name=price}}
                             <a href="#modal-calculation" class="computation button-action modal-trigger" onclick="yaCounter49093180.reachGoal('buy');">Заказать расчет</a>
                         </div>
-                        <div class="col s6 push-s6 m2 valign-wrapper">
+                        <div class="col s6 m2 valign-wrapper">
                             <div class="product__bar">
                                 {$favorite = $smarty.cookies.favorite|json_decode:true}
                                 {if in_array({field name=id}, $favorite)}
