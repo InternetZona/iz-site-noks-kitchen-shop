@@ -66,8 +66,14 @@
 <a href="#" class="scroll-up">
     Наверх
 </a>
-
-{include file="components/footer/index.tpl"}
+<script src="{$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')}"></script>
+{snippet name="AjaxSnippet" params=[
+'snippet'   => 'load'
+,'tpl'     => 'footerload.tpl'
+,'parents' => '0'
+, 'as_mode'  => 'onscroll'
+, 'loadtext'  => ''
+]}
 {include file="components/navbar/sidenav.tpl"}
 
 {block name=modals}
@@ -81,7 +87,6 @@
 
 {block name=js_inject}
     {chunk name="jsInject"}
-    <script src="{$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')}"></script>
     {snippet name="AjaxSnippet" params=[
     'snippet'   => 'load'
     ,'tpl'     => 'jivoload.tpl'
