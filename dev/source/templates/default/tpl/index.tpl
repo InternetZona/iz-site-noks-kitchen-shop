@@ -16,7 +16,6 @@
     https://{$smarty.server.HTTP_HOST}/ajax-form/css/style.css?{filemtime('ajax-form/css/style.css')}
     `
     &jsSources=`
-    {$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')},
     {$template_url}js/izscripts.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/izscripts.js')},
     {$template_url}js/app.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/app.js')},
     https://{$smarty.server.HTTP_HOST}/ajax-form/js/jquery.knob.js?{filemtime('ajax-form/js/jquery.knob.js')},
@@ -82,6 +81,14 @@
 
 {block name=js_inject}
     {chunk name="jsInject"}
+    <script src="{$template_url}js/jquery-3.3.1.js?{filemtime(MODX_BASE_PATH|cat:$template_url|cat:'js/jquery-3.3.1.js')}"></script>
+    {snippet name="AjaxSnippet" params=[
+    'snippet'   => 'load'
+    ,'tpl'     => 'jivoload.tpl'
+    ,'parents' => '0'
+    , 'as_mode'  => 'onscroll'
+    , 'loadtext'  => ''
+    ]}
 {/block}
 </body>
 </html>
