@@ -143,8 +143,9 @@
                             {$content}
 
                             {if {field name=pagetitle}|strpos:"Кухня" !== false}
-                                    <a href="{$modx->makeUrl(24)}" class="view-title">
-                                        Смотреть: все виды кухонь из массива
+                                Смотреть:
+                                <a href="{$modx->makeUrl(24)}" class="view-title">
+                                        все виды кухонь из массива
                                     </a>
                             {/if}
 
