@@ -114,6 +114,9 @@
         </div>
     </div>
     <div class="container">
+        {if {field name=id} == 24}
+            <!--noindex-->
+        {/if}
         {include file="blocks/steps.inner.tpl"}
         {include file="blocks/request.tpl"}
         {include file="blocks/recomendation.tpl"}
@@ -122,6 +125,9 @@
         {include file="blocks/portfolio.tpl"}
         {include file="blocks/free.tpl"}
         {include file="blocks/featured.tpl"}
+        {if {field name=id} == 24}
+            <!--/noindex-->
+        {/if}
         {include file="blocks/request.tpl"}
     </div>
 {/block}
