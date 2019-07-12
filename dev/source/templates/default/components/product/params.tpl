@@ -12,7 +12,7 @@
                     {if $filter->id != 5}
                         {if $filter->multiple == 'listbox'}
                             {if $value = $modx->getObject('catalogFilterValue', $product->getTVValue($filter->tv_key))}
-                                <li>{$filter->name}: <span>{$value->name}</span></li>
+                                <li>{$filter->name}: <a href="{link id="{$value->res_id}"}"><span>{$value->name}</span></a></li>
                             {/if}
 
                         {else}
@@ -27,7 +27,7 @@
                                     {/if}
                                 {/foreach}
                                 {if $values}
-                                    <li>{$filter->name}: <span>{implode(', ', $values)}</span></li>
+                                    <li>{$filter->name}: <a href="{link id="{$value->res_id}"}"><span>{implode(', ', $values)}</span></a></li>
                                 {/if}
                             {/if}
 
